@@ -28,6 +28,12 @@ enum {
 	LIBUSB_FLEXIBLE_ARRAY 	= 3,
 };
 
+enum libusb_endpoint_direction {
+	LIBUSB_ENDPOINT_OUT = 0x00,
+	LIBUSB_ENDPOINT_IN = 0x80
+};
+
+
 enum libusb_log_level {
 	LIBUSB_LOG_LEVEL_NONE = 0,
 	LIBUSB_LOG_LEVEL_ERROR = 1,
@@ -229,7 +235,17 @@ void libusb_close(libusb_device_handle *dev_handle);
 libusb_device_handle * libusb_open_device_with_vid_pid(libusb_context *ctx, uint16_t vendor_id, uint16_t product_id);
 libusb_device * libusb_get_device(libusb_device_handle *dev_handle);
 int libusb_reset_device(libusb_device_handle *dev_handle);
+int libusb_get_configuration(libusb_device_handle *dev,	int *config);
+
+int libusb_bulk_transfer(libusb_device_handle *dev_handle,
+	unsigned char endpoint, unsigned char *data, int length,
+	int *actual_length, unsigned int timeout);
+
+int libusb_control_transfer(libusb_device_handle *dev_handle,
+	uint8_t request_type, uint8_t bRequest, uint16_t wValue, uint16_t wIndex,
+	unsigned char *data, uint16_t wLength, unsigned int timeout);
 
 ]]
+
 
 return lusb_lib

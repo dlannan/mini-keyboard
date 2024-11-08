@@ -16,8 +16,19 @@
 
 package.path    = package.path..";./ffi/?.lua"
 
+-- ----------------------------------------------------------------------------------------------
+
 local ffi   = require("ffi")
 
+ffi.cdef[[
+void Sleep(uint32_t ms);
+]]
+
+-- ----------------------------------------------------------------------------------------------
+
+local codes = require("lua.mapcodes")
+
+-- ----------------------------------------------------------------------------------------------
 -- Get lusb interface
 local lusb = require("lusb")
 
@@ -225,7 +236,90 @@ end
 
 -- ----------------------------------------------------------------------------------------------
 
-local function map_keys()
+local function send_data( handle, data )
+    
+    local actual_length = ffi.new("int[1]")
+    local r = lusb.libusb_bulk_transfer(handle, lusb.LIBUSB_ENDPOINT_IN, data, ffi.sizeof(data), actual_length, 0)
+    ffi.C.Sleep(15)
+    print("Result: "..r.."  Send Size: "..ffi.sizeof(data).."  Actual: "..actual_length[0])
+    if (r == 0 and actual_length[0] == ffi.sizeof(data)) then 
+        print("Transfer success")
+    else 
+        print("Transfer failed")
+    end
+end
+
+-- ----------------------------------------------------------------------------------------------
+
+local function send_macro( handle, key, layer, mod, code )
+	-- // header
+	local req = ffi.new("uint8_t[64]")
+	req[0] = codes.MINIKB.KEY1 
+	req[1] = codes.LAYER.LAYER1 + codes.MACROTYPE.MACROKEYS
+	req[2] = 2
+
+    -- A blank must be sent first?
+    req[3] = 0
+    req[4] = codes.NOMO
+    req[5] = codes.NOKEY
+    send_data(handle, req)
+
+    -- Can repeat from here
+    req[3] = 1
+    req[4] = codes.MODIFIERS.CTRL
+    req[5] = codes.KEYS.A
+    send_data(handle, req)
+
+end
+
+-- ----------------------------------------------------------------------------------------------
+
+local function map_keys(inarg)
+
+    local params = nil 
+
+    if(inarg[2] == "--address" and inarg[3]) then 
+        params = inarg[3]
+    else 
+        print("[Error] No valid vendor:product provided.")
+        return nil
+    end
+
+    local  r = lusb.libusb_init_context(nil, nil, 0)
+    if( r < 0 ) then 
+        print("[Error] Unable to init libusb context.")
+        return 
+    end 
+    
+    local vid, pid = string.match(params, "^(.-)%:(.-)$")
+    local handle = lusb.libusb_open_device_with_vid_pid(nil, tonumber(vid,16), tonumber(pid,16) )
+    if(handle == nil) then 
+        print("[Error] Invalid handle: "..tostring(handle))
+        return 
+    end
+
+    -- local config = ffi.new("int[1]")
+    -- local res = lusb.libusb_get_configuration(handle, config)
+    -- print(res, config[0])
+
+    local data = ffi.new("unsigned char[1]")
+    -- // transfer the setup packet to the USB device
+    local config = lusb.libusb_control_transfer(handle,0,0,0,0,data,0,0)
+    if(config < 0) then 
+        print("[Error] No data transmitted to device: "..config)
+        return 
+    end
+
+    local start = ffi.new("uint8_t[64]", {0xa1, 0x01})
+    send_data(handle, start)
+
+    send_macro(handle, nil)
+
+    local finish = ffi.new("uint8_t[64]", {0xaa, 0xaa})
+    send_data(handle, finish)
+
+
+    lusb.libusb_exit(nil)
 end
 
 -- ----------------------------------------------------------------------------------------------

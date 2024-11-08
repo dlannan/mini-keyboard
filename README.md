@@ -94,3 +94,4 @@ Currenly I only have the 12 button 2 knob variant. But with libusb being used, I
 My device:
 
 ![alt text](https://github.com/dlannan/mini-keyboard/blob/main/media/keyboard-12-2.png)
+
