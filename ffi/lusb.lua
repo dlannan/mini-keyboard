@@ -195,11 +195,12 @@ typedef void ( *libusb_log_cb)(libusb_context *ctx, enum libusb_log_level level,
 struct libusb_init_option {
     enum libusb_option option;
     union {
-      int ival;
-      libusb_log_cb log_cbval;
+      	int ival;
+      	libusb_log_cb log_cbval;
     } value;
-  };
+};
 
+int libusb_init(libusb_context **ctx);  
 int libusb_init_context(libusb_context **ctx, const struct libusb_init_option options[], int num_options);
 void libusb_exit(libusb_context *ctx);
 
@@ -207,12 +208,27 @@ int libusb_get_device_list(libusb_context *ctx,	libusb_device ***list);
 void libusb_free_device_list(libusb_device **list,	int unref_devices);
 
 int libusb_get_device_descriptor(libusb_device *dev, struct libusb_device_descriptor *desc);
+int libusb_get_bos_descriptor(libusb_device_handle *dev_handle,	struct libusb_bos_descriptor **bos);
+void libusb_free_bos_descriptor(struct libusb_bos_descriptor *bos);
 
+int libusb_has_capability(uint32_t capability);
 uint8_t libusb_get_bus_number(libusb_device *dev);
 uint8_t libusb_get_port_number(libusb_device *dev);
 int libusb_get_port_numbers(libusb_device *dev, uint8_t *port_numbers, int port_numbers_len);
 libusb_device * libusb_get_parent(libusb_device *dev);
 uint8_t libusb_get_device_address(libusb_device *dev);
+
+int libusb_get_device_speed(libusb_device *dev);
+int libusb_get_max_packet_size(libusb_device *dev, unsigned char endpoint);
+int libusb_get_max_iso_packet_size(libusb_device *dev, unsigned char endpoint);
+int libusb_get_max_alt_packet_size(libusb_device *dev, int interface_number, int alternate_setting, unsigned char endpoint);
+
+int libusb_open(libusb_device *dev, libusb_device_handle **dev_handle);
+void libusb_close(libusb_device_handle *dev_handle);
+
+libusb_device_handle * libusb_open_device_with_vid_pid(libusb_context *ctx, uint16_t vendor_id, uint16_t product_id);
+libusb_device * libusb_get_device(libusb_device_handle *dev_handle);
+int libusb_reset_device(libusb_device_handle *dev_handle);
 
 ]]
 
