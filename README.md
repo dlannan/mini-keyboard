@@ -89,7 +89,7 @@ Current work is investigating how to send commands to the keyboard and map new k
 
 ## Device
 
-Currenly I only have the 12 button 2 knob variant. But with libusb being used, I think it should be easy enough to support multiple device types. Have a look at the single lua script and if you want to help expand its capability then raise and issue or PR. Happy to add any senisble contributions. 
+Currenly I only have the 12 button 2 knob variant. But with libusb being used, I think it should be easy enough to support multiple device types. Have a look at the single lua script and if you want to help expand its capability then raise an issue or PR. Happy to add any senisble contributions. 
 
 My device:
 
