@@ -11,7 +11,9 @@ https://github.com/kriomant/ch57x-keyboard-tool
 
 ## Usage 
 
-At the moment only windows is supported in the binaries. It is easy to build the luajit and binaries for libusb available here:
+At the moment only windows is supported in the binaries. 
+
+It is easy to build the luajit and binaries for libusb available here:
 
 Luajit: https://github.com/LuaJIT/LuaJIT
 
@@ -74,7 +76,7 @@ Reset also seems to be working ok. Hope to have more commands completed soon.
 
 ## Difference
 
-Im often using luajit to make tools and while attempting to use some of these tools with windows I ran into odd problems like lock-ups, suggestions to install some usb sdk and various other issues, while still having little success actually connecting and controlling the 12 key + 2 knob mini-keyboard I bought.
+Im often using luajit to make tools and while attempting to use some of the other tools with windows I ran into odd problems like lock-ups, suggestions to install some usb sdk and various other issues, while still having little success actually connecting and controlling the 12 key + 2 knob mini-keyboard I bought.
 
 Thus I decided to leverage libusb and luajit + ffi. 
 
