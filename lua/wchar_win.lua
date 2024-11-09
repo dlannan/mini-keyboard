@@ -172,9 +172,10 @@ end
 local mbsbuf = function(sz) return ffi.new('char[?]', sz) end
 
 local function mbs(ws, unused, mbuf) --WCHAR* -> string
-	local wsz = 0	
+	local wsz = 0
 	while(ws[wsz] ~= 0) do wsz = wsz + 1 end
 	if(wsz == 0) then return ffi.string("") end
+	wsz = wsz + 1
 
 	mbuf = mbuf or mbsbuf
 	local msz = C.WideCharToMultiByte(

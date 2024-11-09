@@ -416,12 +416,11 @@ local function map_keys(inarg)
 	res = hapi.hid_get_serial_number_string(handle, wstr, MAX_STR);
 	print(string.format("Serial Number String: (%d) %s", wstr[0],  wwin.mbs(wstr)))
 
-	-- // Read Indexed String 1
-	res = hapi.hid_get_indexed_string(handle, 1, wstr, MAX_STR);
-	print(string.format("Indexed String 1: %s",  wwin.mbs(wstr)))
-	res = hapi.hid_get_indexed_string(handle, 2, wstr, MAX_STR);
-	print(string.format("Indexed String 2: %s",  wwin.mbs(wstr)))
-
+	-- // Read Indexed String 
+    for i=1, 2 do
+	res = hapi.hid_get_indexed_string(handle, i, wstr, MAX_STR);
+	print(string.format("Indexed String %d: %s", i, wwin.mbs(wstr)))
+    end
 
     -- download_keymap(handle)
 
