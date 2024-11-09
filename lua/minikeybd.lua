@@ -255,7 +255,7 @@ end
 local function send_data( handle, data_out, data_size )
     
     local r = hapi.hid_write(handle, data_out, data_size)
-    if (r == 0) then 
+    if (r >= 0) then 
         print("Transfer success")
     else 
         print("Transfer failed")
@@ -277,27 +277,30 @@ end
 
 -- ----------------------------------------------------------------------------------------------
 
-local function send_macro( handle, key, layer, mod, code )
+local function download_keymap( handle )
 	-- // header
-	local req = ffi.new("uint8_t[64]")
-    ffi.fill(req, 64, 0)
+	local req = ffi.new("uint8_t[47]")
+    ffi.fill(req, 47, 0)
 
-	req[0] = codes.MINIKB.KEY1 
-	req[1] = codes.LAYER.LAYER1 + codes.MACROTYPE.MACROKEYS
-	req[2] = 2
+	req[0] = 0
+    req[1] = 254  -- Not sure what this is, but its 
+    req[2] = codes.MINIKB.KEY1 
+	req[3] = codes.LAYER.LAYER1 
+	req[4] = codes.MACROTYPE.MACROKEYS
+    -- req[5] -- protocol2?
+    -- req[6]
+    req[7] = 0
+    req[8] = 0
+    req[9] = 0
 
     -- A blank must be sent first?
-    req[3] = 0
-    req[4] = codes.NOMO
-    req[5] = codes.NOKEY
-    send_data(handle, req, 64)
+    req[10] = codes.NOMO
+    req[11] = codes.NOKEY
 
     -- Can repeat from here
-    req[3] = 1
-    req[4] = codes.MODIFIERS.CTRL
-    req[5] = codes.KEYS.A
-    send_data(handle, req, 64)
-
+    req[12] = codes.MODIFIERS.CTRL
+    req[13] = codes.KEYS.A
+    send_data(handle, req, 47)
 end
 
 -- ----------------------------------------------------------------------------------------------
@@ -307,9 +310,11 @@ local function check_error(handle, res)
         local err = res
         if(handle) then 
             local errmsg = hapi.hid_error(handle)
-            err = wwin.mbs(errmsg, ffi.sizeof(errmsg)+1)
+            local count = 0
+            for i=0, 100 do count = i; if(errmsg[i]==0) then break end end
+            err = wwin.mbs(errmsg, count + 1)
         end
-        print("[Error] Unknown error: "..err)
+        print("[Error] "..err)
         return true
     end 
     return nil
@@ -317,13 +322,38 @@ end
 
 -- ----------------------------------------------------------------------------------------------
 
-local function send_start(handle)
-    local buf = ffi.new("unsigned char[?]", 65)
+local function get_report(handle) 
+    local report_len = 64
+    local report = ffi.new("unsigned char[?]", report_len)
+    local desc = hapi.hid_get_report_descriptor(handle, report, report_len)
+    check_error(handle, desc)
+    for i=0, desc-1 do io.write(string.format("0x%02x ", report[i])) end; print()
+    return desc
+end
+
+-- ----------------------------------------------------------------------------------------------
+
+local function download_map(handle)
+    local buf = ffi.new("unsigned char[?]", 65) 
     ffi.fill(buf, 65, 0)
     buf[0] = 0x01
 	buf[1] = 0xa1
 	buf[2] = 0x01
 	local res = hapi.hid_write(handle, buf, 65);
+    if(check_error(handle, res)) then return end
+end
+
+
+-- ----------------------------------------------------------------------------------------------
+
+local function send_start(handle)
+
+    local count = 65
+    local buf = ffi.new("unsigned char[?]", count)
+    ffi.fill(buf, count, 0)
+    buf[0] = 0x00
+	buf[1] = 0xa1
+	local res = hapi.hid_write(handle, buf, count);
     if(check_error(handle, res)) then return end
 end
 
@@ -338,7 +368,6 @@ local function send_stop(handle)
 	local res = hapi.hid_write(handle, buf, 65);
     if(check_error(handle, res)) then return end
 end
-
 
 -- ----------------------------------------------------------------------------------------------
 
@@ -358,7 +387,6 @@ local function map_keys(inarg)
     local MAX_STR = 255
     local vid, pid = string.match(params, "^(.-)%:(.-)$")
 
-    local buf = ffi.new("unsigned char[65]",{0});
     local wstr = ffi.new("wchar_t[?]", MAX_STR)
 
     local res = hapi.hid_init()
@@ -379,33 +407,29 @@ local function map_keys(inarg)
 
 	-- // Read the Manufacturer String
 	res = hapi.hid_get_manufacturer_string(handle, wstr, MAX_STR);
-	print(string.format("Manufacturer String: %s", wwin.mbs(wstr, ffi.sizeof(wstr)/2)))
+	print(string.format("Manufacturer String: %s", wwin.mbs(wstr)))
 
 	-- // Read the Product String
 	res = hapi.hid_get_product_string(handle, wstr, MAX_STR);
-	print(string.format("Product String: %s",  wwin.mbs(wstr, ffi.sizeof(wstr)/2)))
+	print(string.format("Product String: %s",  wwin.mbs(wstr)))
 	-- // Read the Serial Number String
 	res = hapi.hid_get_serial_number_string(handle, wstr, MAX_STR);
-	print(string.format("Serial Number String: (%d) %s", wstr[0],  wwin.mbs(wstr, ffi.sizeof(wstr)/2)))
+	print(string.format("Serial Number String: (%d) %s", wstr[0],  wwin.mbs(wstr)))
 
 	-- // Read Indexed String 1
 	res = hapi.hid_get_indexed_string(handle, 1, wstr, MAX_STR);
-	print(string.format("Indexed String 1: %s",  wwin.mbs(wstr, ffi.sizeof(wstr)/2)))
+	print(string.format("Indexed String 1: %s",  wwin.mbs(wstr)))
+	res = hapi.hid_get_indexed_string(handle, 2, wstr, MAX_STR);
+	print(string.format("Indexed String 2: %s",  wwin.mbs(wstr)))
+
+
+    -- download_keymap(handle)
 
     send_start(handle)
 
-    send_macro(handle) 
+    -- send_macro(handle) 
 
     send_stop(handle)
-
-	-- -- // Read requested state
-	-- res = hapi.hid_read(handle, buf, 65)
-    -- if(check_error(res)) then return end
-
-	-- -- // Print out the returned buffer.
-	-- for i = 0, 3 do
-	-- 	print(string.format("buf[%d]: %d\n", i, buf[i]))
-    -- end
 
 	-- // Close the device
 	hapi.hid_close(handle)
