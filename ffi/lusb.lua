@@ -245,6 +245,13 @@ int libusb_control_transfer(libusb_device_handle *dev_handle,
 	uint8_t request_type, uint8_t bRequest, uint16_t wValue, uint16_t wIndex,
 	unsigned char *data, uint16_t wLength, unsigned int timeout);
 
+int libusb_interrupt_transfer(libusb_device_handle *dev_handle,
+	unsigned char endpoint, unsigned char *data, int length,
+	int *actual_length, unsigned int timeout);
+
+int libusb_detach_kernel_driver(libusb_device_handle *dev_handle, int interface_number);
+int libusb_claim_interface(libusb_device_handle *dev_handle, int interface_number);
+int libusb_release_interface(libusb_device_handle *dev_handle, int interface_number);
 ]]
 
 

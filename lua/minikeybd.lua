@@ -12,6 +12,11 @@
 --   - check status (current mapping, bt on etc)
 --   - support various hardware ids if needed
 
+-- Update:
+--   The hidapi library has been added, since keyboards use HID protocols and dont seem to work well
+--   with the lusb lib. The lusb will still be used for showing devices and similar.
+--   The hidapi will be used mainly in mapping key codes
+
 -- If you have ideas/suggestions, raise an issue and I will take a look.
 
 package.path    = package.path..";./ffi/?.lua"
@@ -32,12 +37,17 @@ local codes = require("lua.mapcodes")
 -- Get lusb interface
 local lusb = require("lusb")
 
+local hapi = require("hidapi")
+local wwin = require("lua.wchar_win")
+
+-- ----------------------------------------------------------------------------------------------
+
 local speed_lookup = {
-    [0]     = "Speed Unknown (unreported)",
-    [1]     = "Low Speed (1.5MBit/s)",
-    [2]     = "Full Speed (12MBit/s)",
-    [3]     = "High Speed (480MBit/s)",
-    [4]     = "Super Speed (5000MBit/s)",
+    [0]     = "   Speed Unknown (unreported)",
+    [1]     = "        Low Speed (1.5MBit/s)",
+    [2]     = "        Full Speed (12MBit/s)",
+    [3]     = "       High Speed (480MBit/s)",
+    [4]     = "     Super Speed (5000MBit/s)",
     [5]     = "Super Speed Plus(10000MBit/s)",
 }
 
@@ -109,7 +119,7 @@ end
 
 local function print_devs(devs)
 
-    local path = ffi.new("uint8_t[8]")
+    local ports = ffi.new("uint8_t[8]")
 
     iterate_devs(devs, function(dev)
         local desc = ffi.new("struct libusb_device_descriptor[1]")
@@ -119,18 +129,19 @@ local function print_devs(devs)
             return
         end
 
-        io.write(string.format("%04x:%04x (bus %d, device %d)",
+        io.write(string.format("%04x:%04x (bus %03d, device %03d) | ",
             desc[0].idVendor, desc[0].idProduct,
             lusb.libusb_get_bus_number(dev[0]), lusb.libusb_get_device_address(dev[0])))
 
-        r = lusb.libusb_get_port_numbers(dev[0], path, ffi.sizeof(path))
+        io.write(" Speed: "..speed_lookup[lusb.libusb_get_device_speed(dev[0])])
+
+        r = lusb.libusb_get_port_numbers(dev[0], ports, ffi.sizeof(ports))
         if (r > 0) then 
-            io.write(" path: "..(path[0]))
+            io.write(" | ports: "..(ports[0]))
             for j = 1, r-1 do 
-                io.write(string.format(".%d", path[j]))
+                io.write(string.format(".%d", ports[j]))
             end
         end
-        io.write(" Speed: "..speed_lookup[lusb.libusb_get_device_speed(dev[0])])
         io.write("\n")
     end)
 end
@@ -191,10 +202,15 @@ local function device_info(inarg)
 
             if(matched) then 
                 print("[Info] Found device:")
-                print("    Bus            | "..lusb.libusb_get_bus_number(dev[0])) 
-                print("    Device Id      | "..lusb.libusb_get_device_address(dev[0]))
-                print("    Vendor:Product | "..addr)
-                print("    Speed          | "..speed_lookup[lusb.libusb_get_device_speed(dev[0])] )
+                print("   Vendor:Product  | "..addr)
+                print("   Bus             | "..lusb.libusb_get_bus_number(dev[0])) 
+                print("   Device Id       | "..lusb.libusb_get_device_address(dev[0]))
+                print("   Device CLass    | "..desc[0].bDeviceClass)
+                print("   Device SubClass | "..desc[0].bDeviceSubClass)
+                print("   Device Protocol | "..desc[0].bDeviceProtocol)
+                print("   Max PacketSize  | "..desc[0].bMaxPacketSize0)
+                print("   Num Configs     | "..desc[0].bNumConfigurations)
+                print("   Speed           | "..speed_lookup[lusb.libusb_get_device_speed(dev[0])] )
                 return true
             end            
         end)
@@ -236,13 +252,10 @@ end
 
 -- ----------------------------------------------------------------------------------------------
 
-local function send_data( handle, data )
+local function send_data( handle, data_out, data_size )
     
-    local actual_length = ffi.new("int[1]")
-    local r = lusb.libusb_bulk_transfer(handle, lusb.LIBUSB_ENDPOINT_IN, data, ffi.sizeof(data), actual_length, 0)
-    ffi.C.Sleep(15)
-    print("Result: "..r.."  Send Size: "..ffi.sizeof(data).."  Actual: "..actual_length[0])
-    if (r == 0 and actual_length[0] == ffi.sizeof(data)) then 
+    local r = hapi.hid_write(handle, data_out, data_size)
+    if (r == 0) then 
         print("Transfer success")
     else 
         print("Transfer failed")
@@ -251,9 +264,24 @@ end
 
 -- ----------------------------------------------------------------------------------------------
 
+local function recv_data( handle, data_in)
+    
+    local data_size = hapi.hid_read(handle, data_in)
+    if (data_size >= 0) then 
+        print("Transfer success: byte count:"..data_size)
+    else 
+        print("Transfer failed: " ..data_size)
+    end
+    return data_size
+end
+
+-- ----------------------------------------------------------------------------------------------
+
 local function send_macro( handle, key, layer, mod, code )
 	-- // header
 	local req = ffi.new("uint8_t[64]")
+    ffi.fill(req, 64, 0)
+
 	req[0] = codes.MINIKB.KEY1 
 	req[1] = codes.LAYER.LAYER1 + codes.MACROTYPE.MACROKEYS
 	req[2] = 2
@@ -262,19 +290,61 @@ local function send_macro( handle, key, layer, mod, code )
     req[3] = 0
     req[4] = codes.NOMO
     req[5] = codes.NOKEY
-    send_data(handle, req)
+    send_data(handle, req, 64)
 
     -- Can repeat from here
     req[3] = 1
     req[4] = codes.MODIFIERS.CTRL
     req[5] = codes.KEYS.A
-    send_data(handle, req)
+    send_data(handle, req, 64)
 
 end
 
 -- ----------------------------------------------------------------------------------------------
 
+local function check_error(handle, res)
+    if(res < 0) then 
+        local err = res
+        if(handle) then 
+            local errmsg = hapi.hid_error(handle)
+            err = wwin.mbs(errmsg, ffi.sizeof(errmsg)+1)
+        end
+        print("[Error] Unknown error: "..err)
+        return true
+    end 
+    return nil
+end
+
+-- ----------------------------------------------------------------------------------------------
+
+local function send_start(handle)
+    local buf = ffi.new("unsigned char[?]", 65)
+    ffi.fill(buf, 65, 0)
+    buf[0] = 0x01
+	buf[1] = 0xa1
+	buf[2] = 0x01
+	local res = hapi.hid_write(handle, buf, 65);
+    if(check_error(handle, res)) then return end
+end
+
+-- ----------------------------------------------------------------------------------------------
+
+local function send_stop(handle)
+    local buf = ffi.new("unsigned char[?]", 65)
+    ffi.fill(buf, 65, 0)
+    buf[0] = 0x00
+	buf[1] = 0xaa
+	buf[2] = 0xaa
+	local res = hapi.hid_write(handle, buf, 65);
+    if(check_error(handle, res)) then return end
+end
+
+
+-- ----------------------------------------------------------------------------------------------
+
 local function map_keys(inarg)
+
+    device_reset(inarg)
 
     local params = nil 
 
@@ -285,41 +355,63 @@ local function map_keys(inarg)
         return nil
     end
 
-    local  r = lusb.libusb_init_context(nil, nil, 0)
-    if( r < 0 ) then 
-        print("[Error] Unable to init libusb context.")
-        return 
-    end 
-    
+    local MAX_STR = 255
     local vid, pid = string.match(params, "^(.-)%:(.-)$")
-    local handle = lusb.libusb_open_device_with_vid_pid(nil, tonumber(vid,16), tonumber(pid,16) )
+
+    local buf = ffi.new("unsigned char[65]",{0});
+    local wstr = ffi.new("wchar_t[?]", MAX_STR)
+
+    local res = hapi.hid_init()
+    check_error(nil, res)
+
+    local handle = hapi.hid_open(tonumber(vid, 16), tonumber(pid, 16),nil)
     if(handle == nil) then 
-        print("[Error] Invalid handle: "..tostring(handle))
-        return 
+        print("Unabled to open device.")
+        hapi.hid_exit() 
+        return
     end
 
-    -- local config = ffi.new("int[1]")
-    -- local res = lusb.libusb_get_configuration(handle, config)
-    -- print(res, config[0])
+    local devinfo = hapi.hid_get_device_info(handle)
+    print(string.format("Usage Page: %d", devinfo[0].usage_page))
+    print(string.format("Usage: %d", devinfo[0].usage))
+    print(string.format("Interface: %d", devinfo[0].interface_number))
+    print(string.format("Path: %s", ffi.string(devinfo[0].path)))
 
-    local data = ffi.new("unsigned char[1]")
-    -- // transfer the setup packet to the USB device
-    local config = lusb.libusb_control_transfer(handle,0,0,0,0,data,0,0)
-    if(config < 0) then 
-        print("[Error] No data transmitted to device: "..config)
-        return 
-    end
+	-- // Read the Manufacturer String
+	res = hapi.hid_get_manufacturer_string(handle, wstr, MAX_STR);
+	print(string.format("Manufacturer String: %s", wwin.mbs(wstr, ffi.sizeof(wstr)/2)))
 
-    local start = ffi.new("uint8_t[64]", {0xa1, 0x01})
-    send_data(handle, start)
+	-- // Read the Product String
+	res = hapi.hid_get_product_string(handle, wstr, MAX_STR);
+	print(string.format("Product String: %s",  wwin.mbs(wstr, ffi.sizeof(wstr)/2)))
+	-- // Read the Serial Number String
+	res = hapi.hid_get_serial_number_string(handle, wstr, MAX_STR);
+	print(string.format("Serial Number String: (%d) %s", wstr[0],  wwin.mbs(wstr, ffi.sizeof(wstr)/2)))
 
-    send_macro(handle, nil)
+	-- // Read Indexed String 1
+	res = hapi.hid_get_indexed_string(handle, 1, wstr, MAX_STR);
+	print(string.format("Indexed String 1: %s",  wwin.mbs(wstr, ffi.sizeof(wstr)/2)))
 
-    local finish = ffi.new("uint8_t[64]", {0xaa, 0xaa})
-    send_data(handle, finish)
+    send_start(handle)
 
+    send_macro(handle) 
 
-    lusb.libusb_exit(nil)
+    send_stop(handle)
+
+	-- -- // Read requested state
+	-- res = hapi.hid_read(handle, buf, 65)
+    -- if(check_error(res)) then return end
+
+	-- -- // Print out the returned buffer.
+	-- for i = 0, 3 do
+	-- 	print(string.format("buf[%d]: %d\n", i, buf[i]))
+    -- end
+
+	-- // Close the device
+	hapi.hid_close(handle)
+
+	-- // Finalize the hidapi library
+	res = hapi.hid_exit()
 end
 
 -- ----------------------------------------------------------------------------------------------
