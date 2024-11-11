@@ -11,52 +11,7 @@ local bor, band, shl = bit.bor, bit.band, bit.lshift
 local C = ffi.C
 local cdef = ffi.cdef
 
---types, consts, utils -------------------------------------------------------
 
-cdef'typedef int64_t ULONG_PTR;'
-
-cdef[[
-typedef void           VOID, *PVOID, *LPVOID;
-typedef VOID*          HANDLE, *PHANDLE;
-typedef unsigned short WORD;
-typedef unsigned long  DWORD, *PDWORD, *LPDWORD;
-typedef unsigned int   UINT;
-typedef int            BOOL;
-typedef ULONG_PTR      SIZE_T;
-typedef const void*    LPCVOID;
-typedef char*          LPSTR;
-typedef const char*    LPCSTR;
-typedef wchar_t        WCHAR;
-typedef WCHAR*         LPWSTR;
-typedef const WCHAR*   LPCWSTR;
-typedef BOOL           *LPBOOL;
-typedef void*          HMODULE;
-typedef unsigned char  UCHAR;
-typedef unsigned short USHORT;
-typedef long           LONG;
-typedef unsigned long  ULONG;
-typedef long long      LONGLONG;
-
-typedef union {
-	struct {
-		DWORD LowPart;
-		LONG HighPart;
-	};
-	struct {
-		DWORD LowPart;
-		LONG HighPart;
-	} u;
-	LONGLONG QuadPart;
-} LARGE_INTEGER, *PLARGE_INTEGER;
-
-typedef struct {
-	DWORD  nLength;
-	LPVOID lpSecurityDescriptor;
-	BOOL   bInheritHandle;
-} SECURITY_ATTRIBUTES, *LPSECURITY_ATTRIBUTES;
-]]
-
-local INVALID_HANDLE_VALUE = ffi.cast('HANDLE', -1)
 
 --error handling -------------------------------------------------------------
 

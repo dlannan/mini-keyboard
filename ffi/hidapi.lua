@@ -92,6 +92,7 @@ struct hid_device_info {
 	hid_bus_type bus_type;
 };
 
+
 int hid_init(void);
 int hid_exit(void);
 struct hid_device_info * hid_enumerate(unsigned short vendor_id, unsigned short product_id);
@@ -99,6 +100,7 @@ void  hid_free_enumeration(struct hid_device_info *devs);
 hid_device * hid_open(unsigned short vendor_id, unsigned short product_id, const wchar_t *serial_number);
 hid_device * hid_open_path(const char *path);
 int hid_write(hid_device *dev, const unsigned char *data, size_t length);
+void hid_winapi_set_write_timeout(hid_device *dev, unsigned long timeout);
 int hid_read_timeout(hid_device *dev, unsigned char *data, size_t length, int milliseconds);
 int hid_read(hid_device *dev, unsigned char *data, size_t length);
 int hid_set_nonblocking(hid_device *dev, int nonblock);
@@ -109,6 +111,7 @@ void hid_close(hid_device *dev);
 int hid_get_manufacturer_string(hid_device *dev, wchar_t *string, size_t maxlen);
 int hid_get_product_string(hid_device *dev, wchar_t *string, size_t maxlen);
 int hid_get_serial_number_string(hid_device *dev, wchar_t *string, size_t maxlen);
+int hid_winapi_get_container_id(hid_device *dev, GUID *container_id);
 struct hid_device_info * hid_get_device_info(hid_device *dev);
 int hid_get_indexed_string(hid_device *dev, int string_index, wchar_t *string, size_t maxlen);
 int hid_get_report_descriptor(hid_device *dev, unsigned char *buf, size_t buf_size);

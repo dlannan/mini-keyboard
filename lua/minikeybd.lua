@@ -37,6 +37,7 @@ local codes = require("lua.mapcodes")
 -- Get lusb interface
 local lusb = require("lusb")
 
+local whid = require("hidwin")
 local hapi = require("hidapi")
 local wwin = require("lua.wchar_win")
 
@@ -304,6 +305,86 @@ local function download_keymap( handle )
 end
 
 -- ----------------------------------------------------------------------------------------------
+-- Get the pages that this device supports (can be more than one!)
+local function get_pages(vid, pid)
+
+    print(string.format("Device Pages info for: 0x%02x:0x%02x", vid, pid))
+    local devs = hapi.hid_enumerate(vid, pid)
+
+    local function ShowPage(id, devs)
+        print("----> Page "..id..": ")
+        print("  Path:         "..ffi.string(devs.path))
+        print("  Serial No:    "..wwin.mbs(devs.serial_number))
+        print("  Release No:   "..devs.release_number)
+        print("  Manufacturer: "..wwin.mbs(devs.manufacturer_string))
+        print("  Product:      "..wwin.mbs(devs.product_string))
+        print("  Usage Page:   "..string.format("0x%04x", devs.usage_page))
+        print("  Usage:        "..devs.usage)
+        print("  Interface No: "..devs.interface_number)
+    end
+
+    local count = 1
+    ShowPage(count, devs)
+
+    while(devs ~= nil) do 
+        count = count + 1
+        ShowPage(count, devs)
+        devs = devs.next
+    end
+
+    hapi.hid_free_enumeration(devs)
+end
+
+-- ----------------------------------------------------------------------------------------------
+
+local function get_page_usage(vid, pid, usage_page, usage)
+
+    local devs = hapi.hid_enumerate(vid, pid)
+    if(devs.usage_page == usage_page and devs.usage == usage) then
+        local rep = ffi.new("struct hid_device_info[1]")
+        ffi.copy(rep, devs, ffi.sizeof("struct hid_device_info"))
+        rep[0].path = ffi.cast("char *", ffi.string(devs[0].path))
+        hapi.hid_free_enumeration(devs)
+        return rep
+    end
+
+    while(devs.next ~= nil) do
+        devs = devs.next
+        if(devs ~= nil and devs.usage_page == usage_page and devs.usage == usage) then
+            local rep = ffi.new("struct hid_device_info[1]")
+            ffi.copy(rep, devs, ffi.sizeof("struct hid_device_info"))
+            rep[0].path = ffi.cast("char *", ffi.string(devs[0].path))
+            hapi.hid_free_enumeration(devs)
+            return rep
+        end    
+    end
+
+    hapi.hid_free_enumeration(devs)
+    return nil
+end
+
+-- ----------------------------------------------------------------------------------------------
+
+local function get_by_path(vid, pid)
+
+    local devs = hapi.hid_enumerate(vid, pid)
+    while(devs ~= nil) do
+        local path = ffi.string(devs.path)
+        if(devs ~= nil and string.match(path, "MI_01") ~= nil) then
+            local rep = ffi.new("struct hid_device_info[1]")
+            ffi.copy(rep, devs, ffi.sizeof("struct hid_device_info"))
+            rep[0].path = ffi.cast("char *", path)
+            hapi.hid_free_enumeration(devs)
+            return rep
+        end    
+        devs = devs.next
+    end
+
+    hapi.hid_free_enumeration(devs)
+    return nil
+end
+
+-- ----------------------------------------------------------------------------------------------
 
 local function check_error(handle, res)
     if(res < 0) then 
@@ -346,34 +427,91 @@ end
 
 -- ----------------------------------------------------------------------------------------------
 
+local function send_data( handle, buffer, count )
+
+    buffer[0] = 3 
+    local res = hapi.hid_write(handle, buffer, count);
+    print(res, buffer[1], buffer[2])
+    ffi.C.Sleep(15)
+    if(check_error(handle, res)) then return end
+end
+
+-- ----------------------------------------------------------------------------------------------
+
+local function send_hello(handle)
+
+    local count = 65
+    local buf = ffi.new("unsigned char[?]", count)
+    ffi.fill(buf, count, 0)
+    send_data(handle, buf, count);
+end
+
+
+-- ----------------------------------------------------------------------------------------------
+
 local function send_start(handle)
 
     local count = 65
     local buf = ffi.new("unsigned char[?]", count)
     ffi.fill(buf, count, 0)
-    buf[0] = 0x00
 	buf[1] = 0xa1
-	local res = hapi.hid_write(handle, buf, count);
-    if(check_error(handle, res)) then return end
+    buf[2] = 0x01
+    send_data(handle, buf, count);
 end
 
 -- ----------------------------------------------------------------------------------------------
 
 local function send_stop(handle)
-    local buf = ffi.new("unsigned char[?]", 65)
-    ffi.fill(buf, 65, 0)
-    buf[0] = 0x00
+
+    local count = 65
+    local buf = ffi.new("unsigned char[?]", count)
+    ffi.fill(buf, count, 0)
 	buf[1] = 0xaa
 	buf[2] = 0xaa
-	local res = hapi.hid_write(handle, buf, 65);
-    if(check_error(handle, res)) then return end
+    send_data(handle, buf, count);
+end
+
+-- ----------------------------------------------------------------------------------------------
+
+local function send_flash_led(handle)
+
+    local count = 65
+    local buf = ffi.new("unsigned char[?]", count)
+    ffi.fill(buf, count, 0)
+	buf[1] = 0xaa
+    buf[2] = 0xa1
+    send_data(handle, buf, count);
+end
+
+-- ----------------------------------------------------------------------------------------------
+
+local function send_macro(handle, macro)
+
+    send_start(handle)
+
+    local count = 65
+    local buf = ffi.new("unsigned char[?]", count)
+    ffi.fill(buf, count, 0)
+	buf[1] = macro.key
+	buf[2] = macro.layer + macro.macrotype
+    buf[3] = table.getn(macro.combos)
+
+    local startindex = 4
+    if(macro.macrotype == codes.MACROTYPE.MACROKEYS) then startindex = 5 end
+
+    for i,v in ipairs(macro.combos) do 
+        buf[startindex] = i
+        buf[startindex+1] = v.mod
+        buf[startindex+2] = v.keycode
+        send_data(handle, buf, count);
+    end
+
+    send_stop(handle)
 end
 
 -- ----------------------------------------------------------------------------------------------
 
 local function map_keys(inarg)
-
-    device_reset(inarg)
 
     local params = nil 
 
@@ -384,51 +522,49 @@ local function map_keys(inarg)
         return nil
     end
 
-    local MAX_STR = 255
     local vid, pid = string.match(params, "^(.-)%:(.-)$")
-
-    local wstr = ffi.new("wchar_t[?]", MAX_STR)
-
     local res = hapi.hid_init()
     check_error(nil, res)
 
-    local handle = hapi.hid_open(tonumber(vid, 16), tonumber(pid, 16),nil)
+    local device = whid.open_device(tonumber(vid, 16), tonumber(pid, 16))
+    print("-------------->>>", device)
+
+    -- get_pages(tonumber(vid, 16), tonumber(pid, 16))
+    -- local dev_info = get_page_usage(tonumber(vid, 16), tonumber(pid, 16), 0xff00, 1)
+    local dev_info = get_by_path(tonumber(vid, 16), tonumber(pid, 16))
+    local handle = hapi.hid_open_path(dev_info[0].path)
     if(handle == nil) then 
         print("Unabled to open device.")
         hapi.hid_exit() 
         return
     end
 
-    local devinfo = hapi.hid_get_device_info(handle)
-    print(string.format("Usage Page: %d", devinfo[0].usage_page))
-    print(string.format("Usage: %d", devinfo[0].usage))
-    print(string.format("Interface: %d", devinfo[0].interface_number))
-    print(string.format("Path: %s", ffi.string(devinfo[0].path)))
+    hapi.hid_winapi_set_write_timeout(handle, 15)
 
-	-- // Read the Manufacturer String
-	res = hapi.hid_get_manufacturer_string(handle, wstr, MAX_STR);
-	print(string.format("Manufacturer String: %s", wwin.mbs(wstr)))
+    get_pages(tonumber(vid, 16), tonumber(pid, 16))
 
-	-- // Read the Product String
-	res = hapi.hid_get_product_string(handle, wstr, MAX_STR);
-	print(string.format("Product String: %s",  wwin.mbs(wstr)))
-	-- // Read the Serial Number String
-	res = hapi.hid_get_serial_number_string(handle, wstr, MAX_STR);
-	print(string.format("Serial Number String: (%d) %s", wstr[0],  wwin.mbs(wstr)))
-
-	-- // Read Indexed String 
-    for i=1, 2 do
-	res = hapi.hid_get_indexed_string(handle, i, wstr, MAX_STR);
-	print(string.format("Indexed String %d: %s", i, wwin.mbs(wstr)))
-    end
+    -- get_report(handle)
 
     -- download_keymap(handle)
+    local macro = {
+        macrotype   = codes.MACROTYPE.MACROKEYS,
+        layer       = codes.LAYER.LAYER1,
+        key         = codes.MINIKB.KEY1,
+        combos      = {},
+    }
 
-    send_start(handle)
+    -- Set all the keys to the same thing 
+    for i=1, 18 do 
+        local comb =  {
+            mod = codes.MODIFIERS.SHIFT,
+            keycode = codes.KEYS.A + i-1,
+        }
+        table.insert(macro.combos, comb)
+    end
 
-    -- send_macro(handle) 
+    send_hello(handle)
 
-    send_stop(handle)
+    send_macro(handle, macro)
 
 	-- // Close the device
 	hapi.hid_close(handle)
