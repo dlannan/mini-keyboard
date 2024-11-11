@@ -22,11 +22,7 @@ local hid_win = {
     deviceState     = nil,      -- Is the device open, closed reading, writing.. etc
 }
 
-print(hid_win.hid)
-
 -- -------------------------------------------------------------------------------------------------
-
---types, consts, utils -------------------------------------------------------
 
 ffi.cdef'typedef int64_t ULONG_PTR;'
 
@@ -77,6 +73,19 @@ typedef struct {
 	LPVOID lpSecurityDescriptor;
 	BOOL   bInheritHandle;
 } SECURITY_ATTRIBUTES, *LPSECURITY_ATTRIBUTES;
+
+typedef struct _OVERLAPPED {
+    ULONG_PTR Internal;
+    ULONG_PTR InternalHigh;
+    union {
+      struct {
+        DWORD Offset;
+        DWORD OffsetHigh;
+      } DUMMYSTRUCTNAME;
+      PVOID Pointer;
+    } DUMMYUNIONNAME;
+    HANDLE    hEvent;
+} OVERLAPPED, *LPOVERLAPPED;
 
 typedef struct _GUID {
     unsigned long  Data1;
@@ -146,11 +155,66 @@ BOOL SetupDiDestroyDeviceInfoList(HDEVINFO DeviceInfoSet);
 
 HANDLE CreateFileW(LPCWSTR lpFileName, DWORD dwDesiredAccess, DWORD dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes, DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes, HANDLE hTemplateFile);
 void CloseHandle(HANDLE fhandle);
+BOOL ReadFile( HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWORD lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped);
+BOOL WriteFile( HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped);
+
+DWORD GetLastError();
+DWORD FormatMessageA( DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPSTR lpBuffer, DWORD nSize, va_list *Arguments);
+
+int WideCharToMultiByte(
+	UINT     CodePage,
+	DWORD    dwFlags,
+	LPCWSTR  lpWideCharStr,
+	int      cchWideChar,
+	LPSTR    lpMultiByteStr,
+	int      cbMultiByte,
+	LPCSTR   lpDefaultChar,
+	LPBOOL   lpUsedDefaultChar
+);
+
+HANDLE CreateEventA(LPSECURITY_ATTRIBUTES lpEventAttributes, BOOL bManualReset, BOOL bInitialState, LPCSTR lpName);
+DWORD WaitForSingleObject(HANDLE hHandle,DWORD  dwMilliseconds);
+BOOL GetOverlappedResult(HANDLE hFile, LPOVERLAPPED lpOverlapped, LPDWORD lpNumberOfBytesTransferred, BOOL bWait);
 ]]
+
+-- -------------------------------------------------------------------------------------------------
 
 local INVALID_HANDLE_VALUE = ffi.cast('HANDLE', -1)
 
 -- -------------------------------------------------------------------------------------------------
+
+local function GetErrorString()
+    local err = hid_win.kernel32.GetLastError()
+    local buf = ffi.new("char[256]")
+    hid_win.kernel32.FormatMessageA(bit.bor(0x1000, 0x200), nil, err, bit.lshift(0x01, 10), buf, ffi.sizeof(buf),nil)
+    return ffi.string(buf)
+end
+
+local CP_UTF8 = 65001
+local mbsbuf = function(sz) return ffi.new('char[?]', sz) end
+
+local function mbs(ws, mbuf) --WCHAR* -> string
+	local wsz = 0
+	while(ws[wsz] ~= 0) do wsz = wsz + 1 end
+	if(wsz == 0) then return ffi.string("") end
+	wsz = wsz + 1
+
+	mbuf = mbuf or mbsbuf
+	local msz = ffi.C.WideCharToMultiByte(
+		CP_UTF8, 0, ws, wsz, nil, 0, nil, nil)
+	assert(msz > 0) --should never happen otherwise
+	local buf = mbuf(msz)
+	local sz = ffi.C.WideCharToMultiByte(
+		CP_UTF8, 0, ws, wsz, buf, msz, nil, nil)
+	assert(sz == msz) --should never happen otherwise
+	return ffi.string(buf, sz-1)
+end
+
+-- -------------------------------------------------------------------------------------------------
+
+hid_win.get_error = function()
+    return GetErrorString()
+end
 
 hid_win.get_hid_devices = function()
     local devices = {}
@@ -163,16 +227,19 @@ hid_win.get_hid_devices = function()
         ifaceinfo[0].cbSize = ffi.sizeof("SP_DEVICE_INTERFACE_DATA")
         for index = 0, 63 do 
             local setupinfo = hid_win.setupapi.SetupDiEnumDeviceInterfaces( infoset, nil, guid, index, ifaceinfo )
-            if(setupinfo ~= nil) then 
+            if(setupinfo == 1) then 
 
                 local buffsize = ffi.new("int[1]", {0})
                 hid_win.setupapi.SetupDiGetDeviceInterfaceDetailW( infoset, ifaceinfo, nil, buffsize[0], buffsize, nil)
-                local detail = ffi.new("uint8_t[?]", buffsize[0])
-                detail = ffi.cast("SP_DEVICE_INTERFACE_DETAIL_DATA_W *", detail)
-                
+                local detailraw = ffi.new("uint8_t[?]", buffsize[0])
+                local detail = ffi.cast("PSP_DEVICE_INTERFACE_DETAIL_DATA_W", detailraw)
+                detail[0].cbSize = ffi.sizeof("PSP_DEVICE_INTERFACE_DETAIL_DATA_W")
                 local res = hid_win.setupapi.SetupDiGetDeviceInterfaceDetailW(infoset, ifaceinfo, detail, buffsize[0], buffsize, nil)
-                if(res == true) then 
-                    table.insert(devices, detail)
+                if(res == 1) then 
+                    local detailptr = detailraw+4
+                    table.insert(devices, ffi.cast("const unsigned short *",detailptr))
+                else
+                    print("[Error get_hid_devices] Invalid Details: "..GetErrorString())
                 end
             end
         end
@@ -185,9 +252,18 @@ end
 
 hid_win.begin_async_read = function()
 
-    -- byte[] inputBuff = new byte[InputReportLength];
-    -- _ = hidDevice.Handle;
-    -- readResult = hidDevice.BeginRead(inputBuff, 0, InputReportLength, ReadCompleted, inputBuff);
+    local device = hid_win.curr_device.device
+    local buflen = hid_win.curr_device.inputReportLength
+    local buffer = ffi.new("uint8_t[?]", buflen)
+    local readbytes = ffi.new("int[1]", {0})
+    ffi.C.ReadFile(device, buffer, buflen, readbytes, hid_win.curr_device.overlapped)
+
+    local bytesread = ffi.new("int[1]", {0})
+    
+    while(bytesread[0] < buflen) do
+        ffi.C.GetOverlappedResult(device, hid_win.curr_device.overlapped ,bytesread, false)
+        print(bytesread[0])
+    end
 end
 
 -- -------------------------------------------------------------------------------------------------
@@ -201,7 +277,7 @@ hid_win.open_device = function( vid, pid )
         end
 
         for idx, dev in ipairs(hid_win.devices) do 
-            local device = hid_win.kernel32.CreateFileW(dev, 3221225472, 0, 0, 3, 1073741824, 0)
+            local device = hid_win.kernel32.CreateFileW(dev, 0xC0000000, 0, nil, 3, 0x40000000, nil)
             if(device ~= -1) then 
                 local attributes = ffi.new("HIDD_ATTRIBUTES[1]")
                 if (hid_win.hid.HidD_GetAttributes(device, attributes) == false) then
@@ -211,17 +287,33 @@ hid_win.open_device = function( vid, pid )
                 local buf = ffi.new("uint8_t[?]", 512)
                 hid_win.hid.HidD_GetSerialNumberString(device, buf, 512)
                 -- Check matching stuff!!
-                if (attributes.VendorID == vid and attributes.ProductID == pid) then 
+                
+                -- local tpath = mbs(dev)
+                -- local is_m1_01 = string.match(tpath, "mi_01")
+                -- print(string.format("VID: 0x%04x PID: 0x%04x   %s", attributes[0].VendorID, attributes[0].ProductID, is_m1_01))
 
-                    local preparseData = ffi.new("HIDP_PREPARSED_DATA[1]")
+                if (attributes[0].VendorID == vid and attributes[0].ProductID == pid) then 
+
+                    local preparseData = ffi.new("struct _HIDP_PREPARSED_DATA *[1]")
                     hid_win.hid.HidD_GetPreparsedData(device, preparseData)
                     local caps = ffi.new("HIDP_CAPS[1]")
-                    hid_win.hid.HidP_GetCaps(preparseData, caps)
-                    hid_win.hid.HidD_FreePreparsedData(preparseData)
-                    hid_win.curr_device.outputReportLength = caps.OutputReportByteLength
-                    hid_win.curr_device.inputReportLength = caps.InputReportByteLength
+                    hid_win.hid.HidP_GetCaps(preparseData[0], caps)
+                    hid_win.hid.HidD_FreePreparsedData(preparseData[0])
+                    hid_win.curr_device.path = dev
+                    hid_win.curr_device.caps = caps
+                    hid_win.curr_device.attributes = attributes
+                    hid_win.curr_device.outputReportLength = caps[0].OutputReportByteLength
+                    hid_win.curr_device.inputReportLength = caps[0].InputReportByteLength
                     
+                    -- Create a file stream here for reading.
+                    -- local devpath = mbs(dev)\
+                    -- Do an initial read... checking that the handle works.
+                    hid_win.curr_device.overlapped = ffi.new("OVERLAPPED[1]")
+                    hid_win.curr_device.overlapped[0].hEvent = ffi.C.CreateEventA(nil, true, false, nil)
+
                     hid_win.deviceState = "opened"
+                    hid_win.curr_device.device = device
+                    print("HERE.....")
                     return device
                 end
             end
@@ -231,6 +323,41 @@ hid_win.open_device = function( vid, pid )
     end
     return INVALID_HANDLE_VALUE
 end
+
+-- -------------------------------------------------------------------------------------------------
+
+hid_win.close_device = function()
+
+    if( hid_win.curr_device.hiddevice ) then 
+        io.close( hid_win.curr_device.hiddevice )
+    end
+    if(hid_win.curr_device.device ~= nil) then
+        hid_win.kernel32.CloseHandle(hid_win.curr_device.device)
+    end
+    hid_win.curr_device.device = nil
+end
+
+-- -------------------------------------------------------------------------------------------------
+
+hid_win.write = function(buf, buflen)
+
+    local device = hid_win.curr_device.device
+    if(device==nil) then return -1 end
+    
+    local bytes_written = ffi.new("int[1]")
+
+    local err = ffi.C.WriteFile(hid_win.curr_device.device, buf, buflen, bytes_written, hid_win.curr_device.overlapped)
+    if(err ~= 0) then 
+        print("[Error] write: Timeout")
+        return -1
+    end
+    -- Wait for a little bit.
+
+    local res = ffi.C.WaitForSingleObject(device, 15);
+    res = ffi.C.GetOverlappedResult(device, hid_win.curr_device.overlapped, bytes_written, false)
+    if(res ~= 0) then return bytes_written[0] end
+    return -1
+end 
 
 -- -------------------------------------------------------------------------------------------------
 

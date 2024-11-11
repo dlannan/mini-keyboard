@@ -11,23 +11,7 @@ local bor, band, shl = bit.bor, bit.band, bit.lshift
 local C = ffi.C
 local cdef = ffi.cdef
 
-
-
 --error handling -------------------------------------------------------------
-
-cdef[[
-DWORD GetLastError(void);
-
-DWORD FormatMessageA(
-	DWORD dwFlags,
-	LPCVOID lpSource,
-	DWORD dwMessageId,
-	DWORD dwLanguageId,
-	LPSTR lpBuffer,
-	DWORD nSize,
-	va_list *Arguments
-);
-]]
 
 local FORMAT_MESSAGE_FROM_SYSTEM = 0x00001000
 
@@ -97,16 +81,7 @@ int MultiByteToWideChar(
 	LPWSTR   lpWideCharStr,
 	int      cchWideChar
 );
-int WideCharToMultiByte(
-	UINT     CodePage,
-	DWORD    dwFlags,
-	LPCWSTR  lpWideCharStr,
-	int      cchWideChar,
-	LPSTR    lpMultiByteStr,
-	int      cbMultiByte,
-	LPCSTR   lpDefaultChar,
-	LPBOOL   lpUsedDefaultChar
-);
+
 ]]
 
 local CP_UTF8 = 65001
