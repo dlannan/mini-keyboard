@@ -304,7 +304,6 @@ local function download_map(handle)
     if(check_error(handle, res)) then return end
 end
 
-
 -- ----------------------------------------------------------------------------------------------
 
 local function send_data( handle, buffer, count, reportid )
@@ -369,7 +368,66 @@ end
 
 -- ----------------------------------------------------------------------------------------------
 
+local function process_combos(macro)
+
+    local newcombos = {}
+    for i,com in ipairs(macro.combos) do 
+
+        if(type(com) == "string") then 
+            -- Iterate string and map char to the key codes.
+            for c in string.gmatch(com, ".") do
+                local keycode = 0
+                local mod = codes.MODIFIERS.NOMOD
+
+                local ch = string.byte(c)
+                if(ch >=65 and ch <= 90) then 
+                    keycode = ch-65 + codes.KEYS.A 
+                    mod = codes.MODIFIERS.SHIFT
+                elseif(ch >=97 and ch <= 122) then 
+                    keycode = ch-97 + codes.KEYS.A 
+                elseif(ch == 92) then 
+                    keycode = codes.KEYS.BSLASH
+                elseif(ch == 13) then 
+                    keycode = codes.KEYS.ENTER
+                elseif(ch == 32) then 
+                    keycode = codes.KEYS.SPACE
+                elseif(ch == 34) then 
+                    keycode = codes.KEYS.QUOTE
+                elseif(ch == 47) then 
+                    keycode = codes.KEYS.SLASH  
+                elseif(ch == 44) then 
+                    keycode = codes.KEYS.COMMA
+                elseif(ch == 45) then 
+                    keycode = codes.KEYS.MINUS
+                elseif(ch == 46) then 
+                    keycode = codes.KEYS.DOT
+                elseif(ch == 58) then 
+                    mod = codes.MODIFIERS.SHIFT
+                    keycode = codes.KEYS.SCOLON
+                elseif(ch == 59) then 
+                    keycode = codes.KEYS.SCOLON
+                end
+-- print(c, mod, keycode, ch)
+
+                table.insert(newcombos, { mod = mod, keycode = keycode })
+            end
+
+        elseif(type(com) == "table") then 
+            table.insert(newcombos, com)
+        end
+    end
+    return newcombos
+end
+
+-- ----------------------------------------------------------------------------------------------
+
 local function send_macro_proto1(handle, macro)
+
+    -- Check combos - if its a string then generate the appropriate combo for it.
+    local combos = process_combos(macro)
+    if(combos == nil) then 
+        return nil 
+    end
 
     send_start(handle)
 
@@ -386,12 +444,12 @@ local function send_macro_proto1(handle, macro)
     buf[7] = 0
     buf[8] = 0
     buf[9] = 0
-    buf[10] = table.getn(macro.combos)
+    buf[10] = table.getn(combos)
 
     local startindex = 11
     if(macro.macrotype == codes.MACROTYPE.MACROKEYS) then startindex = 11 end
 
-    for i,v in ipairs(macro.combos) do 
+    for i,v in ipairs(combos) do 
         buf[startindex] = v.mod
         buf[startindex+1] = v.keycode
         startindex = startindex + 2

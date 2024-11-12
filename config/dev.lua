@@ -36,16 +36,77 @@ local codes = require("lua.mapcodes")
 --                  keycode = codes.KEYS.O,    
 --              },
 --          },
---    
---    Recommended Use:
---       Copy this example.lua and create your own. 
---       The config can be passed as a parameter to the program as the final parameter.
---       If the config isnt found it will use config.example instead (it will report this)
-
-
+--
 -- ----------------------------------------------------------------------------------------------
 
 local macros = {
+
+    {
+        -- Mute using the button on the knob
+        key         = codes.MINIKB.KEY3,
+        macrotype   = codes.MACROTYPE.MACROKEYS,
+        layer       = codes.LAYER.LAYER1,
+        combos      = {
+            {
+                mod = codes.MODIFIERS.WIN,
+                keycode = codes.KEYS.LEFT,
+            },
+            {
+                mod = codes.MODIFIERS.NOMOD,
+                keycode = codes.KEYS.ESCAPE,
+            },            
+        }
+    },
+
+    {
+        -- Mute using the button on the knob
+        key         = codes.MINIKB.KEY7,
+        macrotype   = codes.MACROTYPE.MACROKEYS,
+        layer       = codes.LAYER.LAYER1,
+        combos      = {
+            {
+                mod = codes.MODIFIERS.WIN,
+                keycode = codes.KEYS.UP,
+            },
+        }
+    },
+
+    {
+        -- Mute using the button on the knob
+        key         = codes.MINIKB.KEY11,
+        macrotype   = codes.MACROTYPE.MACROKEYS,
+        layer       = codes.LAYER.LAYER1,
+        combos      = {
+            {
+                mod = codes.MODIFIERS.WIN,
+                keycode = codes.KEYS.RIGHT,
+            },
+        }
+    },
+
+    {
+        -- Lauunch a cmd window
+        key         = codes.MINIKB.KEY4,
+        macrotype   = codes.MACROTYPE.MACROKEYS,
+        layer       = codes.LAYER.LAYER1,
+        combos      = {
+            {
+                mod = codes.MODIFIERS.WIN,
+                keycode = codes.KEYS.R,
+            },
+            " cmd /K D:\r",
+        }
+    },
+    
+    {
+        -- Mute using the button on the knob
+        key         = codes.MINIKB.KEY8,
+        macrotype   = codes.MACROTYPE.MACROKEYS,
+        layer       = codes.LAYER.LAYER1,
+        combos      = {
+            "cd dev\\mycode\r",
+        }
+    },
 
     {
         -- Mute using the button on the knob
@@ -56,11 +117,11 @@ local macros = {
             {
                 mod = codes.MEDIA.MUTE,
                 keycode = 0,
-            }
+            }             
         },       
     },
     {
-        -- Mute using the button on the knob
+        -- Volume down
         key         = codes.MINIKB.ROT1CCW,
         macrotype   = codes.MACROTYPE.MACROPLAY,
         layer       = codes.LAYER.LAYER1,
@@ -72,7 +133,7 @@ local macros = {
         },       
     },
     {
-        -- Mute using the button on the knob
+        -- Volume up
         key         = codes.MINIKB.ROT1CW,
         macrotype   = codes.MACROTYPE.MACROPLAY,
         layer       = codes.LAYER.LAYER1,

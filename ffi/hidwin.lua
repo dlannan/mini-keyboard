@@ -283,6 +283,7 @@ end
 -- -------------------------------------------------------------------------------------------------
 -- Open a usb device based on its Vendor Id and Product Id
 hid_win.open_device = function( vid, pid )
+
     if(hid_win.deviceState ~= "opened") then 
 
         hid_win.devices = hid_win.enumerate()
