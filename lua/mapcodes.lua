@@ -15,12 +15,12 @@ mapped_codes.MINIKB = {
 	KEY10 = 10,
 	KEY11 = 11,
 	KEY12 = 12,
-	ROT1CCW = 13,
-	ROT1 = 14,
-	ROT1CW = 15,
-	ROT2CCW = 16,
-	ROT2 = 17,
-	ROT2CW = 18,
+	ROT1CCW = 16,
+	ROT1 = 17,
+	ROT1CW = 18,
+	ROT2CCW = 19,
+	ROT2 = 20,
+	ROT2CW = 21,
 }
 
 mapped_codes.NOKEY = 0x00
@@ -135,9 +135,9 @@ mapped_codes.MACROTYPE = {
 }
 
 mapped_codes.LAYER =  {
-	LAYER1       = 0x10,
-	LAYER2       = 0x20,
-	LAYER3       = 0x30,
+	LAYER1       = 1,
+	LAYER2       = 2,
+	LAYER3       = 3,
 }
 
 -- /* Modifiers */

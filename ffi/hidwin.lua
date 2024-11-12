@@ -141,6 +141,15 @@ typedef struct _SP_DEVICE_INTERFACE_DETAIL_DATA_W {
     WCHAR DevicePath[ANYSIZE_ARRAY];
 } SP_DEVICE_INTERFACE_DETAIL_DATA_W, *PSP_DEVICE_INTERFACE_DETAIL_DATA_W;
 
+enum DIGCF
+{
+	DIGCF_DEFAULT = 1,
+	DIGCF_PRESENT = 2,
+	DIGCF_ALLCLASSES = 4,
+	DIGCF_PROFILE = 8,
+	DIGCF_DEVICEINTERFACE = 0x10
+};
+
 void HidD_GetHidGuid( LPGUID HidGuid );
 BOOLEAN HidD_GetAttributes(HANDLE HidDeviceObject, PHIDD_ATTRIBUTES Attributes);
 BOOLEAN HidD_GetSerialNumberString(HANDLE HidDeviceObject,PVOID Buffer,ULONG BufferLength);
@@ -216,11 +225,15 @@ hid_win.get_error = function()
     return GetErrorString()
 end
 
-hid_win.get_hid_devices = function()
+-- -------------------------------------------------------------------------------------------------
+
+hid_win.enumerate = function(hid_device_types)
+
+    hid_device_types = hid_device_types or bit.bor(ffi.C.DIGCF_PRESENT, ffi.C.DIGCF_DEVICEINTERFACE)
     local devices = {}
     local guid = ffi.new("GUID[1]")
     hid_win.hid.HidD_GetHidGuid( guid )
-    local infoset = hid_win.setupapi.SetupDiGetClassDevsW( guid, nil, 0, 18)
+    local infoset = hid_win.setupapi.SetupDiGetClassDevsW( guid, nil, 0, hid_device_types)
     if(infoset ~= nil) then 
 
         local ifaceinfo = ffi.new("SP_DEVICE_INTERFACE_DATA[1]")
@@ -237,7 +250,8 @@ hid_win.get_hid_devices = function()
                 local res = hid_win.setupapi.SetupDiGetDeviceInterfaceDetailW(infoset, ifaceinfo, detail, buffsize[0], buffsize, nil)
                 if(res == 1) then 
                     local detailptr = detailraw+4
-                    table.insert(devices, ffi.cast("const unsigned short *",detailptr))
+                    local handlestr = ffi.cast("const unsigned short *",detailptr)
+                    table.insert(devices, handlestr)
                 else
                     print("[Error get_hid_devices] Invalid Details: "..GetErrorString())
                 end
@@ -271,7 +285,7 @@ end
 hid_win.open_device = function( vid, pid )
     if(hid_win.deviceState ~= "opened") then 
 
-        hid_win.devices = hid_win.get_hid_devices()
+        hid_win.devices = hid_win.enumerate()
         if( table.getn(hid_win.devices) == 0) then 
             return INVALID_HANDLE_VALUE 
         end
@@ -309,11 +323,10 @@ hid_win.open_device = function( vid, pid )
                     -- local devpath = mbs(dev)\
                     -- Do an initial read... checking that the handle works.
                     hid_win.curr_device.overlapped = ffi.new("OVERLAPPED[1]")
-                    hid_win.curr_device.overlapped[0].hEvent = ffi.C.CreateEventA(nil, true, false, nil)
+                    hid_win.curr_device.overlapped[0].hEvent = ffi.C.CreateEventA(nil, 1, 0, nil)
 
                     hid_win.deviceState = "opened"
                     hid_win.curr_device.device = device
-                    print("HERE.....")
                     return device
                 end
             end
@@ -348,13 +361,14 @@ hid_win.write = function(buf, buflen)
 
     local err = ffi.C.WriteFile(hid_win.curr_device.device, buf, buflen, bytes_written, hid_win.curr_device.overlapped)
     if(err ~= 0) then 
-        print("[Error] write: Timeout")
+        print("[Error] write: "..hid_win.get_error())
         return -1
     end
     -- Wait for a little bit.
 
-    local res = ffi.C.WaitForSingleObject(device, 15);
+    local res = ffi.C.WaitForSingleObject( hid_win.curr_device.overlapped[0].hEvent, 1000);
     res = ffi.C.GetOverlappedResult(device, hid_win.curr_device.overlapped, bytes_written, false)
+    if(res <= 0) then print( hid_win.get_error()) end
     if(res ~= 0) then return bytes_written[0] end
     return -1
 end 

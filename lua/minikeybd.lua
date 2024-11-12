@@ -369,26 +369,34 @@ end
 
 -- ----------------------------------------------------------------------------------------------
 
-local function send_macro(handle, macro)
+local function send_macro_proto1(handle, macro)
 
     send_start(handle)
 
     local count = 65
     local buf = ffi.new("unsigned char[?]", count)
     ffi.fill(buf, count, 0)
-    buf[1] = macro.key
-	buf[2] = macro.layer + macro.macrotype
-	buf[3] = table.getn(macro.combos)
+    buf[1] = 254
+	buf[2] = macro.key
+    buf[3] = macro.layer
+    buf[4] = macro.macrotype
+    buf[5] = 0
+    buf[6] = 0
 
-    local startindex = 4
-    if(macro.macrotype == codes.MACROTYPE.MACROKEYS) then startindex = 5 end
+    buf[7] = 0
+    buf[8] = 0
+    buf[9] = 0
+    buf[10] = table.getn(macro.combos)
+
+    local startindex = 11
+    if(macro.macrotype == codes.MACROTYPE.MACROKEYS) then startindex = 11 end
 
     for i,v in ipairs(macro.combos) do 
-        buf[startindex] = i
-        buf[startindex+1] = v.mod
-        buf[startindex+2] = v.keycode
-        send_data(handle, buf, count);
+        buf[startindex] = v.mod
+        buf[startindex+1] = v.keycode
+        startindex = startindex + 2
     end
+    send_data(handle, buf, count);
 
     send_stop(handle)
 end
@@ -397,20 +405,14 @@ end
 
 local function keyboard_check( handle )
 
-    local reportid = 0
+    local reportid = 3
     local count = 65
     local buf = ffi.new("unsigned char[?]", count)
     ffi.fill(buf, count, 0)
     buf[1] = 0
     buf[2] = 0
     local res = send_data(handle, buf, count, reportid)
-    if(res == 0) then print(reportid) end
-    local res = send_data(handle, buf, count, 2)
-    if(res == 0) then 
-        print(2)
-    else 
-        print(3) 
-    end
+    if(res == 0) then print("Report Id: "..reportid) end   
 end
 
 -- ----------------------------------------------------------------------------------------------
@@ -436,31 +438,14 @@ local function map_keys(inarg)
     dump_caps(device)
 
     keyboard_check(device)
-
-    local macro = {
-        macrotype   = codes.MACROTYPE.MACROKEYS,
-        layer       = codes.LAYER.LAYER1,
-        key         = codes.MINIKB.KEY1,
-        combos      = {
-            {
-                mod = codes.MODIFIERS.SHIFT,
-                keycode = 0,    
-            }
-        },
-    }
-
-    -- Set all the keys to the same thing 
-    for i=1, 5 do 
-        local comb =  {
-            mod = codes.MODIFIERS.SHIFT,
-            keycode = codes.KEYS.A + i-1,
-        }
-        table.insert(macro.combos, comb)
-    end
-
     send_hello(device)
 
-    send_macro(device, macro)
+    -- Load in the macro configs
+    local config = inarg[4] or "example"
+    local macros = require("config."..config)
+    for i,v in pairs(macros) do
+        send_macro_proto1(device, v)
+    end
 
     whid.close_device()
 end
