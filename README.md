@@ -9,6 +9,14 @@ and
 
 https://github.com/kriomant/ch57x-keyboard-tool
 
+## Update - 13/11/2024
+
+Have changed many things:
+- The tool is atm mainly Win64 only. I will fix the Linux/Mac to use libusb soon 
+- The protocol used is also changed. It looks like my device uses a newer protocol which I managed to sort out. I will update to test for different USB interfaces and switch protocols to suit.
+- There is now a config file (see new command line below) and if you dont pass the config file it will load the example config file in the config folder.
+- I will be building a standalone exe for this. Where you only need to pass params and dont need luajit or any of the scripts. This might be a few weeks (depending on my available time). 
+
 ## Usage 
 
 At the moment only windows is supported in the binaries. 
@@ -28,21 +36,21 @@ Running is easy:
 The output should be similar to:
 
 ```
-046d:c52b (bus 1, device 9) path: 12.1 Speed: Full Speed (12MBit/s)
-1189:8840 (bus 1, device 2) path: 7 Speed: Full Speed (12MBit/s)
-05e3:0610 (bus 1, device 6) path: 10 Speed: High Speed (480MBit/s)
-05e3:0610 (bus 1, device 1) path: 12 Speed: High Speed (480MBit/s)
-046d:0acb (bus 1, device 8) path: 12.2 Speed: Full Speed (12MBit/s)
-058f:6254 (bus 1, device 3) path: 13 Speed: High Speed (480MBit/s)
-0b05:19af (bus 1, device 7) path: 2 Speed: Full Speed (12MBit/s)
-8086:1138 (bus 2, device 0) Speed: Super Speed (5000MBit/s)
-8087:0032 (bus 1, device 13) path: 13.4 Speed: Full Speed (12MBit/s)
-0c76:1676 (bus 1, device 11) path: 10.2 Speed: Full Speed (12MBit/s)
-05e3:0610 (bus 1, device 10) path: 12.4 Speed: High Speed (480MBit/s)
-046d:08e5 (bus 1, device 5) path: 3 Speed: High Speed (480MBit/s)
-8086:7ae0 (bus 1, device 0) Speed: Super Speed (5000MBit/s)
-05ac:024f (bus 1, device 12) path: 10.3 Speed: Full Speed (12MBit/s)
-05e3:0612 (bus 1, device 4) path: 25 Speed: Super Speed (5000MBit/s)
+046d:c52b (bus 001, device 008) |  Speed:         Full Speed (12MBit/s) | ports: 12.1
+1189:8840 (bus 001, device 014) |  Speed:         Full Speed (12MBit/s) | ports: 7
+05e3:0610 (bus 001, device 003) |  Speed:        High Speed (480MBit/s) | ports: 10
+05e3:0610 (bus 001, device 002) |  Speed:        High Speed (480MBit/s) | ports: 12
+046d:0acb (bus 001, device 009) |  Speed:         Full Speed (12MBit/s) | ports: 12.2
+058f:6254 (bus 001, device 005) |  Speed:        High Speed (480MBit/s) | ports: 13
+0b05:19af (bus 001, device 001) |  Speed:         Full Speed (12MBit/s) | ports: 2
+8086:1138 (bus 002, device 000) |  Speed:      Super Speed (5000MBit/s)
+8087:0032 (bus 001, device 013) |  Speed:         Full Speed (12MBit/s) | ports: 13.4
+0c76:1676 (bus 001, device 011) |  Speed:         Full Speed (12MBit/s) | ports: 10.2
+05e3:0610 (bus 001, device 010) |  Speed:        High Speed (480MBit/s) | ports: 12.4
+046d:08e5 (bus 001, device 004) |  Speed:        High Speed (480MBit/s) | ports: 3
+8086:7ae0 (bus 001, device 000) |  Speed:      Super Speed (5000MBit/s)
+05ac:024f (bus 001, device 012) |  Speed:         Full Speed (12MBit/s) | ports: 10.3
+05e3:0612 (bus 001, device 007) |  Speed:      Super Speed (5000MBit/s) | ports: 25
 ```
 
 Running a device info:
@@ -52,10 +60,15 @@ Running a device info:
 The output:
 ```
 [Info] Found device:
-    Bus            | 1
-    Device Id      | 2
-    Vendor:Product | 1189:8840
-    Speed          | Full Speed (12MBit/s)
+   Vendor:Product  | 058f:6254
+   Bus             | 1
+   Device Id       | 2
+   Device CLass    | 9
+   Device SubClass | 0
+   Device Protocol | 1
+   Max PacketSize  | 64
+   Num Configs     | 1
+   Speed           |        High Speed (480MBit/s)
 ```
 
 Running the same command but using vendor and product ids:
@@ -66,11 +79,98 @@ And the output:
 
 ```
 [Info] Found device:
-    Bus            | 1
-    Device Id      | 2
-    Vendor:Product | 1189:8840
-    Speed          | Full Speed (12MBit/s)
+   Vendor:Product  | 1189:8840
+   Bus             | 1
+   Device Id       | 5
+   Device CLass    | 0
+   Device SubClass | 0
+   Device Protocol | 0
+   Max PacketSize  | 64
+   Num Configs     | 1
+   Speed           |         Full Speed (12MBit/s)
 ```
+
+## Mapping keys
+
+The basic premise for how this works is that it loads a set of macros from the config file, applies them to the keys mapped in the config and uploads it to the device.
+
+The format of the config is described in the config/example.lua file itself. There are a couple of examples provided as shown below:
+
+```
+--    Example:
+--       In the example we will assign the word "Hello" to the first key on the keyboard
+--       {
+--           key         = codes.MINIKB.KEY1,
+--           macrotype   = codes.MACROTYPE.MACROKEYS,
+--           layer       = codes.LAYER.LAYER1,
+--           combos      = {
+--               {
+--                   mod = codes.MODIFIERS.SHIFT,
+--                   keycode = codes.KEYS.H,    
+--               },
+--               {
+--                   mod = codes.MODIFIERS.NOMOD,
+--                   keycode = codes.KEYS.E,    
+--               },
+--               {
+--                   mod = codes.MODIFIERS.NOMOD,
+--                   keycode = codes.KEYS.L,    
+--               },
+--               {
+--                   mod = codes.MODIFIERS.NOMOD,
+--                   keycode = codes.KEYS.L,    
+--               },
+--               {
+--                   mod = codes.MODIFIERS.NOMOD,
+--                   keycode = codes.KEYS.O,    
+--               },
+--           },
+--       },
+--
+--       Another example opening a cmd window:
+--       -- Lauunch a cmd window
+--       {
+--           key         = codes.MINIKB.KEY4,
+--           macrotype   = codes.MACROTYPE.MACROKEYS,
+--           layer       = codes.LAYER.LAYER1,
+--           combos      = {
+--              {
+--                  mod = codes.MODIFIERS.WIN,
+--                  keycode = codes.KEYS.R,
+--              },
+--              " cmd /K D:\r",
+--           },
+--       },
+```
+
+The structure of the file is fairly simple. Each marco block has 3 main properties to set:
+
+key         - which key this macro will be applied to 
+macrotype   - what type of macro is it (see mapcodes.lua for details)
+layer       - which layer is this macro key mapped to (1, 2 or 3)
+
+The fourth property combos is a list of individual keys, mouse movements, or media controls that can be added in a list. 
+
+If the combos property comes across a string in the list (instead of a table) it will convert that string into a list of macro keys for you. Please beware that only a small subset of all string values can be converted safely.
+
+A limitation of the combos macros is that there can only be a maximum of 18. 
+
+If you need a complex macro, then create a bat file or shell script and then call it from the macro that way.
+
+Example use of the macro keys command:
+
+```.\bin\win64\luajit.exe .\lua\minikeybd.lua map_keys --address 1189:8840```
+
+This loads the config/example.lua keymapping into the device
+
+```.\bin\win64\luajit.exe .\lua\minikeybd.lua map_keys --address 1189:8840 dev```
+
+This loads the config/dev.lua keymapping into the device. This is a more complex example that Im using to control the volume with knob 1 and move windows around with keys 3, 7, and 11. 
+
+Additionally a cmd window is opened with key 4.
+
+```
+
 
 Reset also seems to be working ok. Hope to have more commands completed soon.
 
