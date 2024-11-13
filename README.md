@@ -151,7 +151,7 @@ macrotype   - what type of macro is it (see mapcodes.lua for details)
 
 layer       - which layer is this macro key mapped to (1, 2 or 3)
 
---
+---
 
 The fourth property combos is a list of individual keys, mouse movements, or media controls that can be added in a list. 
 
@@ -161,7 +161,7 @@ A limitation of the combos macros is that there can only be a maximum of 18.
 
 If you need a complex macro, then create a bat file or shell script and then call it from the macro that way.
 
---
+---
 
 ### Map_keys Commmand Examples
 
