@@ -146,8 +146,12 @@ The format of the config is described in the config/example.lua file itself. The
 The structure of the file is fairly simple. Each marco block has 3 main properties to set:
 
 key         - which key this macro will be applied to 
+
 macrotype   - what type of macro is it (see mapcodes.lua for details)
+
 layer       - which layer is this macro key mapped to (1, 2 or 3)
+
+--
 
 The fourth property combos is a list of individual keys, mouse movements, or media controls that can be added in a list. 
 
@@ -157,19 +161,21 @@ A limitation of the combos macros is that there can only be a maximum of 18.
 
 If you need a complex macro, then create a bat file or shell script and then call it from the macro that way.
 
+--
+
+### Map_keys Commmand Examples
+
 Example use of the macro keys command:
 
 ```.\bin\win64\luajit.exe .\lua\minikeybd.lua map_keys --address 1189:8840```
 
-This loads the config/example.lua keymapping into the device
+Example loads the config/example.lua keymapping into the device
 
 ```.\bin\win64\luajit.exe .\lua\minikeybd.lua map_keys --address 1189:8840 dev```
 
 This loads the config/dev.lua keymapping into the device. This is a more complex example that Im using to control the volume with knob 1 and move windows around with keys 3, 7, and 11. 
 
 Additionally a cmd window is opened with key 4.
-
-```
 
 
 Reset also seems to be working ok. Hope to have more commands completed soon.
