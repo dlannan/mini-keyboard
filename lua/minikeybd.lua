@@ -35,9 +35,9 @@ local codes = require("lua.mapcodes")
 
 -- ----------------------------------------------------------------------------------------------
 -- Get lusb interface
-local lusb = require("lusb")
+local lusb = require("ffi.lusb")
 
-local whid = require("hidwin")
+local whid = require("ffi.hidwin")
 -- local hapi = require("hidapi")
 local wwin = require("lua.wchar_win")
 

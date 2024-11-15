@@ -1,0 +1,1445 @@
+LJ¨˝local t=package.preload;t['ffi.hidwin']=load("\27LJ\2\8\
+ffi.hidwin¢\2\0\0\12\2\
+\0\";√\1\5-\0\0\0009\0\0\0009\0\1\0B\0\1\2-\1\1\0009\1\2\1'\3\3\0B\1\2\2-\2\0\0009\2\0\0029\2\4\0026\4\5\0009\4\6\4)\6\0\16)\7\0\2B\4\3\2+\5\0\0\18\6\0\0006\7\5\0009\7\7\7)\9\1\0)\
+\
+\0B\7\3\2\18\8\1\0-\9\1\0009\9\8\9\18\11\1\0B\9\2\2+\
+\0\0B\2\8\1-\2\1\0009\2\9\2\18\4\1\0D\2\2\0\1¿\0¿\11string\11sizeof\11lshift\8bor\8bit\19FormatMessageA\14char[256]\8new\17GetLastError\13kernel32\1\1\1\1\2\2\2\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\4\4\4\4hid_win\0ffi\0err\0\5\30buf\0\4\26\0<\0\1\5\1\2\0\5\15À\1\0-\1\0\0009\1\0\1'\3\1\0\18\4\0\0D\1\3\0\0¿\12char[?]\8new\0\0\0\0\0ffi\0sz\0\0\6\0•\3\0\2\15\3\5\2>uÕ\1\15)\2\0\0008\3\2\0\8\3\0\0X\3\3ÄU\3\2Ä\22\2\1\2X\3˙\127\9\2\0\0X\3\4Ä-\3\0\0009\3\0\3'\5\1\0D\3\2\0\22\2\1\2\14\0\1\0X\3\1Ä-\1\1\0-\3\0\0009\3\2\0039\3\3\3-\5\2\0)\6\0\0\18\7\0\0\18\8\2\0+\9\0\0)\
+\0\0,\11\12\0B\3\9\0026\4\4\0)\6\0\0\0\6\3\0X\6\2Ä+\6\1\0X\7\1Ä+\6\2\0B\4\2\1\18\4\1\0\18\6\3\0B\4\2\2-\5\0\0009\5\2\0059\5\3\5-\7\2\0)\8\0\0\18\9\0\0\18\
+\2\0\18\11\4\0\18\12\3\0,\13\14\0B\5\9\0026\6\4\0\4\5\3\0X\8\2Ä+\8\1\0X\9\1Ä+\8\2\0B\6\2\1-\6\0\0009\6\0\6\18\8\4\0\23\9\1\5D\6\3\0\0¿\5¿\4¿\11assert\24WideCharToMultiByte\6C\5\11string\0\2\1\2\2\2\2\2\2\3\3\3\3\3\3\4\6\6\6\7\7\7\8\8\8\8\8\8\8\7\9\9\9\9\9\9\9\9\
+\
+\
+\11\11\11\12\12\12\12\12\12\12\11\13\13\13\13\13\13\13\14\14\14\14\14ffi\0mbsbuf\0CP_UTF8\0ws\0\0?mbuf\0\0?wsz\0\2=msz\0\27\"buf\0\11\23sz\0\11\12\0'\0\0\2\1\0\0\2\18‡\1\2-\0\0\0D\0\1\0\3¿\1\1GetErrorString\0\0”\9\0\1\21\3\28\2}Æ\2Ê\1!\14\0\0\0X\1\
+Ä6\1\0\0009\1\1\1-\3\0\0009\3\2\0039\3\3\3-\4\0\0009\4\2\0049\4\4\4B\1\3\2\18\0\1\0004\1\0\0-\2\0\0009\2\5\2'\4\6\0B\2\2\2-\3\1\0009\3\7\0039\3\8\3\18\5\2\0B\3\2\1-\3\1\0009\3\9\0039\3\
+\3\18\5\2\0+\6\0\0)\7\0\0\18\8\0\0B\3\5\2\
+\3\0\0X\4WÄ-\4\0\0009\4\5\4'\6\11\0B\4\2\2:\5\0\4-\6\0\0009\6\13\6'\8\14\0B\6\2\2=\6\12\5)\5\0\0)\6?\0)\7\1\0M\5IÄ-\9\1\0009\9\9\0099\9\15\9\18\11\3\0+\12\0\0\18\13\2\0\18\14\8\0\18\15\4\0B\9\6\2\9\9\0\0X\
+=Ä-\
+\0\0009\
+\5\
+'\12\16\0005\13\17\0B\
+\3\2-\11\1\0009\11\9\0119\11\18\11\18\13\3\0\18\14\4\0+\15\0\0:\16\0\
+\18\17\
+\0+\18\0\0B\11\7\1-\11\0\0009\11\5\11'\13\19\0:\14\0\
+B\11\3\2-\12\0\0009\12\20\12'\14\21\0\18\15\11\0B\12\3\2:\13\0\12-\14\0\0009\14\13\14'\16\21\0B\14\2\2=\14\12\13-\13\1\0009\13\9\0139\13\18\13\18\15\3\0\18\16\4\0\18\17\12\0:\18\0\
+\18\19\
+\0+\20\0\0B\13\7\2\9\13\0\0X\14\12Ä\22\14\1\11-\15\0\0009\15\20\15'\17\22\0\18\18\14\0B\15\3\0026\16\23\0009\16\24\16\18\18\1\0\18\19\15\0B\16\3\1X\14\6Ä6\14\25\0'\16\26\0-\17\2\0B\17\1\2&\16\17\16B\14\2\1O\5∑\127-\4\1\0009\4\9\0049\4\27\4\18\6\3\0B\4\2\1L\1\2\0\0¿\1¿\3¿!SetupDiDestroyDeviceInfoList.[Error get_hid_devices] Invalid Details: \
+print\11insert\
+table\27const unsigned short *'PSP_DEVICE_INTERFACE_DETAIL_DATA_W\9cast\15uint8_t[?]%SetupDiGetDeviceInterfaceDetailW\1\2\0\0\3\0\11int[1] SetupDiEnumDeviceInterfaces\29SP_DEVICE_INTERFACE_DATA\11sizeof\11cbSize SP_DEVICE_INTERFACE_DATA[1]\25SetupDiGetClassDevsW\13setupapi\20HidD_GetHidGuid\8hid\12GUID[1]\8new\26DIGCF_DEVICEINTERFACE\18DIGCF_PRESENT\6C\8bor\8bit\2\8\2\2\2\2\2\2\2\2\2\2\2\2\3\4\4\4\4\5\5\5\5\5\6\6\6\6\6\6\6\6\7\7\9\9\9\9\
+\
+\
+\
+\
+\
+\11\11\11\11\12\12\12\12\12\12\12\12\12\13\13\15\15\15\15\15\16\16\16\16\16\16\16\16\16\16\17\17\17\17\17\18\18\18\18\18\19\19\19\19\19\19\20\20\20\20\20\20\20\20\20\20\21\21\22\23\23\23\23\23\24\24\24\24\24\24\26\26\26\26\26\26\11\31\31\31\31\31 ffi\0hid_win\0GetErrorString\0hid_device_types\0\0~devices\0\14pguid\0\4linfoset\0\13_ifaceinfo\0\6S\1\9J\2\0J\3\0Jindex\0\1Hsetupinfo\0\9?buffsize\0\0078detailraw\0\15)detail\0\5$res\0\16\20detailptr\0\3\
+handlestr\0\5\5\0≈\3\0\0\11\2\13\0003sã\2\14-\0\0\0009\0\0\0009\0\1\0-\1\0\0009\1\0\0019\1\2\1-\2\1\0009\2\3\2'\4\4\0\18\5\1\0B\2\3\2-\3\1\0009\3\3\3'\5\5\0005\6\6\0B\3\3\2-\4\1\0009\4\7\0049\4\8\4\18\6\0\0\18\7\2\0\18\8\1\0\18\9\3\0-\
+\0\0009\
+\0\
+9\
+\9\
+B\4\6\1-\4\1\0009\4\3\4'\6\5\0005\7\
+\0B\4\3\2:\5\0\4\1\5\1\0X\5\15ÄU\5\14Ä-\5\1\0009\5\7\0059\5\11\5\18\7\0\0-\8\0\0009\8\0\0089\8\9\8\18\9\4\0+\
+\1\0B\5\5\0016\5\12\0:\7\0\4B\5\2\1X\5Ó\127K\0\1\0\1¿\0¿\
+print\24GetOverlappedResult\1\2\0\0\3\0\15overlapped\13ReadFile\6C\1\2\0\0\3\0\11int[1]\15uint8_t[?]\8new\22inputReportLength\11device\16curr_device\2\2\2\3\3\3\4\4\4\4\4\5\5\5\5\5\6\6\6\6\6\6\6\6\6\6\6\8\8\8\8\8\
+\
+\
+\
+\11\11\11\11\11\11\11\11\11\11\12\12\12\12\14hid_win\0ffi\0device\0\0040buflen\0\3-buffer\0\5(readbytes\0\5#bytesread\0\16\19\0Å\11\0\2\19\3%\4ù\1ô\2ù\0026-\2\0\0009\2\0\2\6\2\1\0X\2óÄ-\2\0\0-\3\0\0009\3\3\3B\3\1\2=\3\2\0026\2\4\0009\2\5\2-\4\0\0009\4\2\4B\2\2\2\9\2\0\0X\2\2Ä-\2\1\0L\2\2\0006\2\6\0-\4\0\0009\4\2\4B\2\2\4X\5ÄÄ-\7\0\0009\7\7\0079\7\8\7\18\9\6\0*\
+\1\0)\11\0\0+\12\0\0)\13\3\0*\14\2\0+\15\0\0B\7\8\2\8\7\3\0X\8nÄ-\8\2\0009\8\9\8'\
+\
+\0B\8\2\2-\9\0\0009\9\11\0099\9\12\9\18\11\7\0\18\12\8\0B\9\3\2\11\9\1\0X\9\7Ä-\9\0\0009\9\7\0099\9\13\9\18\11\7\0B\9\2\1-\9\1\0L\9\2\0-\9\2\0009\9\9\9'\11\14\0)\12\0\2B\9\3\2-\
+\0\0009\
+\11\
+9\
+\15\
+\18\12\7\0\18\13\9\0)\14\0\2B\
+\4\1:\
+\0\0089\
+\16\
+\5\
+\0\0X\
+KÄ:\
+\0\0089\
+\17\
+\5\
+\1\0X\
+GÄ-\
+\2\0009\
+\9\
+'\12\18\0B\
+\2\2-\11\0\0009\11\11\0119\11\19\11\18\13\7\0\18\14\
+\0B\11\3\1-\11\2\0009\11\9\11'\13\20\0B\11\2\2-\12\0\0009\12\11\0129\12\21\12:\14\0\
+\18\15\11\0B\12\3\1-\12\0\0009\12\11\0129\12\22\12:\14\0\
+B\12\2\1-\12\0\0009\12\23\12=\6\24\12-\12\0\0009\12\23\12=\11\25\12-\12\0\0009\12\23\12=\8\26\12-\12\0\0009\12\23\12:\13\0\0119\13\28\13=\13\27\12-\12\0\0009\12\23\12:\13\0\0119\13\30\13=\13\29\12-\12\0\0009\12\23\12-\13\2\0009\13\9\13'\15 \0B\13\2\2=\13\31\12-\12\0\0009\12\23\0129\12\31\12:\12\0\12-\13\2\0009\13\"\0139\13#\13+\15\0\0)\16\1\0)\17\0\0+\18\0\0B\13\5\2=\13!\12-\12\0\0'\13\1\0=\13\0\12-\12\0\0009\12\23\12=\7$\12L\7\2\0-\8\0\0009\8\7\0089\8\13\8\18\
+\7\0B\8\2\1E\5\3\3R\5~\127-\2\1\0L\2\2\0-\2\1\0L\2\2\0\1¿\2¿\0¿\11device\17CreateEventA\6C\11hEvent\18OVERLAPPED[1]\15overlapped\26InputReportByteLength\22inputReportLength\27OutputReportByteLength\23outputReportLength\15attributes\9caps\9path\16curr_device\27HidD_FreePreparsedData\17HidP_GetCaps\17HIDP_CAPS[1]\26HidD_GetPreparsedData%struct _HIDP_PREPARSED_DATA *[1]\14ProductID\13VendorID\31HidD_GetSerialNumberString\15uint8_t[?]\16CloseHandle\23HidD_GetAttributes\8hid\23HIDD_ATTRIBUTES[1]\8new\16CreateFileW\13kernel32\11ipairs\9getn\
+table\14enumerate\12devices\11opened\16deviceState\0\1ÄÄ†è\4ÄÄÄÄ\8˛ˇˇˇ\31\2\2\2\2\4\4\4\4\4\5\5\5\5\5\5\5\6\6\9\9\9\9\9\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\11\11\12\12\12\12\13\13\13\13\13\13\13\13\14\14\14\14\14\15\15\17\17\17\17\17\18\18\18\18\18\18\18\25\25\25\25\25\25\25\25\27\27\27\27\28\28\28\28\28\28\29\29\29\29\30\30\30\30\30\30\31\31\31\31\31   !!!\"\"\"#####$$$$$)))))))*************,,,---.11111\9\0093355hid_win\0INVALID_HANDLE_VALUE\0ffi\0vid\0\0û\1pid\0\0û\1\4\23É\1\5\0É\1\6\0É\1idx\0\1Ä\1dev\0\0Ä\1device\0\11uattributes\0\6jbuf\0\20VpreparseData\0\19Ccaps\0\
+9\0›\1\0\0\3\1\7\0\28%◊\2\9-\0\0\0009\0\0\0009\0\1\0\15\0\0\0X\1\6Ä6\0\2\0009\0\3\0-\2\0\0009\2\0\0029\2\1\2B\0\2\1-\0\0\0009\0\0\0009\0\4\0\
+\0\0\0X\0\7Ä-\0\0\0009\0\5\0009\0\6\0-\2\0\0009\2\0\0029\2\4\2B\0\2\1-\0\0\0009\0\0\0+\1\0\0=\1\4\0K\0\1\0\1¿\16CloseHandle\13kernel32\11device\
+close\7io\14hiddevice\16curr_device\2\2\2\2\2\3\3\3\3\3\3\5\5\5\5\5\6\6\6\6\6\6\6\8\8\8\8\9hid_win\0\0¥\4\0\2\12\2\13\1Fá\1‰\2\19-\2\0\0009\2\0\0029\2\1\2\11\2\0\0X\3\2Ä)\3ˇˇL\3\2\0-\3\1\0009\3\2\3'\5\3\0B\3\2\2-\4\1\0009\4\4\0049\4\5\4-\6\0\0009\6\0\0069\6\1\6\18\7\0\0\18\8\1\0\18\9\3\0-\
+\0\0009\
+\0\
+9\
+\6\
+B\4\6\2\8\4\0\0X\5\9Ä6\5\7\0'\7\8\0-\8\0\0009\8\9\8B\8\1\2&\7\8\7B\5\2\1)\5ˇˇL\5\2\0-\5\1\0009\5\4\0059\5\
+\5-\7\0\0009\7\0\0079\7\6\7:\7\0\0079\7\11\7)\8Ë\3B\5\3\2-\6\1\0009\6\4\0069\6\12\6\18\8\2\0-\9\0\0009\9\0\0099\9\6\9\18\
+\3\0+\11\1\0B\6\5\2\18\5\6\0)\6\0\0\3\5\6\0X\6\5Ä6\6\7\0-\8\0\0009\8\9\8B\8\1\0A\6\0\1\8\5\0\0X\6\2Ä:\6\0\3L\6\2\0)\6ˇˇL\6\2\0\1¿\0¿\24GetOverlappedResult\11hEvent\24WaitForSingleObject\14get_error\20[Error] write: \
+print\15overlapped\14WriteFile\6C\11int[1]\8new\11device\16curr_device\0\2\2\2\3\3\3\3\5\5\5\5\7\7\7\7\7\7\7\7\7\7\7\7\7\8\8\9\9\9\9\9\9\9\
+\
+\14\14\14\14\14\14\14\14\14\14\15\15\15\15\15\15\15\15\15\15\15\16\16\16\16\16\16\16\16\17\17\17\17\18\18hid_win\0ffi\0buf\0\0Gbuflen\0\0Gdevice\0\4Cbytes_written\0\8;err\0\13.res\0\21\25\0œ.\3\0\8\0\30\0014∫\1\0˛\0026\0\0\0'\2\1\0B\0\2\0025\1\4\0009\2\2\0'\4\3\0B\2\2\2=\2\3\0019\2\2\0'\4\5\0B\2\2\2=\2\5\0019\2\2\0'\4\6\0B\2\2\2=\2\6\0019\2\2\0'\4\7\0B\2\2\2=\2\7\0014\2\0\0=\2\8\0014\2\0\0=\2\9\0019\2\
+\0'\4\11\0B\2\2\0019\2\
+\0'\4\12\0B\2\2\0019\2\13\0'\4\14\0)\5ˇˇB\2\3\0023\3\15\0*\4\0\0003\5\16\0003\6\17\0003\7\19\0=\7\18\0013\7\21\0=\7\20\0013\7\23\0=\7\22\0013\7\25\0=\7\24\0013\7\27\0=\7\26\0013\7\29\0=\7\28\0012\0\0ÄL\1\2\0\0\
+write\0\17close_device\0\16open_device\0\21begin_async_read\0\14enumerate\0\14get_error\0\0\0\11HANDLE\9cast∑)\
+enum {\
+    ANYSIZE_ARRAY       = 1\
+};\
+\
+typedef void           VOID, *PVOID, *LPVOID;\
+typedef VOID*          HANDLE, *PHANDLE;\
+typedef intptr_t       HDEVINFO;\
+typedef unsigned short WORD;\
+typedef unsigned short USAGE;\
+typedef unsigned long  DWORD, *PDWORD, *LPDWORD;\
+typedef unsigned int   UINT;\
+typedef int            BOOL;\
+typedef int            BOOLEAN;\
+typedef ULONG_PTR      SIZE_T;\
+typedef const void*    LPCVOID;\
+typedef char*          LPSTR;\
+typedef const char*    LPCSTR;\
+typedef wchar_t        WCHAR;\
+typedef WCHAR*         LPWSTR;\
+typedef const WCHAR*   LPCWSTR;\
+typedef BOOL           *LPBOOL;\
+typedef void*          HMODULE;\
+typedef unsigned char  UCHAR;\
+typedef unsigned short USHORT;\
+typedef long           LONG;\
+typedef unsigned long  ULONG;\
+typedef long long      LONGLONG;\
+\
+typedef union {\
+\9struct {\
+\9\9DWORD LowPart;\
+\9\9LONG HighPart;\
+\9};\
+\9struct {\
+\9\9DWORD LowPart;\
+\9\9LONG HighPart;\
+\9} u;\
+\9LONGLONG QuadPart;\
+} LARGE_INTEGER, *PLARGE_INTEGER;\
+\
+typedef struct {\
+\9DWORD  nLength;\
+\9LPVOID lpSecurityDescriptor;\
+\9BOOL   bInheritHandle;\
+} SECURITY_ATTRIBUTES, *LPSECURITY_ATTRIBUTES;\
+\
+typedef struct _OVERLAPPED {\
+    ULONG_PTR Internal;\
+    ULONG_PTR InternalHigh;\
+    union {\
+      struct {\
+        DWORD Offset;\
+        DWORD OffsetHigh;\
+      } DUMMYSTRUCTNAME;\
+      PVOID Pointer;\
+    } DUMMYUNIONNAME;\
+    HANDLE    hEvent;\
+} OVERLAPPED, *LPOVERLAPPED;\
+\
+typedef struct _GUID {\
+    unsigned long  Data1;\
+    unsigned short Data2;\
+    unsigned short Data3;\
+    unsigned char  Data4[ 8 ];\
+} GUID, *LPGUID;\
+\
+typedef struct _SP_DEVINFO_DATA {\
+    DWORD     cbSize;\
+    GUID      ClassGuid;\
+    DWORD     DevInst;\
+    ULONG_PTR Reserved;\
+} SP_DEVINFO_DATA, *PSP_DEVINFO_DATA;\
+\
+typedef struct _SP_DEVICE_INTERFACE_DATA {\
+    DWORD     cbSize;\
+    GUID      InterfaceClassGuid;\
+    DWORD     Flags;\
+    ULONG_PTR Reserved;\
+} SP_DEVICE_INTERFACE_DATA, *PSP_DEVICE_INTERFACE_DATA;\
+\
+typedef struct _HIDD_ATTRIBUTES {\
+    ULONG  Size;\
+    USHORT VendorID;\
+    USHORT ProductID;\
+    USHORT VersionNumber;\
+} HIDD_ATTRIBUTES, *PHIDD_ATTRIBUTES;\
+\
+typedef struct _HIDP_PREPARSED_DATA HIDP_PREPARSED_DATA, *PHIDP_PREPARSED_DATA;\
+\
+typedef struct _HIDP_CAPS {\
+    USAGE  Usage;\
+    USAGE  UsagePage;\
+    USHORT InputReportByteLength;\
+    USHORT OutputReportByteLength;\
+    USHORT FeatureReportByteLength;\
+    USHORT Reserved[17];\
+    USHORT NumberLinkCollectionNodes;\
+    USHORT NumberInputButtonCaps;\
+    USHORT NumberInputValueCaps;\
+    USHORT NumberInputDataIndices;\
+    USHORT NumberOutputButtonCaps;\
+    USHORT NumberOutputValueCaps;\
+    USHORT NumberOutputDataIndices;\
+    USHORT NumberFeatureButtonCaps;\
+    USHORT NumberFeatureValueCaps;\
+    USHORT NumberFeatureDataIndices;\
+} HIDP_CAPS, *PHIDP_CAPS;\
+\
+typedef struct _SP_DEVICE_INTERFACE_DETAIL_DATA_W {\
+    DWORD cbSize;\
+    WCHAR DevicePath[ANYSIZE_ARRAY];\
+} SP_DEVICE_INTERFACE_DETAIL_DATA_W, *PSP_DEVICE_INTERFACE_DETAIL_DATA_W;\
+\
+enum DIGCF\
+{\
+\9DIGCF_DEFAULT = 1,\
+\9DIGCF_PRESENT = 2,\
+\9DIGCF_ALLCLASSES = 4,\
+\9DIGCF_PROFILE = 8,\
+\9DIGCF_DEVICEINTERFACE = 0x10\
+};\
+\
+void HidD_GetHidGuid( LPGUID HidGuid );\
+BOOLEAN HidD_GetAttributes(HANDLE HidDeviceObject, PHIDD_ATTRIBUTES Attributes);\
+BOOLEAN HidD_GetSerialNumberString(HANDLE HidDeviceObject,PVOID Buffer,ULONG BufferLength);\
+BOOLEAN HidD_GetPreparsedData(HANDLE HidDeviceObject, PHIDP_PREPARSED_DATA *PreparsedData);\
+int HidP_GetCaps(PHIDP_PREPARSED_DATA PreparsedData, PHIDP_CAPS Capabilities);\
+BOOLEAN HidD_FreePreparsedData(PHIDP_PREPARSED_DATA PreparsedData);\
+\
+intptr_t SetupDiGetClassDevsW( const GUID *ClassGuid, const wchar_t ** Enumerator, intptr_t hwndParent, uint32_t Flags );\
+BOOL SetupDiEnumDeviceInterfaces(HDEVINFO DeviceInfoSet, PSP_DEVINFO_DATA DeviceInfoData, const GUID *InterfaceClassGuid, DWORD MemberIndex, PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData);\
+BOOL SetupDiGetDeviceInterfaceDetailW(HDEVINFO DeviceInfoSet, PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData, PSP_DEVICE_INTERFACE_DETAIL_DATA_W DeviceInterfaceDetailData, DWORD DeviceInterfaceDetailDataSize, PDWORD RequiredSize, PSP_DEVINFO_DATA DeviceInfoData);\
+BOOL SetupDiDestroyDeviceInfoList(HDEVINFO DeviceInfoSet);\
+\
+HANDLE CreateFileW(LPCWSTR lpFileName, DWORD dwDesiredAccess, DWORD dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes, DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes, HANDLE hTemplateFile);\
+void CloseHandle(HANDLE fhandle);\
+BOOL ReadFile( HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWORD lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped);\
+BOOL WriteFile( HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped);\
+\
+DWORD GetLastError();\
+DWORD FormatMessageA( DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPSTR lpBuffer, DWORD nSize, va_list *Arguments);\
+\
+int WideCharToMultiByte(\
+\9UINT     CodePage,\
+\9DWORD    dwFlags,\
+\9LPCWSTR  lpWideCharStr,\
+\9int      cchWideChar,\
+\9LPSTR    lpMultiByteStr,\
+\9int      cbMultiByte,\
+\9LPCSTR   lpDefaultChar,\
+\9LPBOOL   lpUsedDefaultChar\
+);\
+\
+HANDLE CreateEventA(LPSECURITY_ATTRIBUTES lpEventAttributes, BOOL bManualReset, BOOL bInitialState, LPCSTR lpName);\
+DWORD WaitForSingleObject(HANDLE hHandle,DWORD  dwMilliseconds);\
+BOOL GetOverlappedResult(HANDLE hFile, LPOVERLAPPED lpOverlapped, LPDWORD lpNumberOfBytesTransferred, BOOL bWait);\
+\31typedef int64_t ULONG_PTR;\9cdef\16curr_device\12devices\13setupapi\8hid\11user32\1\0\7\16deviceState\0\16curr_device\0\12devices\0\13setupapi\0\8hid\0\11user32\0\13kernel32\0\13kernel32\9load\8ffi\12require“˜\7\9\0\9\0\9\0\14\0\15\0\15\0\15\0\15\0\16\0\16\0\16\0\16\0\17\0\17\0\17\0\17\0\18\0\18\0\18\0\18\0\20\0\20\0\21\0\21\0\27\0\27\0\27\0\29\0ª\0ª\0ø\0ø\0ø\0ø\0»\0 \0À\0‹\0‚\0‚\0\7\1\7\1\25\1\25\1S\1S\1`\1`\1w\1w\1{\1{\1ffi\0\0041hid_win\0\21\28INVALID_HANDLE_VALUE\0\
+\18GetErrorString\0\1\17CP_UTF8\0\1\16mbsbuf\0\1\15mbs\0\1\14\0\0");t['ffi.lusb']=load("\27LJ\2\8\8ffi.lusbº;\2\0\7\0\21\0!a\0Ö\0026\0\0\0'\2\1\0B\0\2\0026\1\2\0\14\0\1\0X\2\13Ä5\1\4\0005\2\3\0=\2\5\0015\2\6\0=\2\7\0015\2\8\0=\2\9\0015\2\
+\0=\2\11\0015\2\12\0=\2\13\0015\2\14\0=\2\15\0016\2\2\0\14\0\2\0X\3\4Ä9\2\16\0008\2\2\0019\3\17\0008\2\3\0029\3\18\0\18\5\2\0B\3\2\0029\4\19\0'\6\20\0B\4\2\1L\3\2\0ﬁ7\
+/********** lusb_lib ****************************************************************/\
+\
+struct libusb_context;\
+struct libusb_device;\
+struct libusb_device_handle;\
+typedef struct libusb_device libusb_device;\
+typedef struct libusb_device_handle libusb_device_handle;\
+\
+typedef struct libusb_context libusb_context;\
+\
+enum {\
+\9LIBUSB_FLEXIBLE_ARRAY \9= 3,\
+};\
+\
+enum libusb_endpoint_direction {\
+\9LIBUSB_ENDPOINT_OUT = 0x00,\
+\9LIBUSB_ENDPOINT_IN = 0x80\
+};\
+\
+\
+enum libusb_log_level {\
+\9LIBUSB_LOG_LEVEL_NONE = 0,\
+\9LIBUSB_LOG_LEVEL_ERROR = 1,\
+\9LIBUSB_LOG_LEVEL_WARNING = 2,\
+\9LIBUSB_LOG_LEVEL_INFO = 3,\
+\9LIBUSB_LOG_LEVEL_DEBUG = 4\
+};\
+\
+enum libusb_option {\
+\9LIBUSB_OPTION_LOG_LEVEL = 0,\
+\9LIBUSB_OPTION_USE_USBDK = 1,\
+\9LIBUSB_OPTION_NO_DEVICE_DISCOVERY = 2,\
+\9LIBUSB_OPTION_LOG_CB = 3,\
+\9LIBUSB_OPTION_MAX = 4\
+};\
+\
+enum libusb_bos_type {\
+\9LIBUSB_BT_WIRELESS_USB_DEVICE_CAPABILITY = 0x01,\
+\9LIBUSB_BT_USB_2_0_EXTENSION = 0x02,\
+\9LIBUSB_BT_SS_USB_DEVICE_CAPABILITY = 0x03,\
+\9LIBUSB_BT_CONTAINER_ID = 0x04,\
+\9LIBUSB_BT_PLATFORM_DESCRIPTOR = 0x05\
+};\
+\
+struct libusb_device_descriptor {\
+\9uint8_t  bLength;\
+\9uint8_t  bDescriptorType;\
+\9uint16_t bcdUSB;\
+\9uint8_t  bDeviceClass;\
+\9uint8_t  bDeviceSubClass;\
+\9uint8_t  bDeviceProtocol;\
+\9uint8_t  bMaxPacketSize0;\
+\9uint16_t idVendor;\
+\9uint16_t idProduct;\
+\9uint16_t bcdDevice;\
+\9uint8_t  iManufacturer;\
+\9uint8_t  iProduct;\
+\9uint8_t  iSerialNumber;\
+\9uint8_t  bNumConfigurations;\
+};\
+\
+struct libusb_endpoint_descriptor {\
+\9uint8_t  bLength;\
+\9uint8_t  bDescriptorType;\
+\9uint8_t  bEndpointAddress;\
+\9uint8_t  bmAttributes;\
+\9uint16_t wMaxPacketSize;\
+\9uint8_t  bInterval;\
+\9uint8_t  bRefresh;\
+\9uint8_t  bSynchAddress;\
+\9const unsigned char *extra;\
+\9int extra_length;\
+};\
+\
+struct libusb_interface_association_descriptor {\
+\9uint8_t  bLength;\
+\9uint8_t  bDescriptorType;\
+\9uint8_t  bFirstInterface;\
+\9uint8_t  bInterfaceCount;\
+\9uint8_t  bFunctionClass;\
+\9uint8_t  bFunctionSubClass;\
+\9uint8_t  bFunctionProtocol;\
+\9uint8_t  iFunction;\
+};\
+\
+struct libusb_interface_association_descriptor_array {\
+\9const struct libusb_interface_association_descriptor *iad;\
+\9int length;\
+};\
+\
+struct libusb_interface_descriptor {\
+\9uint8_t  bLength;\
+\9uint8_t  bDescriptorType;\
+\9uint8_t  bInterfaceNumber;\
+\9uint8_t  bAlternateSetting;\
+\9uint8_t  bNumEndpoints;\
+\9uint8_t  bInterfaceClass;\
+\9uint8_t  bInterfaceSubClass;\
+\9uint8_t  bInterfaceProtocol;\
+\9uint8_t  iInterface;\
+\9const struct libusb_endpoint_descriptor *endpoint;\
+\9const unsigned char *extra;\
+\9int extra_length;\
+};\
+\
+struct libusb_interface {\
+\9const struct libusb_interface_descriptor *altsetting;\
+\9int num_altsetting;\
+};\
+\
+struct libusb_config_descriptor {\
+\9uint8_t  bLength;\
+\9uint8_t  bDescriptorType;\
+\9uint16_t wTotalLength;\
+\9uint8_t  bNumInterfaces;\
+\9uint8_t  bConfigurationValue;\
+\9uint8_t  iConfiguration;\
+\9uint8_t  bmAttributes;\
+\9uint8_t  MaxPower;\
+\9const struct libusb_interface *interface;\
+\9const unsigned char *extra;\
+\9int extra_length;\
+};\
+\
+struct libusb_ss_endpoint_companion_descriptor {\
+\9uint8_t  bLength;\
+\9uint8_t  bDescriptorType;\
+\9uint8_t  bMaxBurst;\
+\9uint8_t  bmAttributes;\
+\9uint16_t wBytesPerInterval;\
+};\
+\
+struct libusb_bos_dev_capability_descriptor {\
+\9uint8_t  bLength;\
+\9uint8_t  bDescriptorType;\
+\9uint8_t  bDevCapabilityType;\
+\9uint8_t  dev_capability_data[LIBUSB_FLEXIBLE_ARRAY];\
+};\
+\
+struct libusb_bos_descriptor {\
+\9uint8_t  bLength;\
+\9uint8_t  bDescriptorType;\
+\9uint16_t wTotalLength;\
+\9uint8_t  bNumDeviceCaps;\
+\9struct libusb_bos_dev_capability_descriptor *dev_capability[LIBUSB_FLEXIBLE_ARRAY];\
+};\
+\
+struct libusb_usb_2_0_extension_descriptor {\
+\9uint8_t  bLength;\
+\9uint8_t  bDescriptorType;\
+\9uint8_t  bDevCapabilityType;\
+\9uint32_t bmAttributes;\
+};\
+\
+struct libusb_ss_usb_device_capability_descriptor {\
+\9uint8_t  bLength;\
+\9uint8_t  bDescriptorType;\
+\9uint8_t  bDevCapabilityType;\
+\9uint8_t  bmAttributes;\
+\9uint16_t wSpeedSupported;\
+\9uint8_t  bFunctionalitySupport;\
+\9uint8_t  bU1DevExitLat;\
+\9uint16_t bU2DevExitLat;\
+};\
+\
+struct libusb_container_id_descriptor {\
+\9uint8_t  bLength;\
+\9uint8_t  bDescriptorType;\
+\9uint8_t  bDevCapabilityType;\
+\9uint8_t  bReserved;\
+\9uint8_t  ContainerID[16];\
+};\
+\
+struct libusb_platform_descriptor {\
+\9uint8_t  bLength;\
+\9uint8_t  bDescriptorType;\
+\9uint8_t  bDevCapabilityType;\
+\9uint8_t  bReserved;\
+\9uint8_t  PlatformCapabilityUUID[16];\
+\9uint8_t  CapabilityData[LIBUSB_FLEXIBLE_ARRAY];\
+};\
+\
+typedef void ( *libusb_log_cb)(libusb_context *ctx, enum libusb_log_level level, const char *str);\
+\
+struct libusb_init_option {\
+    enum libusb_option option;\
+    union {\
+      \9int ival;\
+      \9libusb_log_cb log_cbval;\
+    } value;\
+};\
+\
+int libusb_init(libusb_context **ctx);  \
+int libusb_init_context(libusb_context **ctx, const struct libusb_init_option options[], int num_options);\
+void libusb_exit(libusb_context *ctx);\
+\
+int libusb_get_device_list(libusb_context *ctx,\9libusb_device ***list);\
+void libusb_free_device_list(libusb_device **list,\9int unref_devices);\
+\
+int libusb_get_device_descriptor(libusb_device *dev, struct libusb_device_descriptor *desc);\
+int libusb_get_bos_descriptor(libusb_device_handle *dev_handle,\9struct libusb_bos_descriptor **bos);\
+void libusb_free_bos_descriptor(struct libusb_bos_descriptor *bos);\
+\
+int libusb_has_capability(uint32_t capability);\
+uint8_t libusb_get_bus_number(libusb_device *dev);\
+uint8_t libusb_get_port_number(libusb_device *dev);\
+int libusb_get_port_numbers(libusb_device *dev, uint8_t *port_numbers, int port_numbers_len);\
+libusb_device * libusb_get_parent(libusb_device *dev);\
+uint8_t libusb_get_device_address(libusb_device *dev);\
+\
+int libusb_get_device_speed(libusb_device *dev);\
+int libusb_get_max_packet_size(libusb_device *dev, unsigned char endpoint);\
+int libusb_get_max_iso_packet_size(libusb_device *dev, unsigned char endpoint);\
+int libusb_get_max_alt_packet_size(libusb_device *dev, int interface_number, int alternate_setting, unsigned char endpoint);\
+\
+int libusb_open(libusb_device *dev, libusb_device_handle **dev_handle);\
+void libusb_close(libusb_device_handle *dev_handle);\
+\
+libusb_device_handle * libusb_open_device_with_vid_pid(libusb_context *ctx, uint16_t vendor_id, uint16_t product_id);\
+libusb_device * libusb_get_device(libusb_device_handle *dev_handle);\
+int libusb_reset_device(libusb_device_handle *dev_handle);\
+int libusb_get_configuration(libusb_device_handle *dev,\9int *config);\
+\
+const char * libusb_strerror(int errcode);\
+\
+int libusb_bulk_transfer(libusb_device_handle *dev_handle,\
+\9unsigned char endpoint, unsigned char *data, int length,\
+\9int *actual_length, unsigned int timeout);\
+\
+int libusb_control_transfer(libusb_device_handle *dev_handle,\
+\9uint8_t request_type, uint8_t bRequest, uint16_t wValue, uint16_t wIndex,\
+\9unsigned char *data, uint16_t wLength, unsigned int timeout);\
+\
+int libusb_interrupt_transfer(libusb_device_handle *dev_handle,\
+\9unsigned char endpoint, unsigned char *data, int length,\
+\9int *actual_length, unsigned int timeout);\
+\
+int libusb_kernel_driver_active(libusb_device_handle *dev_handle, int interface_number);\
+int libusb_detach_kernel_driver(libusb_device_handle *dev_handle, int interface_number);\
+int libusb_claim_interface(libusb_device_handle *dev_handle, int interface_number);\
+int libusb_release_interface(libusb_device_handle *dev_handle, int interface_number);\
+\9cdef\9load\9arch\7os\
+Other\1\0\1\8x64\6v\
+POSIX\1\0\1\8x64\15usb-1.0.so\8BSD\1\0\1\8x64\15usb-1.0.so\
+Linux\1\0\2\8arm\15usb-1.0.so\8x64\15usb-1.0.so\12Windows\1\0\1\8x64\19libusb-1.0.dll\8OSX\1\0\6\
+Linux\0\
+Other\0\12Windows\0\8OSX\0\
+POSIX\0\8BSD\0\1\0\1\8x64\18usb-1.0.dylib\17ffi_lusb_dll\8ffi\12require\1\0\1\0\1\0\3\0\3\0\3\0\3\0\4\0\4\0\5\0\5\0\6\0\6\0\7\0\7\0\8\0\8\0\9\0\9\0\12\0\12\0\12\0\12\0\12\0\12\0\12\0\13\0\13\0\13\0\15\0\2\1\2\1\5\1ffi\0\4\30libs\0\16\14lib\0\7\7lusb_lib\0\3\4\0\0");t['lua.mapcodes']=load("\27LJ\2\8\12lua.mapcodes£\
+\2\0\2\0\18\0\22&\0π\0014\0\0\0005\1\1\0=\1\0\0)\1\0\0=\1\2\0005\1\4\0=\1\3\0005\1\6\0=\1\5\0005\1\8\0=\1\7\0)\1\0\0=\1\9\0005\1\11\0=\1\
+\0005\1\13\0=\1\12\0005\1\15\0=\1\14\0005\1\17\0=\1\16\0L\0\2\0\1\0\3\15MS_WL_DOWN\3ˇ\1\13MS_WL_UP\3\1\
+MS_WL\3\0\16MOUSE_WHEEL\1\0\3\14MS_CENTER\3\4\13MS_RIGHT\3\2\12MS_LEFT\3\1\17MOUSE_BUTTON\1\0\6\9PREV\3∂\1\9PLAY\3Õ\1\11VOL_DN\3Í\1\11VOL_UP\3È\1\9MUTE\3‚\1\9NEXT\3µ\1\
+MEDIA\1\0\9\9RWIN\3Ä\1\9RALT\3@\11RSHIFT\3 \
+RCTRL\3\16\8WIN\3\8\8ALT\3\4\
+SHIFT\3\2\9CTRL\3\1\
+NOMOD\3\0\14MODIFIERS\9NOMO\1\0\3\11LAYER1\3\1\11LAYER3\3\3\11LAYER2\3\2\
+LAYER\1\0\4\14MACROKEYS\3\1\14MACRONONE\3\0\15MACROMOUSE\3\3\14MACROPLAY\3\2\14MACROTYPE\1\0d\9KP_6\3^\9KP_5\3]\9KP_4\3\\\9KP_3\3[\9KP_2\3Z\9KP_1\3Y\13KP_ENTER\3X\12KP_PLUS\3W\13KP_MINUS\3V\16KP_ASTERISK\3U\13KP_SLASH\3T\12NUMLOCK\3S\7UP\3R\9DOWN\3Q\9LEFT\3P\
+POWER\3f\13KP_EQUAL\3g\
+RIGHT\3O\11PGDOWN\3N\8END\3M\11DELETE\3L\9PGUP\3K\9HOME\3J\11INSERT\3I\
+PAUSE\3H\15SCROLLLOCK\3G\12PSCREEN\3F\8F12\3E\8F11\3D\8F10\3C\7F9\3B\7F8\3A\7F7\3@\7F6\3?\7F5\3>\7F4\3=\7F3\3<\7F2\3;\7F1\3:\13CAPSLOCK\0039\
+SLASH\0038\8DOT\0037\
+COMMA\0036\
+GRAVE\0035\
+QUOTE\0034\11SCOLON\0033\15NONUS_HASH\0032\11BSLASH\0031\13RBRACKET\0030\13LBRACKET\3/\
+EQUAL\3.\
+MINUS\3-\
+SPACE\3,\8TAB\3+\11BSPACE\3*\11ESCAPE\3)\
+ENTER\3(\7N0\3'\7N9\3&\7N8\3%\7N7\3$\7N6\3#\7N5\3\"\7N4\3!\7N3\3 \7N2\3\31\7N1\3\30\6Z\3\29\6Y\3\28\6X\3\27\6W\3\26\6V\3\25\6U\3\24\6T\3\23\6S\3\22\6R\3\21\6Q\3\20\6P\3\19\6O\3\18\6N\3\17\6M\3\16\6L\3\15\6K\3\14\6J\3\13\6I\3\12\6H\3\11\6G\3\
+\6F\3\9\6E\3\8\6D\3\7\6C\3\6\6B\3\5\6A\3\4\16APPLICATION\3e\17NONUS_BSLASH\3d\11KP_DOT\3c\9KP_0\3b\9KP_9\3a\9KP_8\3`\9KP_7\3_\9KEYS\
+NOKEY\1\0\18\12ROT1CCW\3\16\
+KEY12\3\12\
+KEY11\3\11\
+KEY10\3\
+\9KEY9\3\9\9KEY8\3\8\9KEY7\3\7\9KEY6\3\6\9KEY5\3\5\9KEY4\3\4\9KEY3\3\3\9KEY2\3\2\9KEY1\3\1\11ROT2CW\3\21\9ROT2\3\20\12ROT2CCW\3\19\11ROT1CW\3\18\9ROT1\3\17\11MINIKB\3\5\24\26\26\27ÄÇáâçëëíú†ß™Æ≥∑πmapped_codes\0\2\21\0\0");t['lua.wchar_win']=load("\27LJ\2\8\13lua.wchar_win;\0\1\5\1\2\0\5\15\16\0-\1\0\0009\1\0\1'\3\1\0\18\4\0\0D\1\3\0\0¿\12char[?]\8new\0\0\0\0\0ffi\0sz\0\0\6\0—\3\0\6\18\5\7\0004µ\1(\13\4\3\0\0X\6\1ÄL\1\2\0\14\0\4\0X\6\4Ä-\6\0\0009\6\0\6B\6\1\2\18\4\6\0-\6\1\0008\6\4\6\14\0\6\0X\7\3Ä\13\6\5\0X\6\1Ä8\6\4\5\14\0\6\0X\7\31Ä-\7\2\0)\9\0\2B\7\2\3-\9\0\0009\9\1\9-\11\3\0+\12\0\0\18\13\4\0)\14\0\0\18\15\7\0\18\16\8\0+\17\0\0B\9\8\2)\
+\0\0\1\
+\9\0X\
+\12Ä-\
+\4\0009\
+\2\
+\18\12\7\0\18\13\9\0B\
+\3\2\18\12\
+\0009\
+\3\
+'\13\4\0'\14\5\0B\
+\4\2\12\6\
+\0X\11\3Ä'\
+\6\0\18\11\4\0&\6\11\
+\18\7\2\0\18\8\6\0J\7\3\0\5¿\9¿\8¿\7¿\0¿\11Error \5\11[\13\
+]+$\9gsub\11string\19FormatMessageA\17GetLastError\1\1\2\4\4\4\4\4\4\5\5\5\5\5\5\5\6\6\7\7\7\8\8\9\9\9\9\9\9\9\8\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\12\12\12C\0errors\0errbuf\0FORMAT_MESSAGE_FROM_SYSTEM\0ffi\0fail_ret\0\0005ok_ret\0\0005err_ret\0\0005ret\0\0005err\0\0005xtra_errors\0\0005msg\0\17$buf\0\5\28bufsz\0\0\28sz\0\
+\18\0Z\0\2\9\1\1\0\7\0297\2-\2\0\0006\4\0\0\18\5\0\0+\6\0\0\18\7\0\0\18\8\1\0D\2\6\0\11¿\25INVALID_HANDLE_VALUE\1\1\1\1\1\1\1checkneq\0ret\0\0\8err\0\0\8\0E\0\2\9\1\0\0\7\29;\2-\2\0\0)\4\0\0+\5\2\0+\6\1\0\18\7\0\0\18\8\1\0D\2\6\0\11¿\1\1\1\1\1\1\1checkneq\0ret\0\0\8err\0\0\8\0S\0\3\11\1\0\0\8'?\2-\3\0\0+\5\0\0\18\6\0\0+\7\0\0\18\8\0\0\18\9\1\0\18\
+\2\0D\3\7\0\11¿\1\1\1\1\1\1\1\1checkneq\0ret\0\0\9err\0\0\9errors\0\0\9\0E\0\2\9\1\0\0\7\29C\2-\2\0\0)\4\0\0\18\5\0\0+\6\0\0\18\7\0\0\18\8\1\0D\2\6\0\11¿\1\1\1\1\1\1\1checkneq\0ret\0\0\8err\0\0\8\0<\0\1\5\1\2\0\5\15W\0-\1\0\0009\1\0\1'\3\1\0\18\4\0\0D\1\3\0\0¿\13WCHAR[?]\8new\0\0\0\0\0ffi\0sz\0\0\6\0À\2\0\3\13\3\2\1/cY\9\15\0\1\0X\3\3Ä\22\3\0\1\12\1\3\0X\4\2Ä\21\3\0\0\22\1\0\3\14\0\2\0X\3\1Ä-\2\0\0-\3\1\0009\3\0\3-\5\2\0)\6\0\0\18\7\0\0\18\8\1\0+\9\0\0)\
+\0\0B\3\7\0026\4\1\0)\6\0\0\0\6\3\0X\6\2Ä+\6\1\0X\7\1Ä+\6\2\0B\4\2\1\18\4\2\0\18\6\3\0B\4\2\2-\5\1\0009\5\0\5-\7\2\0)\8\0\0\18\9\0\0\18\
+\1\0\18\11\4\0\18\12\3\0B\5\7\0026\6\1\0\4\5\3\0X\8\2Ä+\8\1\0X\9\1Ä+\8\2\0B\6\2\1L\4\2\0\17¿\5¿\16¿\11assert\24MultiByteToWideChar\2\1\1\1\1\1\1\1\2\2\2\3\3\3\3\3\3\3\3\3\4\4\4\4\4\4\4\4\5\5\5\6\6\6\6\6\6\6\6\6\7\7\7\7\7\7\7\8wcsbuf\0C\0CP_UTF8\0s\0\0000msz\0\0000wbuf\0\0000wsz\0\20\28buf\0\11\17sz\0\9\8\0;\0\1\5\1\2\0\5\15d\0-\1\0\0009\1\0\1'\3\1\0\18\4\0\0D\1\3\0\0¿\12char[?]\8new\0\0\0\0\0ffi\0sz\0\0\6\0•\3\0\3\16\4\4\2<~f\15)\3\0\0008\4\3\0\8\4\0\0X\4\3ÄU\4\2Ä\22\3\1\3X\4˙\127\9\3\0\0X\4\4Ä-\4\0\0009\4\0\4'\6\1\0D\4\2\0\22\3\1\3\14\0\2\0X\4\1Ä-\2\1\0-\4\2\0009\4\2\4-\6\3\0)\7\0\0\18\8\0\0\18\9\3\0+\
+\0\0)\11\0\0,\12\13\0B\4\9\0026\5\3\0)\7\0\0\0\7\4\0X\7\2Ä+\7\1\0X\8\1Ä+\7\2\0B\5\2\1\18\5\2\0\18\7\4\0B\5\2\2-\6\2\0009\6\2\6-\8\3\0)\9\0\0\18\
+\0\0\18\11\3\0\18\12\5\0\18\13\4\0,\14\15\0B\6\9\0026\7\3\0\4\6\4\0X\9\2Ä+\9\1\0X\
+\1Ä+\9\2\0B\7\2\1-\7\0\0009\7\0\7\18\9\5\0\23\
+\1\6D\7\3\0\0¿\19¿\5¿\16¿\11assert\24WideCharToMultiByte\5\11string\0\2\1\2\2\2\2\2\2\3\3\3\3\3\3\4\6\6\6\7\7\8\8\8\8\8\8\8\7\9\9\9\9\9\9\9\9\
+\
+\
+\11\11\12\12\12\12\12\12\12\11\13\13\13\13\13\13\13\14\14\14\14\14ffi\0mbsbuf\0C\0CP_UTF8\0ws\0\0=unused\0\0=mbuf\0\0=wsz\0\2;msz\0\26!buf\0\11\22sz\0\
+\12\0˙\6\3\0\22\0\24\1!Â\1\0{6\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\2\3\0019\3\4\0019\4\5\0019\5\6\0009\6\7\0)\7\0\0163\8\8\0005\9\9\0005\
+\
+\0003\11\11\0003\12\12\0003\13\13\0003\14\14\0003\15\15\0\18\16\6\0'\18\16\0B\16\2\1*\16\0\0003\17\17\0003\18\18\0003\19\19\0003\20\20\0005\21\21\0=\20\22\21=\18\23\0212\0\0ÄL\21\2\0\8wcs\8mbs\1\0\2\8wcs\0\8mbs\0\0\0\0\0©\1int MultiByteToWideChar(\
+\9UINT     CodePage,\
+\9DWORD    dwFlags,\
+\9LPCSTR   lpMultiByteStr,\
+\9int      cbMultiByte,\
+\9LPWSTR   lpWideCharStr,\
+\9int      cchWideChar\
+);\
+\
+\0\0\0\0\0\1\0\6\4\0Ä‡˘É\4\15out_of_mem\4\0Ä¯⁄Ñ\4\15out_of_mem\4\0ÄÄ◊Ç\4\15out_of_mem\4\0ÄÄÇ\4\14disk_full\4\0Ä‡ΩÑ\4\19file_too_short\4\0ÄÄÄÅ\4\19file_too_short\1\6\7\0\0\14not_found\14not_found\0\18access_denied\4\0Ä‡¬É\4\14not_found\4\0Ä¿õÉ\4\19already_exists\4\0Ä¿àÉ\4\14not_empty\4\0ÄÄ¯Å\4\13io_error\4\0ÄÄÙÅ\4\13io_error\4\0ÄÄ–Ç\4\19already_exists\4\0ÄÄÌÇ\4\8eof\0\9cdef\6C\11lshift\9band\8bor\8bit\8ffi\12require“˜\7\5\5\5\6\6\6\7\7\7\9\
+\14\16\18\03159=AEISSUWbduxyz{{ffi\0\4\30bit\0\3\27bor\0\3\24band\0\0\24shl\0\0\24C\0\1\23cdef\0\1\22FORMAT_MESSAGE_FROM_SYSTEM\0\1\21errbuf\0\1\20errors\0\1\19mmap_errors\0\1\18checkneq\0\1\17checkh\0\1\16checknz\0\1\15checknil\0\1\14checknum\0\1\13CP_UTF8\0\4\9wcsbuf\0\1\8wcs\0\1\7mbsbuf\0\1\6mbs\0\1\5\0\0");load("\27LJ\2\8\20@.\\lua\\minikeybd.lua€\8\0\0\3\0\18\0:;9\0216\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0016\0\0\0'\2\4\0B\0\2\0016\0\0\0'\2\5\0B\0\2\0016\0\0\0'\2\6\0B\0\2\0016\0\0\0'\2\7\0B\0\2\0016\0\0\0'\2\8\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0016\0\0\0'\2\9\0B\0\2\0016\0\0\0'\2\
+\0B\0\2\0016\0\0\0'\2\11\0B\0\2\0016\0\0\0'\2\12\0B\0\2\0016\0\0\0'\2\13\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0016\0\0\0'\2\14\0B\0\2\0016\0\0\0'\2\15\0B\0\2\0016\0\0\0'\2\16\0B\0\2\0016\0\0\0'\2\17\0B\0\2\1K\0\1\0008  luajit minikeybd.lua device_info --address 1189:86  luajit minikeybd.lua device_info --device-id 12(  luajit minikeybd.lua list_devices\15 Examples:P  --map-config <file> - uses a lua file to map many keys and layers at once\\  --map-key           - starts key mapping. can map multiple. will ask for key and typeB  --address <XX:YY>   - set which address to use for a deviceE  --device-id <id>    - set which device to effect for a command\14 Options:L  map_keys            - using options map the keys of a keyboard deviceM  device_reset        - attempt to reset a device - for keyboard devicesM  device_info         - show info about specific device (needs options).B  list_devices        - show all the devices detected on usb.\15 Commands:\6 . luajit minikeybd.lua <command> <options>\27 minikeybd tool usage.\
+print\2\2\2\3\3\3\4\4\4\5\5\5\6\6\6\7\7\7\8\8\8\9\9\9\
+\
+\
+\11\11\11\12\12\12\13\13\13\14\14\14\15\15\15\16\16\16\17\17\17\18\18\18\19\19\19\20\20\20\21\0È\2\0\0\9\2\8\0+FR\18-\0\0\0009\0\0\0'\2\1\0B\0\2\2-\1\1\0009\1\2\1,\3\4\0)\5\0\0B\1\4\2)\2\0\0\1\1\2\0X\2\9Ä6\2\3\0'\4\4\0006\5\5\0\18\7\1\0B\5\2\2&\4\5\4B\2\2\1+\2\0\0L\2\2\0-\2\1\0009\2\6\2+\4\0\0\18\5\0\0B\2\3\2)\3\0\0\1\2\3\0X\3\13Ä-\3\1\0009\3\7\3+\5\0\0B\3\2\0016\3\3\0'\5\4\0006\6\5\0\18\8\2\0B\6\2\2&\5\6\5B\3\2\1+\3\0\0L\3\2\0L\0\2\0\0¿\2¿\16libusb_exit\27libusb_get_device_list\13tostring\15[Error] : \
+print\24libusb_init_context\24libusb_device **[1]\8new\2\2\2\2\4\4\4\4\4\5\5\5\6\6\6\6\6\6\6\7\7\
+\
+\
+\
+\
+\11\11\11\12\12\12\12\13\13\13\13\13\13\13\14\14\17ffi\0lusb\0devs\0\5'r\0\5\"cnt\0\17\17\0Ω\1\0\2\7\1\2\1\0236h\13-\2\0\0009\2\0\2'\4\1\0B\2\2\2)\3\0\0008\4\3\0>\4\0\2\22\3\0\3:\4\0\2\
+\4\0\0X\4\11ÄU\4\
+Ä\18\4\1\0\18\6\2\0B\4\2\2\15\0\4\0X\5\1ÄL\3\2\0008\4\3\0>\4\0\2\22\3\0\3X\4Ú\127K\0\1\0\0¿\30struct libusb_device *[1]\8new\2\2\2\2\2\3\4\4\5\7\7\7\7\9\9\9\9\9\9\
+\
+\11\11\13ffi\0devs\0\0\24dev_cb\0\0\24dev\0\5\19i\0\1\18\0≤\6\0\1\14\4\21\1Uê\1}\22-\1\0\0009\1\0\1'\3\1\0B\1\2\2-\2\1\0009\2\2\2:\4\0\0\18\5\1\0B\2\3\2)\3\0\0\1\2\3\0X\3\4Ä6\3\3\0'\5\4\0B\3\2\1K\0\1\0006\3\5\0009\3\6\0036\5\7\0009\5\8\5'\7\9\0:\8\0\0019\8\
+\8:\9\0\0019\9\11\9-\
+\1\0009\
+\12\
+:\12\0\0B\
+\2\2-\11\1\0009\11\13\11:\13\0\0B\11\2\0A\5\4\0A\3\0\0016\3\5\0009\3\6\3'\5\14\0-\6\2\0-\7\1\0009\7\15\7:\9\0\0B\7\2\0028\6\7\6&\5\6\5B\3\2\1-\3\1\0009\3\16\3:\5\0\0-\6\3\0-\7\0\0009\7\17\7-\9\3\0B\7\2\0A\3\2\2\18\2\3\0)\3\0\0\1\3\2\0X\3\21Ä6\3\5\0009\3\6\3'\5\18\0-\6\3\0:\6\0\6&\5\6\5B\3\2\1)\3\1\0\23\4\0\2)\5\1\0M\3\
+Ä6\7\5\0009\7\6\0076\9\7\0009\9\8\9'\11\19\0-\12\3\0008\12\6\12B\9\3\0A\7\0\1O\3ˆ\1276\3\5\0009\3\6\3'\5\20\0B\3\2\1K\0\1\0\0\0\2\0\3\0\1¿\6\
+\8.%d\15 | ports: \11sizeof\28libusb_get_port_numbers\28libusb_get_device_speed\13 Speed: \30libusb_get_device_address\26libusb_get_bus_number\14idProduct\13idVendor)%04x:%04x (bus %03d, device %03d) | \11format\11string\
+write\7io$failed to get device descriptor\
+print!libusb_get_device_descriptor'struct libusb_device_descriptor[1]\8new\2\1\1\1\1\2\2\2\2\2\3\3\3\4\4\4\5\8\8\8\8\8\9\9\9\9\
+\
+\
+\
+\
+\
+\
+\
+\8\8\12\12\12\12\12\12\12\12\12\12\12\14\14\14\14\14\14\14\14\14\14\15\15\15\16\16\16\16\16\16\16\17\17\17\17\18\18\18\18\18\18\18\18\18\17\21\21\21\21\22ffi\0lusb\0speed_lookup\0ports\0dev\0\0Vdesc\0\5Qr\0\5L\1<\11\2\0\11\3\0\11j\0\1\9\0á\1\1\1\6\4\3\0\
+=y\27-\1\0\0009\1\0\1'\3\1\0B\1\2\2-\2\1\0\18\4\0\0003\5\2\0B\2\3\0012\0\0ÄK\0\1\0\0¿\8¿\2¿\5¿\0\15uint8_t[8]\8new\2\2\2\2\4\4\26\4\27\27ffi\0iterate_devs\0lusb\0speed_lookup\0devs\0\0\11ports\0\5\6\0≠\1\0\0\5\3\2\0\0174ò\1\9-\0\0\0B\0\1\2\15\0\0\0X\1\12Ä-\1\1\0:\3\0\0B\1\2\1-\1\2\0009\1\0\1:\3\0\0)\4\1\0B\1\3\1-\1\2\0009\1\1\1+\3\0\0B\1\2\1K\0\1\0\7¿\9¿\2¿\16libusb_exit\28libusb_free_device_list\2\2\3\3\4\4\4\5\5\5\5\5\7\7\7\7\9setup_lusb\0print_devs\0lusb\0devs\0\3\15\0¬\9\0\1\11\6\31\0sª\1ª\1\30-\1\0\0009\1\0\1'\3\1\0B\1\2\2-\2\1\0009\2\2\2:\4\0\0\18\5\1\0B\2\3\2)\3\0\0\1\2\3\0X\3\4Ä6\3\3\0'\5\4\0B\3\2\1K\0\1\0006\3\5\0009\3\6\3'\5\7\0:\6\0\0019\6\8\6:\7\0\0019\7\9\7B\3\4\2-\4\2\0\7\4\
+\0X\4\11Ä-\4\1\0009\4\11\4:\6\0\0B\4\2\0026\5\12\0-\7\3\0B\5\2\2\5\4\5\0X\4\9Ä1\4\2\0X\4\7Ä-\4\2\0\7\4\13\0X\4\4Ä-\4\3\0\5\3\4\0X\4\1Ä1\4\2\0-\4\4\0\15\0\4\0X\5BÄ6\4\3\0'\6\14\0B\4\2\0016\4\3\0'\6\15\0\18\7\3\0&\6\7\6B\4\2\0016\4\3\0'\6\16\0-\7\1\0009\7\17\7:\9\0\0B\7\2\2&\6\7\6B\4\2\0016\4\3\0'\6\18\0-\7\1\0009\7\11\7:\9\0\0B\7\2\2&\6\7\6B\4\2\0016\4\3\0'\6\19\0:\7\0\0019\7\20\7&\6\7\6B\4\2\0016\4\3\0'\6\21\0:\7\0\0019\7\22\7&\6\7\6B\4\2\0016\4\3\0'\6\23\0:\7\0\0019\7\24\7&\6\7\6B\4\2\0016\4\3\0'\6\25\0:\7\0\0019\7\26\7&\6\7\6B\4\2\0016\4\3\0'\6\27\0:\7\0\0019\7\28\7&\6\7\6B\4\2\0016\4\3\0'\6\29\0-\7\5\0-\8\1\0009\8\30\8:\
+\0\0B\8\2\0028\7\8\7&\6\7\6B\4\2\1+\4\2\0L\4\2\0K\0\1\0\2\0\3\0\2Ä\1Ä\4Ä\4\0\28libusb_get_device_speed\26   Speed           | \23bNumConfigurations\26   Num Configs     | \20bMaxPacketSize0\26   Max PacketSize  | \20bDeviceProtocol\26   Device Protocol | \20bDeviceSubClass\26   Device SubClass | \17bDeviceClass\26   Device CLass    | \26   Device Id       | \26libusb_get_bus_number\26   Bus             | \26   Vendor:Product  | \25[Info] Found device:\12address\13tonumber\30libusb_get_device_address\14device_id\14idProduct\13idVendor\14%04x:%04x\11format\11string$failed to get device descriptor\
+print!libusb_get_device_descriptor'struct libusb_device_descriptor[1]\8new\2\2\2\2\3\3\3\3\3\4\4\4\5\5\5\6\9\9\9\9\9\9\9\9\11\11\11\12\12\12\12\12\12\12\12\12\12\12\13\13\13\14\14\14\14\17\17\17\18\18\18\19\19\19\19\19\20\20\20\20\20\20\20\20\21\21\21\21\21\21\21\21\22\22\22\22\22\22\23\23\23\23\23\23\24\24\24\24\24\24\25\25\25\25\25\25\26\26\26\26\26\26\27\27\27\27\27\27\27\27\27\27\28\28\30ffi\0lusb\0matchtype\0params\0matched\0speed_lookup\0dev\0\0tdesc\0\5or\0\5jaddr\0\15[\0†\4\1\1\
+\5\
+\0003ô\1•\1<,\1\2\0:\3\2\0\7\3\0\0X\3\6Ä:\3\3\0\15\0\3\0X\4\3Ä'\2\1\0:\1\3\0X\3\14Ä:\3\2\0\7\3\2\0X\3\6Ä:\3\3\0\15\0\3\0X\4\3Ä'\2\3\0:\1\3\0X\3\5Ä6\3\4\0'\5\5\0B\3\2\1+\3\0\0002\0\26Ä-\3\0\0B\3\1\2\15\0\3\0X\4\20Ä+\4\0\0-\5\1\0:\7\0\0033\8\6\0B\5\3\2\11\4\0\0X\6\3Ä6\6\4\0'\8\7\0B\6\2\1-\6\3\0009\6\8\6:\8\0\3)\9\1\0B\6\3\1-\6\3\0009\6\9\6+\8\0\0B\6\2\0012\4\0Ä2\0\0ÄK\0\1\0L\3\2\0\7¿\8¿\0¿\2¿\5¿\16libusb_exit\28libusb_free_device_list&[Error] No matching device found.\0004[Error] No valid device_id or address provided.\
+print\12address\14--address\14device_id\16--device-id\2\5\5\5\5\5\5\6\7\7\8\8\8\8\8\8\9\
+\
+\12\12\12\13\13\16\16\17\17\19\22\0224\0226666688888:::::<<\13setup_lusb\0iterate_devs\0ffi\0lusb\0speed_lookup\0inarg\0\0003params\0\0021matchtype\0\0001devs\0\25\24matched\0\3\18dev_id\0\4\14\0Œ\4\0\1\14\2\14\0009sÂ\1\23+\1\0\0:\2\2\0\7\2\0\0X\2\5Ä:\2\3\0\15\0\2\0X\3\2Ä:\1\3\0X\2\5Ä6\2\1\0'\4\2\0B\2\2\1+\2\0\0L\2\2\0-\2\0\0009\2\3\2'\4\4\0B\2\2\2-\3\1\0009\3\5\3\18\5\2\0B\3\2\2)\4\0\0\1\3\4\0X\4\4Ä6\4\1\0'\6\6\0B\4\2\1K\0\1\0006\4\7\0009\4\8\4\18\6\1\0'\7\9\0B\4\3\3-\6\1\0009\6\
+\6:\8\0\0026\9\11\0\18\11\4\0)\12\16\0B\9\3\0026\
+\11\0\18\12\5\0)\13\16\0B\
+\3\0A\6\2\2\15\0\6\0X\7\4Ä-\7\1\0009\7\12\7\18\9\6\0B\7\2\1-\7\1\0009\7\13\7+\9\0\0B\7\2\1K\0\1\0\0¿\2¿\16libusb_exit\24libusb_reset_device\13tonumber$libusb_open_device_with_vid_pid\17^(.-)%:(.-)$\
+match\11string+[Error] Unable to init libusb context.\16libusb_init\24libusb_context *[1]\8new.[Error] No valid vendor:product provided.\
+print\14--address\2\4\4\4\4\4\4\5\5\7\7\7\8\8\11\11\11\11\12\12\12\12\13\13\13\14\14\14\15\18\18\18\18\18\19\19\19\19\19\19\19\19\19\19\19\19\20\20\20\20\20\20\22\22\22\22\23ffi\0lusb\0inarg\0\0:params\0\0028ctx\0\17'r\0\4#vid\0\12\23pid\0\0\23handle\0\12\11\0⁄\6\0\0\12\2\30\0JiÄ\2\15-\0\0\0009\0\0\0009\1\1\0:\1\0\0019\2\2\0:\2\0\0026\3\3\0'\5\4\0006\6\5\0009\6\6\6'\8\7\0009\9\8\1B\6\3\2'\7\9\0006\8\5\0009\8\6\8'\
+\7\0009\11\
+\1B\8\3\2&\5\8\5B\3\2\0016\3\3\0'\5\11\0-\6\1\0009\6\12\0069\8\13\0B\6\2\2&\5\6\5B\3\2\0016\3\3\0'\5\14\0009\6\15\1&\5\6\5B\3\2\0016\3\3\0'\5\16\0006\6\5\0009\6\6\6'\8\7\0009\9\17\2B\6\3\2&\5\6\5B\3\2\0016\3\3\0'\5\18\0009\6\19\2&\5\6\5B\3\2\0016\3\3\0'\5\20\0009\6\21\2&\5\6\5B\3\2\0016\3\3\0'\5\22\0009\6\23\2&\5\6\5B\3\2\0016\3\3\0'\5\24\0009\6\25\2&\5\6\5B\3\2\0016\3\3\0'\5\26\0009\6\27\2&\5\6\5B\3\2\0016\3\3\0'\5\28\0009\6\29\2&\5\6\5B\3\2\1K\0\1\0\3¿\4¿\25NumberInputValueCaps\27  InputValueCaps:     \26NumberInputButtonCaps\27  InputButtonsCaps:   \28FeatureReportByteLength\27  Feature Report Len: \27OutputReportByteLength\27  Output Report Len:  \26InputReportByteLength\27  Input Report Len:   \
+Usage\27  Usage:              \14UsagePage\27  Usage Page:         \18VersionNumber\27  Version No:         \9path\8mbs\27  Path:               \14ProductID\6:\13VendorID\0110x%04x\11format\11string\12Device \
+print\9caps\15attributes\16curr_device\1\1\2\2\3\3\5\5\5\5\5\5\5\5\5\5\5\5\5\5\5\6\6\6\6\6\6\6\6\7\7\7\7\7\8\8\8\8\8\8\8\8\8\9\9\9\9\9\
+\
+\
+\
+\
+\11\11\11\11\11\12\12\12\12\12\13\13\13\13\13\14\14\14\14\14\15whid\0wwin\0dev\0\3Hattr\0\2Fcaps\0\2D\0å\1\0\2\7\1\3\0\15*ì\2\7)\2\0\0\1\1\2\0X\2\
+Ä-\2\0\0009\2\0\2B\2\1\0026\3\1\0'\5\2\0\18\6\2\0&\5\6\5B\3\2\1+\3\2\0L\3\2\0+\2\0\0L\2\2\0\3¿\13[Error] \
+print\14get_error\1\1\1\2\2\2\3\3\3\3\3\4\4\6\6whid\0handle\0\0\16res\0\0\16err\0\7\7\0Õ\2\0\1\14\2\
+\1 dû\2\7)\1@\0-\2\0\0009\2\0\2'\4\1\0\18\5\1\0B\2\3\0026\3\2\0009\3\3\3\18\5\0\0\18\6\2\0\18\7\1\0B\3\4\2-\4\1\0\18\6\0\0\18\7\3\0B\4\3\1)\4\0\0\23\5\0\3)\6\1\0M\4\9Ä6\8\4\0009\8\5\0086\
+\6\0009\
+\7\
+'\12\8\0008\13\7\2B\
+\3\0A\8\0\1O\4˜\1276\4\9\0B\4\1\1L\3\2\0\0¿\14¿\
+print\0120x%02x \11format\11string\
+write\7io\30hid_get_report_descriptor\9hapi\21unsigned char[?]\8new\2\1\2\2\2\2\2\3\3\3\3\3\3\4\4\4\4\5\5\5\5\5\5\5\5\5\5\5\5\5\5\5\6ffi\0check_error\0handle\0\0!report_len\0\2\31report\0\5\26desc\0\6\20\1\7\
+\2\0\
+\3\0\
+i\0\1\8\0˘\1\0\1\7\2\5\0\31E©\2\8-\1\0\0009\1\0\1'\3\1\0)\4A\0B\1\3\2-\2\0\0009\2\2\2\18\4\1\0)\5A\0)\6\0\0B\2\4\1)\2\1\0>\2\0\1)\2°\0>\2\1\1)\2\1\0>\2\2\0016\2\3\0009\2\4\2\18\4\0\0\18\5\1\0)\6A\0B\2\4\2-\3\1\0\18\5\0\0\18\6\2\0B\3\3\2\15\0\3\0X\4\1ÄK\0\1\0K\0\1\0\0¿\14¿\14hid_write\9hapi\9fill\21unsigned char[?]\8new\1\1\1\1\1\2\2\2\2\2\2\3\3\4\4\5\5\6\6\6\6\6\6\7\7\7\7\7\7\7\8ffi\0check_error\0handle\0\0 buf\0\6\26res\0\18\8\0¨\1\0\4\9\2\1\0\18Oµ\2\8\14\0\3\0X\4\1Ä)\3\3\0>\3\0\1-\4\0\0009\4\0\4\18\6\1\0\18\7\2\0B\4\3\2-\5\1\0\18\7\0\0\18\8\4\0B\5\3\2\15\0\5\0X\6\1ÄL\4\2\0)\5\0\0L\5\2\0\3¿\14¿\
+write\2\2\2\3\5\5\5\5\5\6\6\6\6\6\6\6\7\7whid\0check_error\0handle\0\0\19buffer\0\0\19count\0\0\19reportid\0\0\19res\0\
+\9\0©\1\0\1\8\2\3\0\0188¡\2\6)\1A\0-\2\0\0009\2\0\2'\4\1\0\18\5\1\0B\2\3\2-\3\0\0009\3\2\3\18\5\2\0\18\6\1\0)\7\0\0B\3\4\1-\3\1\0\18\5\0\0\18\6\2\0\18\7\1\0B\3\4\1K\0\1\0\0¿\17¿\9fill\21unsigned char[?]\8new\2\3\3\3\3\3\4\4\4\4\4\4\5\5\5\5\5\6ffi\0send_data\0handle\0\0\19count\0\2\17buf\0\5\12\0œ\1\0\2\9\2\3\0\24FÃ\2\9\14\0\1\0X\2\1Ä)\1\1\0)\2A\0-\3\0\0009\3\0\3'\5\1\0\18\6\2\0B\3\3\2-\4\0\0009\4\2\4\18\6\3\0\18\7\2\0)\8\0\0B\4\4\1)\4°\0>\4\1\3>\1\2\3-\4\1\0\18\6\0\0\18\7\3\0\18\8\2\0B\4\4\1K\0\1\0\0¿\17¿\9fill\21unsigned char[?]\8new\2\2\2\3\4\4\4\4\4\5\5\5\5\5\5\6\6\7\8\8\8\8\8\9ffi\0send_data\0handle\0\0\25layer\0\0\25count\0\5\20buf\0\5\15\0Ω\1\0\1\8\2\3\0\22<Ÿ\2\8)\1A\0-\2\0\0009\2\0\2'\4\1\0\18\5\1\0B\2\3\2-\3\0\0009\3\2\3\18\5\2\0\18\6\1\0)\7\0\0B\3\4\1)\3™\0>\3\1\2)\3™\0>\3\2\2-\3\1\0\18\5\0\0\18\6\2\0\18\7\1\0B\3\4\1K\0\1\0\0¿\17¿\9fill\21unsigned char[?]\8new\2\3\3\3\3\3\4\4\4\4\4\4\5\5\6\6\7\7\7\7\7\8ffi\0send_data\0handle\0\0\23count\0\2\21buf\0\5\16\0Ÿ\1\0\1\8\3\3\0\25JÂ\2\
+-\1\0\0\18\3\0\0B\1\2\1)\1A\0-\2\1\0009\2\0\2'\4\1\0\18\5\1\0B\2\3\2-\3\1\0009\3\2\3\18\5\2\0\18\6\1\0)\7\0\0B\3\4\1)\3™\0>\3\1\2)\3°\0>\3\2\2-\3\2\0\18\5\0\0\18\6\2\0\18\7\1\0B\3\4\1K\0\1\0\19¿\0¿\17¿\9fill\21unsigned char[?]\8new\2\2\2\4\5\5\5\5\5\6\6\6\6\6\6\7\7\8\8\9\9\9\9\9\
+send_start\0ffi\0send_data\0handle\0\0\26count\0\5\21buf\0\5\16\0¬\7\0\1\18\1\26\12à\1ﬂ\1Û\00214\1\0\0006\2\0\0009\4\1\0B\2\2\4X\5ÄÄ6\7\2\0\18\9\6\0B\7\2\2\7\7\3\0X\7qÄ6\7\3\0009\7\4\7\18\9\6\0'\
+\5\0B\7\3\4X\
+hÄ)\11\0\0-\12\0\0009\12\6\0129\12\7\0126\13\3\0009\13\8\13\18\15\
+\0B\13\2\2)\14A\0\3\14\13\0X\14\12Ä)\14Z\0\3\13\14\0X\14\9Ä\23\14\0\13-\15\0\0009\15\9\0159\15\
+\15 \11\15\14-\14\0\0009\14\6\0149\12\11\14X\14JÄ)\14a\0\3\14\13\0X\14\9Ä)\14z\0\3\13\14\0X\14\6Ä\23\14\1\13-\15\0\0009\15\9\0159\15\
+\15 \11\15\14X\14>Ä\9\13\2\0X\14\4Ä-\14\0\0009\14\9\0149\11\12\14X\0148Ä\9\13\3\0X\14\4Ä-\14\0\0009\14\9\0149\11\13\14X\0142Ä\9\13\4\0X\14\4Ä-\14\0\0009\14\9\0149\11\14\14X\14,Ä\9\13\5\0X\14\4Ä-\14\0\0009\14\9\0149\11\15\14X\14&Ä\9\13\6\0X\14\4Ä-\14\0\0009\14\9\0149\11\16\14X\14 Ä\9\13\7\0X\14\4Ä-\14\0\0009\14\9\0149\11\17\14X\14\26Ä\9\13\8\0X\14\4Ä-\14\0\0009\14\9\0149\11\18\14X\14\20Ä\9\13\9\0X\14\4Ä-\14\0\0009\14\9\0149\11\19\14X\14\14Ä\9\13\
+\0X\14\7Ä-\14\0\0009\14\6\0149\12\11\14-\14\0\0009\14\9\0149\11\20\14X\14\5Ä\9\13\11\0X\14\3Ä-\14\0\0009\14\9\0149\11\20\0146\14\21\0009\14\22\14\18\16\1\0005\17\23\0=\12\24\17=\11\25\17B\14\3\1E\
+\3\2R\
+ñ\127X\7\
+Ä6\7\2\0\18\9\6\0B\7\2\2\7\7\21\0X\7\5Ä6\7\21\0009\7\22\7\18\9\1\0\18\
+\6\0B\7\3\1E\5\3\3R\5~\127L\1\2\0\1¿\12keycode\8mod\1\0\2\8mod\0\12keycode\0\11insert\
+table\11SCOLON\8DOT\
+MINUS\
+COMMA\
+SLASH\
+QUOTE\
+SPACE\
+ENTER\11BSLASH\
+SHIFT\6A\9KEYS\9byte\
+NOMOD\14MODIFIERS\6.\11gmatch\11string\9type\11combos\11ipairsÇ\1¬\1∏\1\26@D^XZ\\tv\2\3\3\3\3\5\5\5\5\5\7\7\7\7\7\7\8\9\9\9\11\11\11\11\12\12\12\12\12\12\13\13\13\13\13\14\14\14\14\15\15\15\15\15\15\16\16\16\16\16\16\17\17\18\18\18\18\19\19\20\20\20\20\21\21\22\22\22\22\23\23\24\24\24\24\25\25\26\26\26\26\27\27\28\28\28\28\29\29\30\30\30\30\31\31    !!\"\"\"####$$%%%)))))))\7\7*,,,,,-----\3\0030codes\0macro\0\0â\1newcombos\0\2á\1\4\3É\1\5\0É\1\6\0É\1i\0\1Ä\1com\0\0Ä\1\4\
+k\5\0k\6\0kc\0\1hkeycode\0\1gmod\0\3dch\0\4`\0Î\4\0\2\13\6\13\2J…\1®\3$-\2\0\0\18\4\1\0B\2\2\2\11\2\0\0X\3\2Ä+\3\0\0L\3\2\0-\3\1\0\18\5\0\0B\3\2\1)\3A\0-\4\2\0009\4\0\4'\6\1\0\18\7\3\0B\4\3\2-\5\2\0009\5\2\5\18\7\4\0\18\8\3\0)\9\0\0B\5\4\1)\5˛\0>\5\1\0049\5\3\1>\5\2\0049\5\4\1>\5\3\0049\5\5\1>\5\4\4)\5\0\0>\5\5\4)\5\0\0>\5\6\4)\5\0\0>\5\7\4)\5\0\0>\5\8\4)\5\0\0>\5\9\0046\5\6\0009\5\7\5\18\7\2\0B\5\2\2>\5\
+\4)\5\11\0009\6\5\1-\7\3\0009\7\8\0079\7\9\7\5\6\7\0X\6\1Ä)\5\11\0006\6\
+\0\18\8\2\0B\6\2\4X\9\6Ä9\11\11\
+<\11\5\4\22\11\0\0059\12\12\
+<\12\11\4\22\5\1\5E\9\3\3R\9¯\127-\6\4\0\18\8\0\0\18\9\4\0\18\
+\3\0B\6\4\1-\6\5\0\18\8\0\0B\6\2\1K\0\1\0\22¿\19¿\0¿\1¿\17¿\20¿\12keycode\8mod\11ipairs\14MACROKEYS\14MACROTYPE\9getn\
+table\14macrotype\
+layer\8key\9fill\21unsigned char[?]\8new\2\4\3\3\3\4\4\5\5\8\8\8\
+\11\11\11\11\11\12\12\12\12\12\12\13\13\14\14\15\15\16\16\17\17\18\18\20\20\21\21\22\22\23\23\23\23\23\25\26\26\26\26\26\26\26\28\28\28\28\29\29\30\30\30\31\28\28!!!!!###$process_combos\0send_start\0ffi\0codes\0send_data\0send_stop\0handle\0\0Kmacro\0\0Kcombos\0\4Gcount\0\8?buf\0\5:startindex\0\30\28\4\
+\9\5\0\9\6\0\9i\0\1\6v\0\0\6\0é\2\0\1\
+\2\5\1\31V–\3\
+)\1\3\0)\2A\0-\3\0\0009\3\0\3'\5\1\0\18\6\2\0B\3\3\2-\4\0\0009\4\2\4\18\6\3\0\18\7\2\0)\8\0\0B\4\4\1)\4\0\0>\4\1\3)\4\0\0>\4\2\3-\4\1\0\18\6\0\0\18\7\3\0\18\8\2\0\18\9\1\0B\4\5\2\9\4\0\0X\5\5Ä6\5\3\0'\7\4\0\18\8\1\0&\7\8\7B\5\2\1K\0\1\0\0¿\17¿\16Report Id: \
+print\9fill\21unsigned char[?]\8new\0\2\3\4\4\4\4\4\5\5\5\5\5\5\6\6\7\7\8\8\8\8\8\8\9\9\9\9\9\9\9\
+ffi\0send_data\0handle\0\0 reportid\0\2\30count\0\1\29buf\0\5\24res\0\16\8\0’\5\0\1\16\5\15\0HÕ\1ﬁ\3\31+\1\0\0:\2\2\0\7\2\0\0X\2\5Ä:\2\3\0\15\0\2\0X\3\2Ä:\1\3\0X\2\5Ä6\2\1\0'\4\2\0B\2\2\1+\2\0\0L\2\2\0006\2\3\0009\2\4\2\18\4\1\0'\5\5\0B\2\3\3\11\2\0\0X\4\3Ä6\4\1\0'\6\6\0B\4\2\1\11\3\0\0X\4\3Ä6\4\1\0'\6\7\0B\4\2\1-\4\0\0009\4\8\0046\6\9\0\18\8\2\0)\9\16\0B\6\3\0026\7\9\0\18\9\3\0)\
+\16\0B\7\3\0A\4\1\2-\5\1\0\18\7\4\0B\5\2\1-\5\2\0\18\7\4\0B\5\2\1-\5\3\0\18\7\4\0B\5\2\1:\5\4\0\14\0\5\0X\6\1Ä'\5\
+\0006\6\11\0'\8\12\0\18\9\5\0&\8\9\8B\6\2\0026\7\13\0\18\9\6\0B\7\2\4H\
+\4Ä-\12\4\0\18\14\4\0\18\15\11\0B\12\3\1F\
+\3\3R\
+˙\127-\7\0\0009\7\14\7B\7\1\1K\0\1\0\3¿\13¿\24¿\18¿\23¿\17close_device\
+pairs\12config.\12require\12example\13tonumber\16open_device#[Error] map_keys: Invalid pid.#[Error] map_keys: Invalid vid.\17^(.-)%:(.-)$\
+match\11string.[Error] No valid vendor:product provided.\
+print\14--address\2\4\4\4\4\4\4\5\5\7\7\7\8\8\11\11\11\11\11\13\13\13\13\13\14\14\14\14\14\16\16\16\16\16\16\16\16\16\16\16\18\18\18\20\20\20\21\21\21\24\24\24\24\25\25\25\25\25\26\26\26\26\27\27\27\27\26\26\30\30\30\31whid\0dump_caps\0keyboard_check\0send_hello\0send_macro_proto1\0inarg\0\0Iparams\0\2Gvid\0\0185pid\0\0005device\0\21 config\0\13\19macros\0\5\14\4\3\7\5\0\7\6\0\7i\0\1\4v\0\0\4\0—\1\0\0\7\1\5\0\0253ç\4\0146\0\0\0:\0\1\0\15\0\0\0X\1\19Ä-\1\0\0008\1\0\1\15\0\1\0X\2\9Ä9\2\1\1\15\0\2\0X\3\3Ä9\2\1\0016\4\0\0B\2\2\1)\2\1\0L\2\2\0X\2\6Ä6\2\2\0'\4\3\0\18\5\0\0'\6\4\0&\4\6\4B\2\2\1+\1\0\0L\1\2\0\26¿\6\
+ [Error] Command not found: \
+print\9func\8arg\2\2\3\3\5\5\6\6\7\7\7\7\7\7\8\8\8\
+\
+\
+\
+\
+\
+\13\13commands\0command\0\3\23cmd\0\4\17\0”\
+\3\0\31\0/\0JÅ\4\0°\0046\0\0\0006\1\0\0009\1\1\1'\2\2\0&\1\2\1=\1\1\0006\0\3\0'\2\4\0B\0\2\0029\1\5\0'\3\6\0B\1\2\0016\1\3\0'\3\7\0B\1\2\0026\2\3\0'\4\8\0B\2\2\0026\3\3\0'\5\9\0B\3\2\0026\4\3\0'\6\
+\0B\4\2\0025\5\11\0003\6\12\0003\7\13\0003\8\14\0003\9\15\0003\
+\16\0003\11\17\0003\12\18\0003\13\19\0003\14\20\0003\15\21\0003\16\22\0003\17\23\0003\18\24\0003\19\25\0003\20\26\0003\21\27\0003\22\28\0003\23\29\0003\24\30\0003\25\31\0005\26\"\0005\27 \0=\6!\27=\27#\0265\27$\0=\6!\27=\27%\0265\27&\0=\
+!\27=\27'\0265\27(\0=\11!\27=\27)\0265\27*\0=\12!\27=\27+\0265\27,\0=\25!\27=\27-\0263\27.\0\18\28\27\0B\28\1\2\11\28\0\0X\29\3Ä\18\29\6\0002\0\0ÄD\29\1\0002\0\0ÄK\0\1\0\0\13map_keys\1\0\2\9func\0\
+param\0\17device_reset\1\0\2\9func\0\
+param\0\16device_info\1\0\2\9func\0\
+param\0\17list_devices\1\0\2\9func\0\
+param\0\6?\1\0\2\9func\0\
+param\0\11--help\1\0\6\17device_reset\0\11--help\0\13map_keys\0\16device_info\0\6?\0\17list_devices\0\9func\1\0\2\9func\0\
+param\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\1\6\0\"   Speed Unknown (unreported)\"        Low Speed (1.5MBit/s)\"        Full Speed (12MBit/s)\"       High Speed (480MBit/s)\"     Super Speed (5000MBit/s)\"Super Speed Plus(10000MBit/s)\18lua.wchar_win\15ffi.hidwin\13ffi.lusb\17lua.mapcodes\30void Sleep(uint32_t ms);\
+\9cdef\8ffi\12require\17;./ffi/?.lua\9path\12package\22\0\22\0\22\0\22\0\22\0\22\0\26\0\26\0\26\0\28\0\30\0\30\0\"\0\"\0\"\0&\0&\0&\0(\0(\0(\0*\0*\0*\0.\0N\0d\0u\0î\0°\0·\0¸\0\15\1\26\1%\0011\1=\1G\1U\1a\1o\1§\1Ã\1⁄\1˝\1\1\2\2\2\2\2\2\2\3\2\3\2\3\2\4\2\4\2\4\2\5\2\5\2\5\2\6\2\6\2\6\2\7\2\7\2\7\2\27\2\31\2\31\2 \2 \2 \2 \2 \2 \2 \2ffi\0\
+Acodes\0\6;lusb\0\0038whid\0\0035wwin\0\0032speed_lookup\0\0011args_usage\0\0010setup_lusb\0\1/iterate_devs\0\1.print_devs\0\1-list_devices\0\1,device_info\0\1+device_reset\0\1*dump_caps\0\1)check_error\0\1(get_report\0\1'download_map\0\1&send_data\0\1%send_hello\0\1$send_start\0\1#send_stop\0\1\"send_flash_led\0\1!process_combos\0\1 send_macro_proto1\0\1\31keyboard_check\0\1\30map_keys\0\1\29commands\0\19\
+check_args\0\1\9res\0\2\7\0\0")(...);¸å   5 “6   9  6 ' B= 6 ' B= 6 ' B= 6 '
+ B=	 6 ' BG  A K  Å]LJ@.\lua\minikeybd.lua€    :;96   ' B 6   ' B 6   ' B 6   ' B 6   ' B 6   ' B 6   ' B 6   ' B 6   ' B 6   '	 B 6   '
+ B 6   ' B 6   ' B 6   ' B 6   ' B 6   ' B 6   ' B 6   ' B 6   ' B K  8  luajit minikeybd.lua device_info --address 1189:86  luajit minikeybd.lua device_info --device-id 12(  luajit minikeybd.lua list_devices Examples:P  --map-config <file> - uses a lua file to map many keys and layers at once\  --map-key           - starts key mapping. can map multiple. will ask for key and typeB  --address <XX:YY>   - set which address to use for a deviceE  --device-id <id>    - set which device to effect for a command Options:L  map_keys            - using options map the keys of a keyboard deviceM  device_reset        - attempt to reset a device - for keyboard devicesM  device_info         - show info about specific device (needs options).B  list_devices        - show all the devices detected on usb. Commands: . luajit minikeybd.lua <command> <options> minikeybd tool usage.
+print			
+
+
+ È  	 +FR-   9   ' B - 9, )  B)   X	Ä6 ' 6  B&B+  L - 9+    B)   XÄ- 9+  B6 ' 6  B&B+  L L   ¿¿libusb_exitlibusb_get_device_listtostring[Error] : 
+printlibusb_init_contextlibusb_device **[1]new
+
+
+
+
+ffi lusb devs 'r "cnt  Ω 6h-  9 ' B)  8 >  : 
+  XÄU
+Ä  B  XÄL 8 >  XÚK   ¿struct libusb_device *[1]new						
+
+ffi devs  dev_cb  dev i  ≤ Uê}-  9 ' B- 9:   B)   XÄ6 ' BK  6 96 9'	 : 9
+:	 9		-
+ 9
+
+:  B
+- 9:  B A A 6 9' - - 9:	  B8&B- 9:  - -  9-	 B A )   XÄ6 9' - : &B)  ) M
+Ä6 96	 9		' - 8B	 A Oˆ6 9' BK      ¿
+.%d | ports: sizeoflibusb_get_port_numberslibusb_get_device_speed Speed: libusb_get_device_addresslibusb_get_bus_numberidProductidVendor)%04x:%04x (bus %03d, device %03d) | formatstring
+writeio$failed to get device descriptor
+print!libusb_get_device_descriptor'struct libusb_device_descriptor[1]new				
+
+
+
+
+
+
+
+ffi lusb speed_lookup ports dev  Vdesc Qr L<  j 	 á 
+=y-  9 ' B-   3 B2  ÄK   ¿¿¿¿ uint8_t[8]newffi iterate_devs lusb speed_lookup devs  ports  ≠   4ò	-   B    XÄ- :  B- 9 :  ) B- 9+  BK  ¿	¿¿libusb_exitlibusb_free_device_list	setup_lusb print_devs lusb devs  ¬	  sªª-  9 ' B- 9:   B)   XÄ6 ' BK  6 9' : 9: 9	B- 
+ XÄ- 9:  B6 - B X	Ä1 XÄ-  XÄ-  XÄ1 -   XBÄ6 ' B6 '  &B6 ' - 9:	  B&B6 ' - 9:	  B&B6 ' : 9&B6 ' : 9&B6 ' : 9&B6 ' : 9&B6 ' : 9&B6 ' - - 9:
+  B8&B+ L K    ÄÄÄ libusb_get_device_speed   Speed           | bNumConfigurations   Num Configs     | bMaxPacketSize0   Max PacketSize  | bDeviceProtocol   Device Protocol | bDeviceSubClass   Device SubClass | bDeviceClass   Device CLass    |    Device Id       | libusb_get_bus_number   Bus             |    Vendor:Product  | [Info] Found device:addresstonumberlibusb_get_device_addressdevice_ididProductidVendor%04x:%04xformatstring$failed to get device descriptor
+print!libusb_get_device_descriptor'struct libusb_device_descriptor[1]new								ffi lusb matchtype params matched speed_lookup dev  tdesc or jaddr [ †
+
+ 3ô•<, :   XÄ:   XÄ' : XÄ:  XÄ:   XÄ' : XÄ6 ' B+  2 Ä-  B  XÄ+  - : 3 B  XÄ6 ' B- 9: )	 B- 9	+  B2 Ä2  ÄK  L ¿¿ ¿¿¿libusb_exitlibusb_free_device_list&[Error] No matching device found. 4[Error] No valid device_id or address provided.
+printaddress--addressdevice_id--device-id	
+
+46666688888:::::<<setup_lusb iterate_devs ffi lusb speed_lookup inarg  3params 1matchtype  1devs matched dev_id  Œ  9sÂ+  :   XÄ:   XÄ: XÄ6 ' B+  L -  9' B- 9 B)   XÄ6 ' BK  6 9 '	 B- 9
+: 6	  ) B	6
+  ) B
+ A  XÄ- 9	 B- 9+	  BK   ¿¿libusb_exitlibusb_reset_devicetonumber$libusb_open_device_with_vid_pid^(.-)%:(.-)$
+matchstring+[Error] Unable to init libusb context.libusb_initlibusb_context *[1]new.[Error] No valid vendor:product provided.
+print--addressffi lusb inarg  :params 8ctx 'r #vid pid  handle  ⁄   JiÄ-   9   9 : 9 : 6 ' 6 9' 9	B'	 6 9'
+ 9
+B&B6 ' - 99 B&B6 ' 9&B6 ' 6 9' 9	B&B6 ' 9&B6 ' 9&B6 ' 9&B6 ' 9&B6 ' 9&B6 ' 9&BK  ¿¿NumberInputValueCaps  InputValueCaps:     NumberInputButtonCaps  InputButtonsCaps:   FeatureReportByteLength  Feature Report Len: OutputReportByteLength  Output Report Len:  InputReportByteLength  Input Report Len:   
+Usage  Usage:              UsagePage  Usage Page:         VersionNumber  Version No:         	pathmbs  Path:               ProductID:VendorID0x%04xformatstringDevice 
+print	capsattributescurr_device					
+
+
+
+
+whid wwin dev Hattr Fcaps D å  *ì)   X
+Ä-  9 B6 '  &B+ L +  L ¿[Error] 
+printget_errorwhid handle  res  err  Õ 
+ dû)@ -  9 '  B6 9    B-    B)   ) M	Ä6 96
+ 9
+
+' 8B
+ A O˜6	 BL  ¿¿
+print0x%02x formatstring
+writeiohid_get_report_descriptor	hapiunsigned char[?]newffi check_error handle  !report_len report desc 
+ 
+ 
+i  ˘  E©-  9 ' )A B-  9 )A )  B) > )° >) >6 9   )A B-    B  XÄK  K   ¿¿hid_write	hapi	fillunsigned char[?]newffi check_error handle   buf res  ¨ 	 Oµ  XÄ) > -  9   B-    B  XÄL )  L ¿¿
+writewhid check_error handle  buffer  count  reportid  res 
+	 ©  8¡)A -  9 '  B-  9  )  B-     BK   ¿¿	fillunsigned char[?]newffi send_data handle  count buf  œ 	 FÃ	  XÄ) )A -  9 '  B-  9  )  B)° >>-     BK   ¿¿	fillunsigned char[?]new	ffi send_data handle  layer  count buf  Ω  <Ÿ)A -  9 '  B-  9  )  B)™ >)™ >-     BK   ¿¿	fillunsigned char[?]newffi send_data handle  count buf  Ÿ  JÂ
+-    B)A - 9 '  B- 9  )  B)™ >)° >-     BK  ¿ ¿¿	fillunsigned char[?]new					
+send_start ffi send_data handle  count buf  ¬ àﬂÛ14  6  9 BXÄÄ6 	 B XqÄ6 9	 '
+ BX
+hÄ)  -  996 9
+ B)A  XÄ)Z  X	Ä -  9	9
+ -  99XJÄ)a  X	Ä)z  XÄ-  9	9
+ X>Ä	 XÄ-  9	9X8Ä	 XÄ-  9	9X2Ä	 XÄ-  9	9X,Ä	 XÄ-  9	9X&Ä	 XÄ-  9	9X Ä	 XÄ-  9	9XÄ	 XÄ-  9	9XÄ		 XÄ-  9	9XÄ	
+ XÄ-  99-  9	9XÄ	 XÄ-  9	96 9 5 ==BE
+R
+ñX
+Ä6 	 B XÄ6 9	 
+ BER~L ¿keycodemod mod keycode insert
+tableSCOLONDOT
+MINUS
+COMMA
+SLASH
+QUOTE
+SPACE
+ENTERBSLASH
+SHIFTA	KEYS	byte
+NOMODMODIFIERS.gmatchstring	typecombosipairsÇ¬∏@D^XZ\tv			    !!"""####$$%%%)))))))*,,,,,-----0codes macro  ânewcombos áÉ É Éi Äcom  Ä
+k k kc hkeycode gmod dch ` Î J…®$-   B  XÄ+  L -   B)A - 9 '  B- 9  )	  B)˛ >9>9>9>)  >)  >)  >)  >)  >	6 9 B>
+) 9- 99	 XÄ) 6
+  BX	Ä9
+< 9
+<E	R	¯-   	 
+ B-   BK  ¿¿ ¿¿¿¿keycodemodipairsMACROKEYSMACROTYPE	getn
+tablemacrotype
+layerkey	fillunsigned char[?]new
+!!!!!###$process_combos send_start ffi codes send_data send_stop handle  Kmacro  Kcombos Gcount ?buf :startindex 
+	 	 	i v   é 
+V–
+) )A -  9 '  B-  9  )  B)  >)  >-     	 B	  XÄ6 '  &BK   ¿¿Report Id: 
+print	fillunsigned char[?]new 							
+ffi send_data handle   reportid count buf res  ’  HÕﬁ+  :   XÄ:   XÄ: XÄ6 ' B+  L 6 9 ' B  XÄ6 ' B  XÄ6 ' B-  96	  )	 B6	 	 )
+ B A-  B-  B-  B:   XÄ'
+ 6 ' 	 &	B6 	 BH
+Ä-   BF
+R
+˙-  9BK  ¿¿¿¿¿close_device
+pairsconfig.requireexampletonumberopen_device#[Error] map_keys: Invalid pid.#[Error] map_keys: Invalid vid.^(.-)%:(.-)$
+matchstring.[Error] No valid vendor:product provided.
+print--addresswhid dump_caps keyboard_check send_hello send_macro_proto1 inarg  Iparams Gvid 5pid  5device  config macros   i v   —   3ç6   :     XÄ-  8   X	Ä9  XÄ96  B) L XÄ6 '   ' &B+  L ¿
+ [Error] Command not found: 
+print	funcarg
+
+
+
+
+
+commands command cmd  ”
+  / JÅ °6   6  9' &= 6  ' B 9 ' B6 ' B6 ' B6 '	 B6 '
+ B5 3 3 3 3	 3
+ 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 5" 5  =!=#5$ =!=%5& =
+!='5( =!=)5* =!=+5, =!=-3.  B  XÄ 2  ÄD 2  ÄK   map_keys 	func 
+param device_reset 	func 
+param device_info 	func 
+param list_devices 	func 
+param ? 	func 
+param --help device_reset --help map_keys device_info ? list_devices 	func 	func 
+param                      "   Speed Unknown (unreported)"        Low Speed (1.5MBit/s)"        Full Speed (12MBit/s)"       High Speed (480MBit/s)"     Super Speed (5000MBit/s)"Super Speed Plus(10000MBit/s)lua.wchar_winffi.hidwinffi.lusblua.mapcodesvoid Sleep(uint32_t ms);
+	cdefffirequire;./ffi/?.lua	pathpackage            " " " & & & ( ( ( * * * . N d u î ° · ¸ %1=GUao§Ã⁄˝       ffi 
+Acodes ;lusb 8whid 5wwin 2speed_lookup 1args_usage 0setup_lusb /iterate_devs .print_devs -list_devices ,device_info +device_reset *dump_caps )check_error (get_report 'download_map &send_data %send_hello $send_start #send_stop "send_flash_led !process_combos  send_macro_proto1 keyboard_check map_keys commands 
+check_args 	res   ÃLJlua.wchar_win;   -  9 '   D  ¿char[?]new     ffi sz   —  4µ(  XÄL   XÄ-  9 B - 8  XÄ XÄ8  XÄ- )	 B-	  9		- +   )    +  B	)
+  
+	 X
+Ä-
+ 9
+
+ 	 B
+
+ 9
+
+' ' B
+
+ XÄ'
+  &
+  J ¿	¿¿¿ ¿Error [
+]+$	gsubstringFormatMessageAGetLastError							
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C errors errbuf FORMAT_MESSAGE_FROM_SYSTEM ffi fail_ret  5ok_ret  5err_ret  5ret  5err  5xtra_errors  5msg $buf bufsz  sz 
+ Z 	 7-  6    +     D ¿INVALID_HANDLE_VALUEcheckneq ret  err   E 	  ;-  )  + +    D ¿checkneq ret  err   S   '?-  +    +    	 
+ D ¿checkneq ret  	err  	errors  	 E 	  C-  )    +     D ¿checkneq ret  err   <  W -  9 '   D  ¿WCHAR[?]new     ffi sz   À /cY	  XÄ  XÄ     XÄ-  - 9 - )     +	  )
+  B6 )    XÄ+ XÄ+ B  B- 9 - )  	  
+   B6  XÄ+ X	Ä+ BL ¿¿¿assertMultiByteToWideCharwcsbuf C CP_UTF8 s  0msz  0wbuf  0wsz buf sz 	 ;  d -  9 '   D  ¿char[?]new     ffi sz   • <~f)  8   XÄUÄX˙	  XÄ-  9 ' D   XÄ- - 9- )    	 +
+  )  , B	6 )    XÄ+ XÄ+ B  B- 9- )	  
+     , B	6  X	Ä+	 X
+Ä+	 B-  9 	 
+D  ¿¿¿¿assertWideCharToMultiBytestring 								
+
+
+ffi mbsbuf C CP_UTF8 ws  =unused  =mbuf  =wsz ;msz !buf sz 
+ ˙  !Â {6   ' B 6  ' B9999 9 ) 3 5		 5
+
+ 3 3 3 3 3  ' B*  3 3 3 3 5 ==2  ÄL wcsmbs wcs mbs     ©int MultiByteToWideChar(
+	UINT     CodePage,
+	DWORD    dwFlags,
+	LPCSTR   lpMultiByteStr,
+	int      cbMultiByte,
+	LPWSTR   lpWideCharStr,
+	int      cchWideChar
+);
+
+       Ä‡˘Éout_of_mem Ä¯⁄Ñout_of_mem ÄÄ◊Çout_of_mem ÄÄÇdisk_full Ä‡ΩÑfile_too_short ÄÄÄÅfile_too_short  not_foundnot_found access_denied Ä‡¬Énot_found Ä¿õÉalready_exists Ä¿àÉnot_empty ÄÄ¯Åio_error ÄÄÙÅio_error ÄÄ–Çalready_exists ÄÄÌÇeof 	cdefClshift	bandborbitffirequire“˜	
+59=AEISSUWbduxyz{{ffi bit bor band  shl  C cdef FORMAT_MESSAGE_FROM_SYSTEM errbuf errors mmap_errors checkneq checkh checknz checknil checknum CP_UTF8 	wcsbuf wcs mbsbuf mbs   lua.wchar_winΩ
+LJlua.mapcodes£
+   & π4   5 =  )  = 5 = 5 = 5 = )  =	 5 =
+ 5 = 5 = 5 = L   MS_WL_DOWNˇMS_WL_UP
+MS_WL MOUSE_WHEEL MS_CENTERMS_RIGHTMS_LEFTMOUSE_BUTTON 	PREV∂	PLAYÕVOL_DNÍVOL_UPÈ	MUTE‚	NEXTµ
+MEDIA 		RWINÄ	RALT@RSHIFT 
+RCTRLWINALT
+SHIFT	CTRL
+NOMOD MODIFIERS	NOMO LAYER1LAYER3LAYER2
+LAYER MACROKEYSMACRONONE MACROMOUSEMACROPLAYMACROTYPE d	KP_6^	KP_5]	KP_4\	KP_3[	KP_2Z	KP_1YKP_ENTERXKP_PLUSWKP_MINUSVKP_ASTERISKUKP_SLASHTNUMLOCKSUPR	DOWNQ	LEFTP
+POWERfKP_EQUALg
+RIGHTOPGDOWNNENDMDELETEL	PGUPK	HOMEJINSERTI
+PAUSEHSCROLLLOCKGPSCREENFF12EF11DF10CF9BF8AF7@F6?F5>F4=F3<F2;F1:CAPSLOCK9
+SLASH8DOT7
+COMMA6
+GRAVE5
+QUOTE4SCOLON3NONUS_HASH2BSLASH1RBRACKET0LBRACKET/
+EQUAL.
+MINUS-
+SPACE,TAB+BSPACE*ESCAPE)
+ENTER(N0'N9&N8%N7$N6#N5"N4!N3 N2N1ZYXWVUTSRQPONMLKJIHG
+F	EDCBAAPPLICATIONeNONUS_BSLASHdKP_DOTc	KP_0b	KP_9a	KP_8`	KP_7_	KEYS
+NOKEY ROT1CCW
+KEY12
+KEY11
+KEY10
+	KEY9		KEY8	KEY7	KEY6	KEY5	KEY4	KEY3	KEY2	KEY1ROT2CW	ROT2ROT2CCWROT1CW	ROT1MINIKBÄÇáâçëëíú†ß™Æ≥∑πmapped_codes   lua.mapcodes“;LJffi.lusbº;   !a Ö6   ' B 6   XÄ5 5 =5 =5 =	5
+ =5 =5 =6   XÄ9 89 89  B9 ' BL ﬁ7
+/********** lusb_lib ****************************************************************/
+
+struct libusb_context;
+struct libusb_device;
+struct libusb_device_handle;
+typedef struct libusb_device libusb_device;
+typedef struct libusb_device_handle libusb_device_handle;
+
+typedef struct libusb_context libusb_context;
+
+enum {
+	LIBUSB_FLEXIBLE_ARRAY 	= 3,
+};
+
+enum libusb_endpoint_direction {
+	LIBUSB_ENDPOINT_OUT = 0x00,
+	LIBUSB_ENDPOINT_IN = 0x80
+};
+
+
+enum libusb_log_level {
+	LIBUSB_LOG_LEVEL_NONE = 0,
+	LIBUSB_LOG_LEVEL_ERROR = 1,
+	LIBUSB_LOG_LEVEL_WARNING = 2,
+	LIBUSB_LOG_LEVEL_INFO = 3,
+	LIBUSB_LOG_LEVEL_DEBUG = 4
+};
+
+enum libusb_option {
+	LIBUSB_OPTION_LOG_LEVEL = 0,
+	LIBUSB_OPTION_USE_USBDK = 1,
+	LIBUSB_OPTION_NO_DEVICE_DISCOVERY = 2,
+	LIBUSB_OPTION_LOG_CB = 3,
+	LIBUSB_OPTION_MAX = 4
+};
+
+enum libusb_bos_type {
+	LIBUSB_BT_WIRELESS_USB_DEVICE_CAPABILITY = 0x01,
+	LIBUSB_BT_USB_2_0_EXTENSION = 0x02,
+	LIBUSB_BT_SS_USB_DEVICE_CAPABILITY = 0x03,
+	LIBUSB_BT_CONTAINER_ID = 0x04,
+	LIBUSB_BT_PLATFORM_DESCRIPTOR = 0x05
+};
+
+struct libusb_device_descriptor {
+	uint8_t  bLength;
+	uint8_t  bDescriptorType;
+	uint16_t bcdUSB;
+	uint8_t  bDeviceClass;
+	uint8_t  bDeviceSubClass;
+	uint8_t  bDeviceProtocol;
+	uint8_t  bMaxPacketSize0;
+	uint16_t idVendor;
+	uint16_t idProduct;
+	uint16_t bcdDevice;
+	uint8_t  iManufacturer;
+	uint8_t  iProduct;
+	uint8_t  iSerialNumber;
+	uint8_t  bNumConfigurations;
+};
+
+struct libusb_endpoint_descriptor {
+	uint8_t  bLength;
+	uint8_t  bDescriptorType;
+	uint8_t  bEndpointAddress;
+	uint8_t  bmAttributes;
+	uint16_t wMaxPacketSize;
+	uint8_t  bInterval;
+	uint8_t  bRefresh;
+	uint8_t  bSynchAddress;
+	const unsigned char *extra;
+	int extra_length;
+};
+
+struct libusb_interface_association_descriptor {
+	uint8_t  bLength;
+	uint8_t  bDescriptorType;
+	uint8_t  bFirstInterface;
+	uint8_t  bInterfaceCount;
+	uint8_t  bFunctionClass;
+	uint8_t  bFunctionSubClass;
+	uint8_t  bFunctionProtocol;
+	uint8_t  iFunction;
+};
+
+struct libusb_interface_association_descriptor_array {
+	const struct libusb_interface_association_descriptor *iad;
+	int length;
+};
+
+struct libusb_interface_descriptor {
+	uint8_t  bLength;
+	uint8_t  bDescriptorType;
+	uint8_t  bInterfaceNumber;
+	uint8_t  bAlternateSetting;
+	uint8_t  bNumEndpoints;
+	uint8_t  bInterfaceClass;
+	uint8_t  bInterfaceSubClass;
+	uint8_t  bInterfaceProtocol;
+	uint8_t  iInterface;
+	const struct libusb_endpoint_descriptor *endpoint;
+	const unsigned char *extra;
+	int extra_length;
+};
+
+struct libusb_interface {
+	const struct libusb_interface_descriptor *altsetting;
+	int num_altsetting;
+};
+
+struct libusb_config_descriptor {
+	uint8_t  bLength;
+	uint8_t  bDescriptorType;
+	uint16_t wTotalLength;
+	uint8_t  bNumInterfaces;
+	uint8_t  bConfigurationValue;
+	uint8_t  iConfiguration;
+	uint8_t  bmAttributes;
+	uint8_t  MaxPower;
+	const struct libusb_interface *interface;
+	const unsigned char *extra;
+	int extra_length;
+};
+
+struct libusb_ss_endpoint_companion_descriptor {
+	uint8_t  bLength;
+	uint8_t  bDescriptorType;
+	uint8_t  bMaxBurst;
+	uint8_t  bmAttributes;
+	uint16_t wBytesPerInterval;
+};
+
+struct libusb_bos_dev_capability_descriptor {
+	uint8_t  bLength;
+	uint8_t  bDescriptorType;
+	uint8_t  bDevCapabilityType;
+	uint8_t  dev_capability_data[LIBUSB_FLEXIBLE_ARRAY];
+};
+
+struct libusb_bos_descriptor {
+	uint8_t  bLength;
+	uint8_t  bDescriptorType;
+	uint16_t wTotalLength;
+	uint8_t  bNumDeviceCaps;
+	struct libusb_bos_dev_capability_descriptor *dev_capability[LIBUSB_FLEXIBLE_ARRAY];
+};
+
+struct libusb_usb_2_0_extension_descriptor {
+	uint8_t  bLength;
+	uint8_t  bDescriptorType;
+	uint8_t  bDevCapabilityType;
+	uint32_t bmAttributes;
+};
+
+struct libusb_ss_usb_device_capability_descriptor {
+	uint8_t  bLength;
+	uint8_t  bDescriptorType;
+	uint8_t  bDevCapabilityType;
+	uint8_t  bmAttributes;
+	uint16_t wSpeedSupported;
+	uint8_t  bFunctionalitySupport;
+	uint8_t  bU1DevExitLat;
+	uint16_t bU2DevExitLat;
+};
+
+struct libusb_container_id_descriptor {
+	uint8_t  bLength;
+	uint8_t  bDescriptorType;
+	uint8_t  bDevCapabilityType;
+	uint8_t  bReserved;
+	uint8_t  ContainerID[16];
+};
+
+struct libusb_platform_descriptor {
+	uint8_t  bLength;
+	uint8_t  bDescriptorType;
+	uint8_t  bDevCapabilityType;
+	uint8_t  bReserved;
+	uint8_t  PlatformCapabilityUUID[16];
+	uint8_t  CapabilityData[LIBUSB_FLEXIBLE_ARRAY];
+};
+
+typedef void ( *libusb_log_cb)(libusb_context *ctx, enum libusb_log_level level, const char *str);
+
+struct libusb_init_option {
+    enum libusb_option option;
+    union {
+      	int ival;
+      	libusb_log_cb log_cbval;
+    } value;
+};
+
+int libusb_init(libusb_context **ctx);  
+int libusb_init_context(libusb_context **ctx, const struct libusb_init_option options[], int num_options);
+void libusb_exit(libusb_context *ctx);
+
+int libusb_get_device_list(libusb_context *ctx,	libusb_device ***list);
+void libusb_free_device_list(libusb_device **list,	int unref_devices);
+
+int libusb_get_device_descriptor(libusb_device *dev, struct libusb_device_descriptor *desc);
+int libusb_get_bos_descriptor(libusb_device_handle *dev_handle,	struct libusb_bos_descriptor **bos);
+void libusb_free_bos_descriptor(struct libusb_bos_descriptor *bos);
+
+int libusb_has_capability(uint32_t capability);
+uint8_t libusb_get_bus_number(libusb_device *dev);
+uint8_t libusb_get_port_number(libusb_device *dev);
+int libusb_get_port_numbers(libusb_device *dev, uint8_t *port_numbers, int port_numbers_len);
+libusb_device * libusb_get_parent(libusb_device *dev);
+uint8_t libusb_get_device_address(libusb_device *dev);
+
+int libusb_get_device_speed(libusb_device *dev);
+int libusb_get_max_packet_size(libusb_device *dev, unsigned char endpoint);
+int libusb_get_max_iso_packet_size(libusb_device *dev, unsigned char endpoint);
+int libusb_get_max_alt_packet_size(libusb_device *dev, int interface_number, int alternate_setting, unsigned char endpoint);
+
+int libusb_open(libusb_device *dev, libusb_device_handle **dev_handle);
+void libusb_close(libusb_device_handle *dev_handle);
+
+libusb_device_handle * libusb_open_device_with_vid_pid(libusb_context *ctx, uint16_t vendor_id, uint16_t product_id);
+libusb_device * libusb_get_device(libusb_device_handle *dev_handle);
+int libusb_reset_device(libusb_device_handle *dev_handle);
+int libusb_get_configuration(libusb_device_handle *dev,	int *config);
+
+const char * libusb_strerror(int errcode);
+
+int libusb_bulk_transfer(libusb_device_handle *dev_handle,
+	unsigned char endpoint, unsigned char *data, int length,
+	int *actual_length, unsigned int timeout);
+
+int libusb_control_transfer(libusb_device_handle *dev_handle,
+	uint8_t request_type, uint8_t bRequest, uint16_t wValue, uint16_t wIndex,
+	unsigned char *data, uint16_t wLength, unsigned int timeout);
+
+int libusb_interrupt_transfer(libusb_device_handle *dev_handle,
+	unsigned char endpoint, unsigned char *data, int length,
+	int *actual_length, unsigned int timeout);
+
+int libusb_kernel_driver_active(libusb_device_handle *dev_handle, int interface_number);
+int libusb_detach_kernel_driver(libusb_device_handle *dev_handle, int interface_number);
+int libusb_claim_interface(libusb_device_handle *dev_handle, int interface_number);
+int libusb_release_interface(libusb_device_handle *dev_handle, int interface_number);
+	cdef	load	archos
+Other x64v
+POSIX x64usb-1.0.soBSD x64usb-1.0.so
+Linux armusb-1.0.sox64usb-1.0.soWindows x64libusb-1.0.dllOSX 
+Linux 
+Other Windows OSX 
+POSIX BSD  x64usb-1.0.dylibffi_lusb_dllffirequire                 	 	            ffi libs lib lusb_lib   ffi.lusbÀSLJ
+ffi.hidwin¢  
+ ";√-   9   9  B - 9' B-  9 96 9) ) B+    6 9)	 )
+
+ B -	 9		 B	+
+  B- 9	 D ¿ ¿stringsizeoflshiftborbitFormatMessageAchar[256]newGetLastErrorkernel32hid_win ffi err buf  <  À -  9 '   D  ¿char[?]new     ffi sz   • >uÕ)  8   XÄUÄX˙	  XÄ-  9 ' D   XÄ- -  99- )     +	  )
+  , B	6 )    XÄ+ XÄ+ B  B-  99- )  	  
+   , B	6  XÄ+ X	Ä+ B-  9  	D  ¿¿¿assertWideCharToMultiByteCstring 								
+
+
+ffi mbsbuf CP_UTF8 ws  ?mbuf  ?wsz =msz "buf sz  '    ‡-   D  ¿GetErrorString  ”	 }ÆÊ!   X
+Ä6  9-  99-  99B  4  -  9' B- 99 B- 9	9
+ +  )    B
+  XWÄ-  9' B: -  9' B=)  )? ) MIÄ-	 9			9		 +     B			  X
+=Ä-
+  9
+
+' 5 B
+- 9	9  +  : 
+
+ +  B-  9' : 
+B-  9'  B: -  9' B=- 9	9   : 
+
+ +  B	  XÄ-  9'  B6 9  BXÄ6 ' - B&BO∑- 9	9 BL  ¿¿¿!SetupDiDestroyDeviceInfoList.[Error get_hid_devices] Invalid Details: 
+printinsert
+tableconst unsigned short *'PSP_DEVICE_INTERFACE_DETAIL_DATA_W	castuint8_t[?]%SetupDiGetDeviceInterfaceDetailW   int[1] SetupDiEnumDeviceInterfacesSP_DEVICE_INTERFACE_DATAsizeofcbSize SP_DEVICE_INTERFACE_DATA[1]SetupDiGetClassDevsWsetupapiHidD_GetHidGuidhidGUID[1]newDIGCF_DEVICEINTERFACEDIGCF_PRESENTCborbit				
+
+
+
+
+
+ ffi hid_win GetErrorString hid_device_types  ~devices pguid linfoset _ifaceinfo S	J J Jindex Hsetupinfo 	?buffsize 8detailraw )detail $res detailptr 
+handlestr  ≈   3sã-   9   9  -  9 9- 9'  B- 9' 5 B- 99    	 -
+  9
+ 
+9
+	
+B- 9' 5
+ B:  XÄUÄ- 99  -  9 9		 +
+ B6 : BXÓK  ¿ ¿
+printGetOverlappedResult   overlappedReadFileC   int[1]uint8_t[?]newinputReportLengthdevicecurr_device
+
+
+
+hid_win ffi device 0buflen -buffer (readbytes #bytesread  Å %ùôù6-  9  XóÄ-  -  9B=6 9-  9B	  XÄ- L 6 -  9BXÄÄ-  99	 *
+ )  +  ) * +  B XnÄ- 9	'
+
+ B-	  9		9		  B		 X	Ä-	  9		9		 B	-	 L	 -	 9			' ) B	-
+  9
+
+9
+
+ 	 ) B
+:
+ 9
+
+
+  X
+KÄ:
+ 9
+
+
+ X
+GÄ-
+ 9
+	
+' B
+-  99 
+ B- 9	' B-  99: 
+ B-  99: 
+B-  9=-  9=-  9=-  9: 9=-  9: 9=-  9- 9	'  B=-  99: - 9"9#+  ) )  +  B=!-  ' = -  9=$L -  99
+ BER~- L - L ¿¿ ¿deviceCreateEventAChEventOVERLAPPED[1]overlappedInputReportByteLengthinputReportLengthOutputReportByteLengthoutputReportLengthattributes	caps	pathcurr_deviceHidD_FreePreparsedDataHidP_GetCapsHIDP_CAPS[1]HidD_GetPreparsedData%struct _HIDP_PREPARSED_DATA *[1]ProductIDVendorIDHidD_GetSerialNumberStringuint8_t[?]CloseHandleHidD_GetAttributeshidHIDD_ATTRIBUTES[1]newCreateFileWkernel32ipairs	getn
+tableenumeratedevicesopeneddeviceState ÄÄ†èÄÄÄÄ˛ˇˇˇ					
+
+
+
+
+
+
+
+
+
+
+   !!!"""#####$$$$$)))))))*************,,,---.11111		3355hid_win INVALID_HANDLE_VALUE ffi vid  ûpid  ûÉ É Éidx Ädev  Ädevice uattributes jbuf VpreparseData Ccaps 
+9 ›   %◊	-   9   9     XÄ6  9  -  9 9B -   9   9  
+   X Ä-   9  9  -  9 9B -   9   +  = K  ¿CloseHandlekernel32device
+closeiohiddevicecurr_device	hid_win  ¥ Fá‰-  9 9  XÄ)ˇˇL - 9' B- 99-  9 9   	 -
+  9
+ 
+9
+
+B  X	Ä6 ' -  9	B&B)ˇˇL - 99
+-  9 9: 9)ËB- 99 -	  9	 	9		
+ + B )   XÄ6 -  9	B A   XÄ: L )ˇˇL ¿ ¿GetOverlappedResulthEventWaitForSingleObjectget_error[Error] write: 
+printoverlappedWriteFileCint[1]newdevicecurr_device 							
+
+hid_win ffi buf  Gbuflen  Gdevice Cbytes_written ;err .res  œ.  4∫ ˛6   ' B 5 9 ' B=9 ' B=9 ' B=9 ' B=4  =4  =	9
+ ' B9
+ ' B9 ' )ˇˇB3 *  3 3 3 =3 =3 =3 =3 =3 =2  ÄL  
+write close_device open_device begin_async_read enumerate get_error   HANDLE	cast∑)
+enum {
+    ANYSIZE_ARRAY       = 1
+};
+
+typedef void           VOID, *PVOID, *LPVOID;
+typedef VOID*          HANDLE, *PHANDLE;
+typedef intptr_t       HDEVINFO;
+typedef unsigned short WORD;
+typedef unsigned short USAGE;
+typedef unsigned long  DWORD, *PDWORD, *LPDWORD;
+typedef unsigned int   UINT;
+typedef int            BOOL;
+typedef int            BOOLEAN;
+typedef ULONG_PTR      SIZE_T;
+typedef const void*    LPCVOID;
+typedef char*          LPSTR;
+typedef const char*    LPCSTR;
+typedef wchar_t        WCHAR;
+typedef WCHAR*         LPWSTR;
+typedef const WCHAR*   LPCWSTR;
+typedef BOOL           *LPBOOL;
+typedef void*          HMODULE;
+typedef unsigned char  UCHAR;
+typedef unsigned short USHORT;
+typedef long           LONG;
+typedef unsigned long  ULONG;
+typedef long long      LONGLONG;
+
+typedef union {
+	struct {
+		DWORD LowPart;
+		LONG HighPart;
+	};
+	struct {
+		DWORD LowPart;
+		LONG HighPart;
+	} u;
+	LONGLONG QuadPart;
+} LARGE_INTEGER, *PLARGE_INTEGER;
+
+typedef struct {
+	DWORD  nLength;
+	LPVOID lpSecurityDescriptor;
+	BOOL   bInheritHandle;
+} SECURITY_ATTRIBUTES, *LPSECURITY_ATTRIBUTES;
+
+typedef struct _OVERLAPPED {
+    ULONG_PTR Internal;
+    ULONG_PTR InternalHigh;
+    union {
+      struct {
+        DWORD Offset;
+        DWORD OffsetHigh;
+      } DUMMYSTRUCTNAME;
+      PVOID Pointer;
+    } DUMMYUNIONNAME;
+    HANDLE    hEvent;
+} OVERLAPPED, *LPOVERLAPPED;
+
+typedef struct _GUID {
+    unsigned long  Data1;
+    unsigned short Data2;
+    unsigned short Data3;
+    unsigned char  Data4[ 8 ];
+} GUID, *LPGUID;
+
+typedef struct _SP_DEVINFO_DATA {
+    DWORD     cbSize;
+    GUID      ClassGuid;
+    DWORD     DevInst;
+    ULONG_PTR Reserved;
+} SP_DEVINFO_DATA, *PSP_DEVINFO_DATA;
+
+typedef struct _SP_DEVICE_INTERFACE_DATA {
+    DWORD     cbSize;
+    GUID      InterfaceClassGuid;
+    DWORD     Flags;
+    ULONG_PTR Reserved;
+} SP_DEVICE_INTERFACE_DATA, *PSP_DEVICE_INTERFACE_DATA;
+
+typedef struct _HIDD_ATTRIBUTES {
+    ULONG  Size;
+    USHORT VendorID;
+    USHORT ProductID;
+    USHORT VersionNumber;
+} HIDD_ATTRIBUTES, *PHIDD_ATTRIBUTES;
+
+typedef struct _HIDP_PREPARSED_DATA HIDP_PREPARSED_DATA, *PHIDP_PREPARSED_DATA;
+
+typedef struct _HIDP_CAPS {
+    USAGE  Usage;
+    USAGE  UsagePage;
+    USHORT InputReportByteLength;
+    USHORT OutputReportByteLength;
+    USHORT FeatureReportByteLength;
+    USHORT Reserved[17];
+    USHORT NumberLinkCollectionNodes;
+    USHORT NumberInputButtonCaps;
+    USHORT NumberInputValueCaps;
+    USHORT NumberInputDataIndices;
+    USHORT NumberOutputButtonCaps;
+    USHORT NumberOutputValueCaps;
+    USHORT NumberOutputDataIndices;
+    USHORT NumberFeatureButtonCaps;
+    USHORT NumberFeatureValueCaps;
+    USHORT NumberFeatureDataIndices;
+} HIDP_CAPS, *PHIDP_CAPS;
+
+typedef struct _SP_DEVICE_INTERFACE_DETAIL_DATA_W {
+    DWORD cbSize;
+    WCHAR DevicePath[ANYSIZE_ARRAY];
+} SP_DEVICE_INTERFACE_DETAIL_DATA_W, *PSP_DEVICE_INTERFACE_DETAIL_DATA_W;
+
+enum DIGCF
+{
+	DIGCF_DEFAULT = 1,
+	DIGCF_PRESENT = 2,
+	DIGCF_ALLCLASSES = 4,
+	DIGCF_PROFILE = 8,
+	DIGCF_DEVICEINTERFACE = 0x10
+};
+
+void HidD_GetHidGuid( LPGUID HidGuid );
+BOOLEAN HidD_GetAttributes(HANDLE HidDeviceObject, PHIDD_ATTRIBUTES Attributes);
+BOOLEAN HidD_GetSerialNumberString(HANDLE HidDeviceObject,PVOID Buffer,ULONG BufferLength);
+BOOLEAN HidD_GetPreparsedData(HANDLE HidDeviceObject, PHIDP_PREPARSED_DATA *PreparsedData);
+int HidP_GetCaps(PHIDP_PREPARSED_DATA PreparsedData, PHIDP_CAPS Capabilities);
+BOOLEAN HidD_FreePreparsedData(PHIDP_PREPARSED_DATA PreparsedData);
+
+intptr_t SetupDiGetClassDevsW( const GUID *ClassGuid, const wchar_t ** Enumerator, intptr_t hwndParent, uint32_t Flags );
+BOOL SetupDiEnumDeviceInterfaces(HDEVINFO DeviceInfoSet, PSP_DEVINFO_DATA DeviceInfoData, const GUID *InterfaceClassGuid, DWORD MemberIndex, PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData);
+BOOL SetupDiGetDeviceInterfaceDetailW(HDEVINFO DeviceInfoSet, PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData, PSP_DEVICE_INTERFACE_DETAIL_DATA_W DeviceInterfaceDetailData, DWORD DeviceInterfaceDetailDataSize, PDWORD RequiredSize, PSP_DEVINFO_DATA DeviceInfoData);
+BOOL SetupDiDestroyDeviceInfoList(HDEVINFO DeviceInfoSet);
+
+HANDLE CreateFileW(LPCWSTR lpFileName, DWORD dwDesiredAccess, DWORD dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes, DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes, HANDLE hTemplateFile);
+void CloseHandle(HANDLE fhandle);
+BOOL ReadFile( HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWORD lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped);
+BOOL WriteFile( HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped);
+
+DWORD GetLastError();
+DWORD FormatMessageA( DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPSTR lpBuffer, DWORD nSize, va_list *Arguments);
+
+int WideCharToMultiByte(
+	UINT     CodePage,
+	DWORD    dwFlags,
+	LPCWSTR  lpWideCharStr,
+	int      cchWideChar,
+	LPSTR    lpMultiByteStr,
+	int      cbMultiByte,
+	LPCSTR   lpDefaultChar,
+	LPBOOL   lpUsedDefaultChar
+);
+
+HANDLE CreateEventA(LPSECURITY_ATTRIBUTES lpEventAttributes, BOOL bManualReset, BOOL bInitialState, LPCSTR lpName);
+DWORD WaitForSingleObject(HANDLE hHandle,DWORD  dwMilliseconds);
+BOOL GetOverlappedResult(HANDLE hFile, LPOVERLAPPED lpOverlapped, LPDWORD lpNumberOfBytesTransferred, BOOL bWait);
+typedef int64_t ULONG_PTR;	cdefcurr_devicedevicessetupapihiduser32 deviceState curr_device devices setupapi hid user32 kernel32 kernel32	loadffirequire“˜	 	 	                          ª ª ø ø ø ø »   À ‹ ‚ ‚ SS``ww{{ffi 1hid_win INVALID_HANDLE_VALUE 
+GetErrorString CP_UTF8 mbsbuf mbs   	loadffi.hidwinpreloadpackage    ˚˚˚˚MMM“M“““t   
