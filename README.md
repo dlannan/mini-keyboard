@@ -15,7 +15,8 @@ https://github.com/kriomant/ch57x-keyboard-tool
 
 # Quick Start
 
-To run on windows (will add osx and linux) you can use the prebuilt releases or build them yourself with the build tool : [here](#build-tool)
+To run on windows (will add osx and linux) you can use the prebuilt releases.
+Alternatively, you can build them yourself with the build tool : [Build Tool](#build-tool)
 
 Open an cmd window and cd to tools/bin/windows folder and run:
 
