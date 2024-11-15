@@ -5,6 +5,8 @@ My device:
 
 ![alt text](https://github.com/dlannan/mini-keyboard/blob/main/media/keyboard-12-2.png)
 
+https://www.aliexpress.com/item/1005005245604214.html
+
 This utility is based on similar tools like:
 
 https://github.com/achushu/CH57x-keyboard-mapper
