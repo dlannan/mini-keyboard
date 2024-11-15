@@ -1,6 +1,10 @@
 # mini-keyboard
 A utility for mini-keyboard using luajit + ffi + libusb.
 
+My device:
+
+![alt text](https://github.com/dlannan/mini-keyboard/blob/main/media/keyboard-12-2.png)
+
 This utility is based on similar tools like:
 
 https://github.com/achushu/CH57x-keyboard-mapper
@@ -8,6 +12,29 @@ https://github.com/achushu/CH57x-keyboard-mapper
 and
 
 https://github.com/kriomant/ch57x-keyboard-tool
+
+# Quick Start
+
+To run on windows (will add osx and linux) you can use the prebuilt releases or build them yourself with the build tool : [here](#build-tool)
+
+Open an cmd window and cd to tools/bin/windows folder and run:
+
+```.\minikeybd_Windows.exe map_keys --address 1189:8840```
+
+This will upload the tools/bin/winows/config/exmaple.lua config to your device.
+
+Change the config to suit your needs or make a new config and pass it to the command line:
+
+```./minikeybd_Windows.exe map_keys --address 1189:8840 dev```
+
+More details below
+
+## Update - 15/11/2024
+
+Added improvements for building your own exe. 
+- Build tool now builds exe's for win64 
+- Added various fixes top the tool
+- Updated docs (here) to explain how build tool works (if you want to use it).
 
 ## Update - 13/11/2024
 
@@ -163,6 +190,19 @@ If you need a complex macro, then create a bat file or shell script and then cal
 
 ---
 
+### Build Tool 
+
+In the tools folder there is a simple build tool to make a standalone executable from the Lua scripts. 
+
+To build your own, open a cmd windows, make sure you are in the root folder of this repo and run: 
+
+```.\bin\win64\luajit.exe .\tools\build.lua```
+
+This will generate a completely standalone package you can use on any win64 machine.
+
+The output for the package is in tools/bin/windows. Other platforms will be added.
+
+
 ### Map_keys Commmand Examples
 
 Example use of the macro keys command:
@@ -197,7 +237,4 @@ Current work is investigating how to send commands to the keyboard and map new k
 
 Currenly I only have the 12 button 2 knob variant. But with libusb being used, I think it should be easy enough to support multiple device types. Have a look at the single lua script and if you want to help expand its capability then raise an issue or PR. Happy to add any senisble contributions. 
 
-My device:
-
-![alt text](https://github.com/dlannan/mini-keyboard/blob/main/media/keyboard-12-2.png)
 

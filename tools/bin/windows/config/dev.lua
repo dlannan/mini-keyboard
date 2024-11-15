@@ -144,6 +144,30 @@ local macros = {
             }
         },       
     },
+    {
+        -- Mute using the button on the knob
+        key         = codes.MINIKB.KEY9,
+        macrotype   = codes.MACROTYPE.MACROKEYS,
+        layer       = codes.LAYER.LAYER1,
+        combos      = {
+            {
+                mod = codes.MODIFIERS.NOMOD,     -- Browser forward
+                keycode = 0xA6,
+            }             
+        },       
+    },    
+    {
+        -- Mute using the button on the knob
+        key         = codes.MINIKB.KEY10,
+        macrotype   = codes.MACROTYPE.MACROKEYS,
+        layer       = codes.LAYER.LAYER1,
+        combos      = {
+            {
+                mod = codes.MODIFIERS.NOMOD,
+                keycode = 0xA7,     -- Launch App2
+            }             
+        },       
+    },    
 
 }
 
