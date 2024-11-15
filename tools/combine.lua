@@ -17,6 +17,15 @@
 -- chunks without losing the package module mapping.
 -- ref: https://www.lua-users.org/wiki/LuaCompilerInLua
 
+-- ---------------------------------------------------------------------------------------------------
+
+local NAME="luac"
+local OUTPUT=NAME..".out"
+
+local n=#arg
+local m=n
+
+-- ---------------------------------------------------------------------------------------------------
 -- Load a chunk manually so we can name it
 local function loader(filepath)
   local data = ""
@@ -28,21 +37,14 @@ local function loader(filepath)
   return data 
 end
 
-local MARK="////////"
-local NAME="luac"
-
-local OUTPUT=NAME..".out"
-NAME="=("..NAME..")"
-
-local n=#arg
-local m=n
-local b
-
+-- ---------------------------------------------------------------------------------------------------
+-- Process args
 for i=1,n do
 	if arg[i]=="-L" then m=i-1 break end
 end
-if m+2<=n then b="local t=package.preload;\n" else b="local t;\n" end
 
+-- ---------------------------------------------------------------------------------------------------
+-- Iterate libs to prepend them to the chunk list
 local ts = {}
 table.insert(ts, 1, "local t=package.preload;")
 
@@ -50,22 +52,23 @@ for i=m+2,n do
   local modulename = string.gsub(arg[i], "^%.[/\\]", "")
   modulename = string.gsub(modulename, "[/\\]", "%.")
   modulename = string.gsub(modulename, "%.lua", "")
-  b=b..string.format("t['%s']=function()end;\n",modulename)
-  local loaded = load(loader(arg[i]), modulename)
   
   local loaded_chunk = assert(load( loader(arg[i]),modulename ))
   table.insert(ts, ("t['%s']=load(%q);"):format(modulename, string.dump(loaded_chunk)) )
 end
-b=b.."t='"..MARK.."';\n"
 
+-- ---------------------------------------------------------------------------------------------------
+-- Add core scripts that will be executed
 for i=1,m do
-	b=b.."(function()end)();\n"
   table.insert(ts, ("load(%q)(...);"):format(string.dump(assert(loadfile(arg[i])))) )
 end
 
+-- ---------------------------------------------------------------------------------------------------
+-- Assemble chunks into one file to dump. 
 local chunks = assert(load(table.concat(ts)))
-
 local f=assert(io.open(OUTPUT,"wb"))
 local data = string.dump(chunks)
 f:write(data)
 assert(f:close())
+
+-- ---------------------------------------------------------------------------------------------------

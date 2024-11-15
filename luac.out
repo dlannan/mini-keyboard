@@ -501,19 +501,21 @@ int libusb_release_interface(libusb_device_handle *dev_handle, int interface_num
 \9cdef\9load\9arch\7os\
 Other\1\0\1\8x64\6v\
 POSIX\1\0\1\8x64\15usb-1.0.so\8BSD\1\0\1\8x64\15usb-1.0.so\
-Linux\1\0\2\8arm\15usb-1.0.so\8x64\15usb-1.0.so\12Windows\1\0\1\8x64\19libusb-1.0.dll\8OSX\1\0\6\
+Linux\1\0\2\8x64\15usb-1.0.so\8arm\15usb-1.0.so\12Windows\1\0\1\8x64\19libusb-1.0.dll\8OSX\1\0\6\8BSD\0\
 Linux\0\
 Other\0\12Windows\0\8OSX\0\
-POSIX\0\8BSD\0\1\0\1\8x64\18usb-1.0.dylib\17ffi_lusb_dll\8ffi\12require\1\0\1\0\1\0\3\0\3\0\3\0\3\0\4\0\4\0\5\0\5\0\6\0\6\0\7\0\7\0\8\0\8\0\9\0\9\0\12\0\12\0\12\0\12\0\12\0\12\0\12\0\13\0\13\0\13\0\15\0\2\1\2\1\5\1ffi\0\4\30libs\0\16\14lib\0\7\7lusb_lib\0\3\4\0\0");t['lua.mapcodes']=load("\27LJ\2\8\12lua.mapcodes£\
+POSIX\0\1\0\1\8x64\18usb-1.0.dylib\17ffi_lusb_dll\8ffi\12require\1\0\1\0\1\0\3\0\3\0\3\0\3\0\4\0\4\0\5\0\5\0\6\0\6\0\7\0\7\0\8\0\8\0\9\0\9\0\12\0\12\0\12\0\12\0\12\0\12\0\12\0\13\0\13\0\13\0\15\0\2\1\2\1\5\1ffi\0\4\30libs\0\16\14lib\0\7\7lusb_lib\0\3\4\0\0");t['lua.mapcodes']=load("\27LJ\2\8\12lua.mapcodes£\
 \2\0\2\0\18\0\22&\0¹\0014\0\0\0005\1\1\0=\1\0\0)\1\0\0=\1\2\0005\1\4\0=\1\3\0005\1\6\0=\1\5\0005\1\8\0=\1\7\0)\1\0\0=\1\9\0005\1\11\0=\1\
-\0005\1\13\0=\1\12\0005\1\15\0=\1\14\0005\1\17\0=\1\16\0L\0\2\0\1\0\3\15MS_WL_DOWN\3ÿ\1\13MS_WL_UP\3\1\
-MS_WL\3\0\16MOUSE_WHEEL\1\0\3\14MS_CENTER\3\4\13MS_RIGHT\3\2\12MS_LEFT\3\1\17MOUSE_BUTTON\1\0\6\9PREV\3¶\1\9PLAY\3Í\1\11VOL_DN\3ê\1\11VOL_UP\3é\1\9MUTE\3â\1\9NEXT\3µ\1\
+\0005\1\13\0=\1\12\0005\1\15\0=\1\14\0005\1\17\0=\1\16\0L\0\2\0\1\0\3\13MS_WL_UP\3\1\
+MS_WL\3\0\15MS_WL_DOWN\3ÿ\1\16MOUSE_WHEEL\1\0\3\13MS_RIGHT\3\2\12MS_LEFT\3\1\14MS_CENTER\3\4\17MOUSE_BUTTON\1\0\6\11VOL_UP\3é\1\9MUTE\3â\1\9NEXT\3µ\1\9PREV\3¶\1\9PLAY\3Í\1\11VOL_DN\3ê\1\
 MEDIA\1\0\9\9RWIN\3€\1\9RALT\3@\11RSHIFT\3 \
 RCTRL\3\16\8WIN\3\8\8ALT\3\4\
 SHIFT\3\2\9CTRL\3\1\
-NOMOD\3\0\14MODIFIERS\9NOMO\1\0\3\11LAYER1\3\1\11LAYER3\3\3\11LAYER2\3\2\
-LAYER\1\0\4\14MACROKEYS\3\1\14MACRONONE\3\0\15MACROMOUSE\3\3\14MACROPLAY\3\2\14MACROTYPE\1\0d\9KP_6\3^\9KP_5\3]\9KP_4\3\\\9KP_3\3[\9KP_2\3Z\9KP_1\3Y\13KP_ENTER\3X\12KP_PLUS\3W\13KP_MINUS\3V\16KP_ASTERISK\3U\13KP_SLASH\3T\12NUMLOCK\3S\7UP\3R\9DOWN\3Q\9LEFT\3P\
-POWER\3f\13KP_EQUAL\3g\
+NOMOD\3\0\14MODIFIERS\9NOMO\1\0\3\11LAYER3\3\3\11LAYER2\3\2\11LAYER1\3\1\
+LAYER\1\0\4\14MACRONONE\3\0\15MACROMOUSE\3\3\14MACROPLAY\3\2\14MACROKEYS\3\1\14MACROTYPE\1\0d\6C\3\6\11ESCAPE\3)\
+ENTER\3(\7N0\3'\7N9\3&\7N8\3%\7N7\3$\7N6\3#\7N5\3\"\7N4\3!\7N3\3 \7N2\3\31\7N1\3\30\6Z\3\29\6Y\3\28\6X\3\27\6W\3\26\6V\3\25\6U\3\24\6T\3\23\6S\3\22\6R\3\21\6Q\3\20\6P\3\19\6O\3\18\6N\3\17\6M\3\16\6L\3\15\6K\3\14\6J\3\13\6I\3\12\6H\3\11\6G\3\
+\6F\3\9\6E\3\8\6D\3\7\6B\3\5\6A\3\4\13KP_EQUAL\3g\
+POWER\3f\16APPLICATION\3e\17NONUS_BSLASH\3d\11KP_DOT\3c\9KP_0\3b\9KP_9\3a\9KP_8\3`\9KP_7\3_\9KP_6\3^\9KP_5\3]\9KP_4\3\\\9KP_3\3[\9KP_2\3Z\9KP_1\3Y\13KP_ENTER\3X\12KP_PLUS\3W\13KP_MINUS\3V\16KP_ASTERISK\3U\13KP_SLASH\3T\12NUMLOCK\3S\7UP\3R\9DOWN\3Q\9LEFT\3P\
 RIGHT\3O\11PGDOWN\3N\8END\3M\11DELETE\3L\9PGUP\3K\9HOME\3J\11INSERT\3I\
 PAUSE\3H\15SCROLLLOCK\3G\12PSCREEN\3F\8F12\3E\8F11\3D\8F10\3C\7F9\3B\7F8\3A\7F7\3@\7F6\3?\7F5\3>\7F4\3=\7F3\3<\7F2\3;\7F1\3:\13CAPSLOCK\0039\
 SLASH\0038\8DOT\0037\
@@ -522,14 +524,12 @@ GRAVE\0035\
 QUOTE\0034\11SCOLON\0033\15NONUS_HASH\0032\11BSLASH\0031\13RBRACKET\0030\13LBRACKET\3/\
 EQUAL\3.\
 MINUS\3-\
-SPACE\3,\8TAB\3+\11BSPACE\3*\11ESCAPE\3)\
-ENTER\3(\7N0\3'\7N9\3&\7N8\3%\7N7\3$\7N6\3#\7N5\3\"\7N4\3!\7N3\3 \7N2\3\31\7N1\3\30\6Z\3\29\6Y\3\28\6X\3\27\6W\3\26\6V\3\25\6U\3\24\6T\3\23\6S\3\22\6R\3\21\6Q\3\20\6P\3\19\6O\3\18\6N\3\17\6M\3\16\6L\3\15\6K\3\14\6J\3\13\6I\3\12\6H\3\11\6G\3\
-\6F\3\9\6E\3\8\6D\3\7\6C\3\6\6B\3\5\6A\3\4\16APPLICATION\3e\17NONUS_BSLASH\3d\11KP_DOT\3c\9KP_0\3b\9KP_9\3a\9KP_8\3`\9KP_7\3_\9KEYS\
-NOKEY\1\0\18\12ROT1CCW\3\16\
+SPACE\3,\8TAB\3+\11BSPACE\3*\9KEYS\
+NOKEY\1\0\18\9KEY2\3\2\9KEY1\3\1\11ROT2CW\3\21\9ROT2\3\20\12ROT2CCW\3\19\11ROT1CW\3\18\9ROT1\3\17\12ROT1CCW\3\16\
 KEY12\3\12\
 KEY11\3\11\
 KEY10\3\
-\9KEY9\3\9\9KEY8\3\8\9KEY7\3\7\9KEY6\3\6\9KEY5\3\5\9KEY4\3\4\9KEY3\3\3\9KEY2\3\2\9KEY1\3\1\11ROT2CW\3\21\9ROT2\3\20\12ROT2CCW\3\19\11ROT1CW\3\18\9ROT1\3\17\11MINIKB\3\5\24\26\26\27€‚‡‰‘‘’œ §ª®³·¹mapped_codes\0\2\21\0\0");t['lua.wchar_win']=load("\27LJ\2\8\13lua.wchar_win;\0\1\5\1\2\0\5\15\16\0-\1\0\0009\1\0\1'\3\1\0\18\4\0\0D\1\3\0\0À\12char[?]\8new\0\0\0\0\0ffi\0sz\0\0\6\0Ñ\3\0\6\18\5\7\0004µ\1(\13\4\3\0\0X\6\1€L\1\2\0\14\0\4\0X\6\4€-\6\0\0009\6\0\6B\6\1\2\18\4\6\0-\6\1\0008\6\4\6\14\0\6\0X\7\3€\13\6\5\0X\6\1€8\6\4\5\14\0\6\0X\7\31€-\7\2\0)\9\0\2B\7\2\3-\9\0\0009\9\1\9-\11\3\0+\12\0\0\18\13\4\0)\14\0\0\18\15\7\0\18\16\8\0+\17\0\0B\9\8\2)\
+\9KEY9\3\9\9KEY8\3\8\9KEY7\3\7\9KEY6\3\6\9KEY5\3\5\9KEY4\3\4\9KEY3\3\3\11MINIKB\3\5\24\26\26\27€‚‡‰‘‘’œ §ª®³·¹mapped_codes\0\2\21\0\0");t['lua.wchar_win']=load("\27LJ\2\8\13lua.wchar_win;\0\1\5\1\2\0\5\15\16\0-\1\0\0009\1\0\1'\3\1\0\18\4\0\0D\1\3\0\0À\12char[?]\8new\0\0\0\0\0ffi\0sz\0\0\6\0Ñ\3\0\6\18\5\7\0004µ\1(\13\4\3\0\0X\6\1€L\1\2\0\14\0\4\0X\6\4€-\6\0\0009\6\0\6B\6\1\2\18\4\6\0-\6\1\0008\6\4\6\14\0\6\0X\7\3€\13\6\5\0X\6\1€8\6\4\5\14\0\6\0X\7\31€-\7\2\0)\9\0\2B\7\2\3-\9\0\0009\9\1\9-\11\3\0+\12\0\0\18\13\4\0)\14\0\0\18\15\7\0\18\16\8\0+\17\0\0B\9\8\2)\
 \0\0\1\
 \9\0X\
 \12€-\
@@ -710,13 +710,13 @@ print\9func\8arg\2\2\3\3\5\5\6\6\7\7\7\7\7\7\8\8\8\
 \3\0\31\0/\0J\4\0¡\0046\0\0\0006\1\0\0009\1\1\1'\2\2\0&\1\2\1=\1\1\0006\0\3\0'\2\4\0B\0\2\0029\1\5\0'\3\6\0B\1\2\0016\1\3\0'\3\7\0B\1\2\0026\2\3\0'\4\8\0B\2\2\0026\3\3\0'\5\9\0B\3\2\0026\4\3\0'\6\
 \0B\4\2\0025\5\11\0003\6\12\0003\7\13\0003\8\14\0003\9\15\0003\
 \16\0003\11\17\0003\12\18\0003\13\19\0003\14\20\0003\15\21\0003\16\22\0003\17\23\0003\18\24\0003\19\25\0003\20\26\0003\21\27\0003\22\28\0003\23\29\0003\24\30\0003\25\31\0005\26\"\0005\27 \0=\6!\27=\27#\0265\27$\0=\6!\27=\27%\0265\27&\0=\
-!\27=\27'\0265\27(\0=\11!\27=\27)\0265\27*\0=\12!\27=\27+\0265\27,\0=\25!\27=\27-\0263\27.\0\18\28\27\0B\28\1\2\11\28\0\0X\29\3€\18\29\6\0002\0\0€D\29\1\0002\0\0€K\0\1\0\0\13map_keys\1\0\2\9func\0\
-param\0\17device_reset\1\0\2\9func\0\
-param\0\16device_info\1\0\2\9func\0\
-param\0\17list_devices\1\0\2\9func\0\
-param\0\6?\1\0\2\9func\0\
-param\0\11--help\1\0\6\17device_reset\0\11--help\0\13map_keys\0\16device_info\0\6?\0\17list_devices\0\9func\1\0\2\9func\0\
-param\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\1\6\0\"   Speed Unknown (unreported)\"        Low Speed (1.5MBit/s)\"        Full Speed (12MBit/s)\"       High Speed (480MBit/s)\"     Super Speed (5000MBit/s)\"Super Speed Plus(10000MBit/s)\18lua.wchar_win\15ffi.hidwin\13ffi.lusb\17lua.mapcodes\30void Sleep(uint32_t ms);\
+!\27=\27'\0265\27(\0=\11!\27=\27)\0265\27*\0=\12!\27=\27+\0265\27,\0=\25!\27=\27-\0263\27.\0\18\28\27\0B\28\1\2\11\28\0\0X\29\3€\18\29\6\0002\0\0€D\29\1\0002\0\0€K\0\1\0\0\13map_keys\1\0\2\
+param\0\9func\0\17device_reset\1\0\2\
+param\0\9func\0\16device_info\1\0\2\
+param\0\9func\0\17list_devices\1\0\2\
+param\0\9func\0\6?\1\0\2\
+param\0\9func\0\11--help\1\0\6\6?\0\17list_devices\0\17device_reset\0\13map_keys\0\11--help\0\16device_info\0\9func\1\0\2\
+param\0\9func\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\1\6\0\"   Speed Unknown (unreported)\"        Low Speed (1.5MBit/s)\"        Full Speed (12MBit/s)\"       High Speed (480MBit/s)\"     Super Speed (5000MBit/s)\"Super Speed Plus(10000MBit/s)\18lua.wchar_win\15ffi.hidwin\13ffi.lusb\17lua.mapcodes\30void Sleep(uint32_t ms);\
 \9cdef\8ffi\12require\17;./ffi/?.lua\9path\12package\22\0\22\0\22\0\22\0\22\0\22\0\26\0\26\0\26\0\28\0\30\0\30\0\"\0\"\0\"\0&\0&\0&\0(\0(\0(\0*\0*\0*\0.\0N\0d\0u\0”\0¡\0á\0ü\0\15\1\26\1%\0011\1=\1G\1U\1a\1o\1¤\1Ì\1Ú\1ý\1\1\2\2\2\2\2\2\2\3\2\3\2\3\2\4\2\4\2\4\2\5\2\5\2\5\2\6\2\6\2\6\2\7\2\7\2\7\2\27\2\31\2\31\2 \2 \2 \2 \2 \2 \2 \2ffi\0\
 Acodes\0\6;lusb\0\0038whid\0\0035wwin\0\0032speed_lookup\0\0011args_usage\0\0010setup_lusb\0\1/iterate_devs\0\1.print_devs\0\1-list_devices\0\1,device_info\0\1+device_reset\0\1*dump_caps\0\1)check_error\0\1(get_report\0\1'download_map\0\1&send_data\0\1%send_hello\0\1$send_start\0\1#send_stop\0\1\"send_flash_led\0\1!process_combos\0\1 send_macro_proto1\0\1\31keyboard_check\0\1\30map_keys\0\1\29commands\0\19\
 check_args\0\1\9res\0\2\7\0\0")(...);üŒ   5 Ò6   9  6 ' B= 6 ' B= 6 ' B= 6 '
@@ -844,13 +844,13 @@ print	funcarg
   / J ¡6   6  9' &= 6  ' B 9 ' B6 ' B6 ' B6 '	 B6 '
  B5 3 3 3 3	 3
  3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 5" 5  =!=#5$ =!=%5& =
-!='5( =!=)5* =!=+5, =!=-3.  B  X€ 2  €D 2  €K   map_keys 	func 
-param device_reset 	func 
-param device_info 	func 
-param list_devices 	func 
-param ? 	func 
-param --help device_reset --help map_keys device_info ? list_devices 	func 	func 
-param                      "   Speed Unknown (unreported)"        Low Speed (1.5MBit/s)"        Full Speed (12MBit/s)"       High Speed (480MBit/s)"     Super Speed (5000MBit/s)"Super Speed Plus(10000MBit/s)lua.wchar_winffi.hidwinffi.lusblua.mapcodesvoid Sleep(uint32_t ms);
+!='5( =!=)5* =!=+5, =!=-3.  B  X€ 2  €D 2  €K   map_keys 
+param 	func device_reset 
+param 	func device_info 
+param 	func list_devices 
+param 	func ? 
+param 	func --help ? list_devices device_reset map_keys --help device_info 	func 
+param 	func                      "   Speed Unknown (unreported)"        Low Speed (1.5MBit/s)"        Full Speed (12MBit/s)"       High Speed (480MBit/s)"     Super Speed (5000MBit/s)"Super Speed Plus(10000MBit/s)lua.wchar_winffi.hidwinffi.lusblua.mapcodesvoid Sleep(uint32_t ms);
 	cdefffirequire;./ffi/?.lua	pathpackage            " " " & & & ( ( ( * * * . N d u ” ¡ á ü %1=GUao¤ÌÚý       ffi 
 Acodes ;lusb 8whid 5wwin 2speed_lookup 1args_usage 0setup_lusb /iterate_devs .print_devs -list_devices ,device_info +device_reset *dump_caps )check_error (get_report 'download_map &send_data %send_hello $send_start #send_stop "send_flash_led !process_combos  send_macro_proto1 keyboard_check map_keys commands 
 check_args 	res   ÌLJlua.wchar_win;   -  9 '   D  Àchar[?]new     ffi sz   Ñ  4µ(  X€L   X€-  9 B - 8  X€ X€8  X€- )	 B-	  9		- +   )    +  B	)
@@ -913,14 +913,16 @@ check_args 	res   ÌLJlua.wchar_win;   -  9 '   D  Àchar
 59=AEISSUWbduxyz{{ffi bit bor band  shl  C cdef FORMAT_MESSAGE_FROM_SYSTEM errbuf errors mmap_errors checkneq checkh checknz checknil checknum CP_UTF8 	wcsbuf wcs mbsbuf mbs   lua.wchar_win½
 LJlua.mapcodes£
    & ¹4   5 =  )  = 5 = 5 = 5 = )  =	 5 =
- 5 = 5 = 5 = L   MS_WL_DOWNÿMS_WL_UP
-MS_WL MOUSE_WHEEL MS_CENTERMS_RIGHTMS_LEFTMOUSE_BUTTON 	PREV¶	PLAYÍVOL_DNêVOL_UPé	MUTEâ	NEXTµ
+ 5 = 5 = 5 = L   MS_WL_UP
+MS_WL MS_WL_DOWNÿMOUSE_WHEEL MS_RIGHTMS_LEFTMS_CENTERMOUSE_BUTTON VOL_UPé	MUTEâ	NEXTµ	PREV¶	PLAYÍVOL_DNê
 MEDIA 		RWIN€	RALT@RSHIFT 
 RCTRLWINALT
 SHIFT	CTRL
-NOMOD MODIFIERS	NOMO LAYER1LAYER3LAYER2
-LAYER MACROKEYSMACRONONE MACROMOUSEMACROPLAYMACROTYPE d	KP_6^	KP_5]	KP_4\	KP_3[	KP_2Z	KP_1YKP_ENTERXKP_PLUSWKP_MINUSVKP_ASTERISKUKP_SLASHTNUMLOCKSUPR	DOWNQ	LEFTP
-POWERfKP_EQUALg
+NOMOD MODIFIERS	NOMO LAYER3LAYER2LAYER1
+LAYER MACRONONE MACROMOUSEMACROPLAYMACROKEYSMACROTYPE dCESCAPE)
+ENTER(N0'N9&N8%N7$N6#N5"N4!N3 N2N1ZYXWVUTSRQPONMLKJIHG
+F	EDBAKP_EQUALg
+POWERfAPPLICATIONeNONUS_BSLASHdKP_DOTc	KP_0b	KP_9a	KP_8`	KP_7_	KP_6^	KP_5]	KP_4\	KP_3[	KP_2Z	KP_1YKP_ENTERXKP_PLUSWKP_MINUSVKP_ASTERISKUKP_SLASHTNUMLOCKSUPR	DOWNQ	LEFTP
 RIGHTOPGDOWNNENDMDELETEL	PGUPK	HOMEJINSERTI
 PAUSEHSCROLLLOCKGPSCREENFF12EF11DF10CF9BF8AF7@F6?F5>F4=F3<F2;F1:CAPSLOCK9
 SLASH8DOT7
@@ -929,14 +931,12 @@ GRAVE5
 QUOTE4SCOLON3NONUS_HASH2BSLASH1RBRACKET0LBRACKET/
 EQUAL.
 MINUS-
-SPACE,TAB+BSPACE*ESCAPE)
-ENTER(N0'N9&N8%N7$N6#N5"N4!N3 N2N1ZYXWVUTSRQPONMLKJIHG
-F	EDCBAAPPLICATIONeNONUS_BSLASHdKP_DOTc	KP_0b	KP_9a	KP_8`	KP_7_	KEYS
-NOKEY ROT1CCW
+SPACE,TAB+BSPACE*	KEYS
+NOKEY 	KEY2	KEY1ROT2CW	ROT2ROT2CCWROT1CW	ROT1ROT1CCW
 KEY12
 KEY11
 KEY10
-	KEY9		KEY8	KEY7	KEY6	KEY5	KEY4	KEY3	KEY2	KEY1ROT2CW	ROT2ROT2CCWROT1CW	ROT1MINIKB€‚‡‰‘‘’œ §ª®³·¹mapped_codes   lua.mapcodesÒ;LJffi.lusb¼;   !a …6   ' B 6   X€5 5 =5 =5 =	5
+	KEY9		KEY8	KEY7	KEY6	KEY5	KEY4	KEY3MINIKB€‚‡‰‘‘’œ §ª®³·¹mapped_codes   lua.mapcodesÒ;LJffi.lusb¼;   !a …6   ' B 6   X€5 5 =5 =5 =	5
  =5 =5 =6   X€9 89 89  B9 ' BL Þ7
 /********** lusb_lib ****************************************************************/
 
@@ -1182,10 +1182,10 @@ int libusb_release_interface(libusb_device_handle *dev_handle, int interface_num
 	cdef	load	archos
 Other x64v
 POSIX x64usb-1.0.soBSD x64usb-1.0.so
-Linux armusb-1.0.sox64usb-1.0.soWindows x64libusb-1.0.dllOSX 
+Linux x64usb-1.0.soarmusb-1.0.soWindows x64libusb-1.0.dllOSX BSD 
 Linux 
 Other Windows OSX 
-POSIX BSD  x64usb-1.0.dylibffi_lusb_dllffirequire                 	 	            ffi libs lib lusb_lib   ffi.lusbËSLJ
+POSIX  x64usb-1.0.dylibffi_lusb_dllffirequire                 	 	            ffi libs lib lusb_lib   ffi.lusbËSLJ
 ffi.hidwin¢  
  ";Ã-   9   9  B - 9' B-  9 96 9) ) B+    6 9)	 )
 
