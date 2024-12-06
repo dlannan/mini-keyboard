@@ -3,7 +3,7 @@ A utility for mini-keyboard using luajit + ffi + libusb.
 
 My device:
 
-![alt text](https://github.com/dlannan/mini-keyboard/blob/main/media/my_keypad.png)
+![alt text](https://github.com/dlannan/mini-keyboard/blob/main/media/my_keypad.jpg)
 
 From Aliexpress:
 
